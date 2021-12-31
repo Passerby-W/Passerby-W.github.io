@@ -1,39 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>WAN</title>
   
-  
+  <subtitle>Hello World</subtitle>
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2021-12-29T14:43:40.364Z</updated>
+  <updated>2021-12-31T08:12:34.401Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Passerby-W</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://passerby-w.github.io/2021/12/29/hello-world/"/>
-    <id>http://passerby-w.github.io/2021/12/29/hello-world/</id>
-    <published>2021-12-29T14:43:40.364Z</published>
-    <updated>2021-12-29T14:43:40.364Z</updated>
+    <title>NER学习整理</title>
+    <link href="http://passerby-w.github.io/2021/12/31/ner-xue-xi-zheng-li/"/>
+    <id>http://passerby-w.github.io/2021/12/31/ner-xue-xi-zheng-li/</id>
+    <published>2021-12-31T08:01:23.000Z</published>
+    <updated>2021-12-31T08:12:34.401Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;什么是NER&quot;&gt;&lt;a href=&quot;#什么是NER&quot; class=&quot;headerlink&quot; title=&quot;什么是NER&quot;&gt;&lt;/a&gt;什么是NER&lt;/h2&gt;&lt;p&gt;命名体识别（Named Entity Recognition,</summary>
         
       
     
     
     
+    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
+    
+    
+    <category term="NER" scheme="http://passerby-w.github.io/tags/NER/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ASR错误自动识别与纠正</title>
+    <link href="http://passerby-w.github.io/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/"/>
+    <id>http://passerby-w.github.io/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/</id>
+    <published>2021-12-31T07:19:38.000Z</published>
+    <updated>2021-12-31T08:10:42.407Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
+    
+    
+    <category term="ASR纠错" scheme="http://passerby-w.github.io/tags/ASR%E7%BA%A0%E9%94%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>M1搭建hexo博客</title>
+    <link href="http://passerby-w.github.io/2021/12/31/m1-da-jian-hexo-bo-ke/"/>
+    <id>http://passerby-w.github.io/2021/12/31/m1-da-jian-hexo-bo-ke/</id>
+    <published>2021-12-31T06:46:32.000Z</published>
+    <updated>2021-12-31T08:19:37.456Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;重度引用：&lt;a href=&quot;http://www.aspoir.cn/posts/20210715195018/&quot;&gt;Aspoir的《在M1上搭建hexo博客》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;简述在M1系统上搭建hexo博客，使用master主题&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Installment" scheme="http://passerby-w.github.io/categories/Installment/"/>
+    
+    
+    <category term="Node.js" scheme="http://passerby-w.github.io/tags/Node-js/"/>
+    
+    <category term="Hexo" scheme="http://passerby-w.github.io/tags/Hexo/"/>
     
   </entry>
   
