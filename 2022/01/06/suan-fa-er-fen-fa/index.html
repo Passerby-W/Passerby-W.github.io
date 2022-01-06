@@ -346,14 +346,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    468
+                    767
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -434,7 +434,7 @@
 </tr>
 </tbody></table>
 <p>由表格可见，在左右指针交换位置的时候终止循环。那么L和R指针分别的意义是什么呢？</p>
-<p>场景1：寻找<strong>小于</strong>target的位置，则目标位置是6，index为3</p>
+<p>场景1：寻找小于target的位置，则目标位置是6，index为3</p>
 <p>则在终止循环前的一个循环时L,R的位置如下：</p>
 <p>如果select1为&lt;时，等价于求&lt;6和first&gt;=6，如下所示：</p>
 <table>
@@ -602,9 +602,108 @@
 <td></td>
 </tr>
 </tbody></table>
+<p>场景1：寻找小于target的位置</p>
+<p>场景2：寻找大于target的位置</p>
+<p>场景3：寻找小于等于target的首次出现的位置</p>
+<p>场景4：寻找小于等于target的末次出现的位置</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">// 模板
+int BinarySearch(int *arr, int arrSize, int target) 
+{
+    int left = 0;
+    int right = arrSize - 1;
+    int mid;
+
+    while (left &lt;= right) {
+        mid = left + (right - left) / 2;
+        if (arr[mid] &lt; target) { // select [&lt;, &lt;=]
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return right; // select [left, right]
+}
+// 4种场景对应的代码：
+// 场景1：&lt; 6
+int BinarySearchLowerTarget(int *arr, int arrSize, int target) 
+{
+    int left = 0;
+    int right = arrSize - 1;
+    int mid;
+
+    while (left &lt;= right) {
+        mid = left + (right - left) / 2;
+        if (arr[mid] &lt; target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return right;
+}
+
+// 场景2：&gt; 6
+int BinarySearchHigherTarget(int* arr, int arrSize, int target) 
+{
+    int left = 0;
+    int right = arrSize - 1;
+    int mid;
+
+    while (left &lt;= right) {
+        mid = left + (right - left) / 2;
+        if (arr[mid] &lt;= target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return left;
+}
+
+// 场景3：&lt;=6, 取首
+int BinarySearchFirstLowerEqualTarget(int* arr, int arrSize, int target) 
+{
+    int left = 0;
+    int right = arrSize - 1;
+    int mid;
+
+    while (left &lt;= right) {
+        mid = left + (right - left) / 2;
+        if (arr[mid] &lt; target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return left;
+}
+
+// 场景4：&lt;=6, 取尾
+int BinarySearchLastLowerEqualTarget(int* arr, int arrSize, int target) 
+{
+    int left = 0;
+    int right = arrSize - 1;
+    int mid;
+
+    while (left &lt;= right) {
+        mid = left + (right - left) / 2;
+        if (arr[mid] &lt;= target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return right;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>总结：</strong></p>
 <ol>
-<li><p>L一定是要**+1<strong>，R一定是</strong>-1**，因为区间要不断收缩才能退出，如果没有+1，和-1，会导致死循环风险。</p>
+<li><p>L一定是要+1，R一定是-1，因为区间要不断收缩才能退出，如果没有+1，和-1，会导致死循环风险。</p>
 </li>
 <li><p>while (left &lt;= right)中的退出条件是，left &gt; right,出现了翻转，此时right跑到left左边。</p>
 </li>
@@ -1154,7 +1253,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">11.5k</span>
+                        class="white-color">11.8k</span>
             
             
             
