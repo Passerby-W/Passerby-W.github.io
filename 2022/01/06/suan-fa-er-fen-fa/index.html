@@ -5,10 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="算法-二分法, python,nlp,machine learning,hexo,data structue">
-    <meta name="description" content="def search(self, nums: List[int], target: int) -&amp;gt; int:
-	left, right = 0, len(nums) - 1
-	while left &amp;lt;= right: 
-		mi">
+    <meta name="description" content="二分法主要是通过左右逼近的方式，向目标值靠拢，并且取得对数复杂度的算法。
+def search(self, nums: List[int], target: int) -&amp;gt; int:
+	left, right = 0, len(num">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -339,14 +338,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-06
+                    2022-01-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    767
+                    800
                 </div>
                 
 
@@ -376,7 +375,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-python" data-language="python"><code class="language-python">def search(self, nums: List[int], target: int) -&gt; int:
+                <p>二分法主要是通过左右逼近的方式，向目标值靠拢，并且取得对数复杂度的算法。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">def search(self, nums: List[int], target: int) -&gt; int:
 	left, right = 0, len(nums) - 1
 	while left &lt;= right: 
 		mid = left + (right - left)//2
