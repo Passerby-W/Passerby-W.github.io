@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-01-10T08:20:19.946Z</updated>
+  <updated>2022-01-10T08:25:04.121Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/"/>
     <id>http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/</id>
     <published>2022-01-10T07:29:52.000Z</published>
-    <updated>2022-01-10T08:20:19.946Z</updated>
+    <updated>2022-01-10T08:25:04.121Z</updated>
     
     
       
@@ -46,7 +46,7 @@
     <link href="http://passerby-w.github.io/2022/01/06/suan-fa-er-fen-fa/"/>
     <id>http://passerby-w.github.io/2022/01/06/suan-fa-er-fen-fa/</id>
     <published>2022-01-06T06:42:05.000Z</published>
-    <updated>2022-01-10T08:18:06.980Z</updated>
+    <updated>2022-01-10T08:24:45.760Z</updated>
     
     
       
@@ -54,7 +54,8 @@
         
         
     <summary type="html">&lt;p&gt;二分法主要是通过左右逼近的方式，向目标值靠拢，并且取得对数复杂度的算法。&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code</summary>
+&lt;p&gt;下面这段代码就是一般二分法的代码，不过应该如何理解二分法的本质呢？&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;</summary>
         
       
     

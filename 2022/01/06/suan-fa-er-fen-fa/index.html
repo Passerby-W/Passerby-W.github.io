@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="算法-二分法, python,nlp,machine learning,hexo,data structue">
     <meta name="description" content="二分法主要是通过左右逼近的方式，向目标值靠拢，并且取得对数复杂度的算法。
-def search(self, nums: List[int], target: int) -&amp;gt; int:
-	left, right = 0, len(num">
+下面这段代码就是一般二分法的代码，不过应该如何理解二分法的本质呢？
+def search(self, nums: List[int], target: int) -&amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -376,6 +376,7 @@ def search(self, nums: List[int], target: int) -&amp;gt; int:
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>二分法主要是通过左右逼近的方式，向目标值靠拢，并且取得对数复杂度的算法。</p>
+<p>下面这段代码就是一般二分法的代码，不过应该如何理解二分法的本质呢？</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">def search(self, nums: List[int], target: int) -&gt; int:
 	left, right = 0, len(nums) - 1
 	while left &lt;= right: 
@@ -386,7 +387,6 @@ def search(self, nums: List[int], target: int) -&amp;gt; int:
 			right = mid - 1
 	return left # select2 left, right<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>上面这段代码就是一般二分法的代码，不过应该如何理解二分法的本质呢？</p>
 <p>在做题的时候经常会对上面的选择部分感到迷惑，在具体情况下应该怎么选择呢？</p>
 <p>我先设定一个数组——&gt;[1,2,3,5,6,6,6,6,8,8,9]</p>
 <p>首先我们要先明确一个概念，在while left &lt;= right这个条件下，我们要确保数组的完整性，所以left, right = 0, len(nums) - 1，这样可以保证index的取值空间为[0, len(nums) - 1]这个闭区间。其次while的终止条件如下面表格所示：</p>
