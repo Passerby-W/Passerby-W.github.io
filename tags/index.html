@@ -239,20 +239,20 @@
                 
                 
                 
-                <a href="/categories/Installment/" title="Installment: 1">
+                <a href="/categories/NLP/" title="NLP: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Installment
-                        <span class="tag-length">1</span>
+                            style="background-color: #F9EBEA;">NLP
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/NLP/" title="NLP: 2">
+                <a href="/categories/Installment/" title="Installment: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">NLP
-                        <span class="tag-length">2</span>
+                            style="background-color: #F5EEF8;">Installment
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -300,7 +300,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"Node.js","weight":1,"link":"/tags/Node-js/"},{"text":"Hexo","weight":1,"link":"/tags/Hexo/"},{"text":"ASR纠错","weight":1,"link":"/tags/ASR纠错/"},{"text":"Regular Expression","weight":1,"link":"/tags/Regular-Expression/"},{"text":"NER","weight":1,"link":"/tags/NER/"},{"text":"Binary Search","weight":1,"link":"/tags/Binary-Search/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"ASR纠错","weight":1,"link":"/tags/ASR纠错/"},{"text":"Node.js","weight":1,"link":"/tags/Node-js/"},{"text":"Hexo","weight":1,"link":"/tags/Hexo/"},{"text":"NER","weight":1,"link":"/tags/NER/"},{"text":"Regular Expression","weight":1,"link":"/tags/Regular-Expression/"},{"text":"Binary Search","weight":1,"link":"/tags/Binary-Search/"}], {
         autoResize: true
     });
 </script>
@@ -319,10 +319,19 @@
             <div class="tag-chips">
                 
                 
+                <a href="/tags/ASR%E7%BA%A0%E9%94%99/" title="ASR纠错: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="ASR纠错" style="background-color: #F9EBEA;">ASR纠错
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/Node-js/" title="Node.js: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Node.js" style="background-color: #F9EBEA;">Node.js
+                            data-tagname="Node.js" style="background-color: #F5EEF8;">Node.js
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -331,25 +340,7 @@
                 <a href="/tags/Hexo/" title="Hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Hexo" style="background-color: #F5EEF8;">Hexo
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ASR%E7%BA%A0%E9%94%99/" title="ASR纠错: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="ASR纠错" style="background-color: #D5F5E3;">ASR纠错
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Regular-Expression/" title="Regular Expression: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Regular Expression" style="background-color: #E8F8F5;">Regular Expression
+                            data-tagname="Hexo" style="background-color: #D5F5E3;">Hexo
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -358,7 +349,16 @@
                 <a href="/tags/NER/" title="NER: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="NER" style="background-color: #FEF9E7;">NER
+                            data-tagname="NER" style="background-color: #E8F8F5;">NER
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Regular-Expression/" title="Regular Expression: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Regular Expression" style="background-color: #FEF9E7;">Regular Expression
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -412,7 +412,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Installment","max":3},{"name":"NLP","max":3},{"name":"Python","max":3},{"name":"Algorithm","max":3}],
+            indicator: [{"name":"NLP","max":3},{"name":"Installment","max":3},{"name":"Python","max":3},{"name":"Algorithm","max":3}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -423,7 +423,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,2,1,1],
+                    value : [2,1,1,1],
                     name : '文章分类数量'
                 }
             ]
@@ -537,7 +537,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Installment","value":1},{"name":"NLP","value":2},{"name":"Python","value":1},{"name":"Algorithm","value":1}],
+                data: [{"name":"NLP","value":2},{"name":"Installment","value":1},{"name":"Python","value":1},{"name":"Algorithm","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -561,7 +561,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Node.js","Hexo","ASR纠错","Regular Expression","NER","Binary Search"]
+                data: ["ASR纠错","Node.js","Hexo","NER","Regular Expression","Binary Search"]
             }
         ],
         yAxis: [
