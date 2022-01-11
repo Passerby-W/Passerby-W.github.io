@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>mac安装教程</title>
+      <link href="/2022/01/11/neo4j-for-mac-an-zhuang-jiao-cheng/"/>
+      <url>/2022/01/11/neo4j-for-mac-an-zhuang-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<p>一般情况下，我们使用数据库查找事物间的联系的时候，只需要<strong>短程关系</strong>的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。</p><p>而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之间织起了一张巨大复杂的关系网，传统数据库面对这样复杂关系往往束手无策。因此，图数据库应运而生。</p><p>图数据库(Graph database)指的是以图数据结构的形式来存储和查询数据的数据库。</p><p>Neo4j 是目前用的最多的图数据库，世界数据库排行榜上排名21位。下面讲介绍一下Neo4j在Mac上的安装流程。</p><ol><li><p>首先，去官网下载<a href="https://neo4j.com/download/other-releases/">社区版neo4j</a></p></li><li><p>然后解压下载tar文件<img src="截屏2022-01-11 下午4.40.50.png" alt="" style="zoom: 50%;"></p></li><li><p>然后打开终端，cd到解压的文件夹的bin目录下，输入./neo4j start</p></li><li><p>进入<a href="http://localhost:7474/">http://localhost:7474/</a></p></li><li><p>如果想要退出，cd到解压的文件夹的bin目录下，输入./neo4j stop即可</p></li><li><p>在.bash_profile文件中添加如下两行代码，然后在终端输入source ~/.bash_profile 并回车</p><pre class="line-numbers language-none"><code class="language-none">export NEO4J_HOME= /Users/haoranwan/neo4j-community-4.4.2export PATH=$PATH:$NEO4J_HOME/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li></ol><p>在安装中，java版本的不匹配也可能导致安装失败。下面将详细介绍如何安装对应的java版本。首先去oracle下载jdk11。然后打开.bash_profile，配置java路径并设置默认java版本。最后在终端输入source ~/.bash_profile 并回车</p><pre class="line-numbers language-none"><code class="language-none">export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home"alias java11='export JAVA_HOME=$JAVA_11_HOME'export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home"alias java17='export JAVA_HOME=$JAVA_17_HOME'# 默认使用java11export JAVA_HOME=$JAVA_11_HOME#java END%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>然后可以输入<code>java -version</code>来查询当前版本</p><p>可以输入java17 or java+其他数字来切换java版本</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Installment </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> neo4j </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>正则表达式</title>
       <link href="/2022/01/10/zheng-ze-biao-da-shi/"/>
       <url>/2022/01/10/zheng-ze-biao-da-shi/</url>

@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-01-10T08:37:05.349Z</updated>
+  <updated>2022-01-11T08:46:33.429Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac安装教程</title>
+    <link href="http://passerby-w.github.io/2022/01/11/neo4j-for-mac-an-zhuang-jiao-cheng/"/>
+    <id>http://passerby-w.github.io/2022/01/11/neo4j-for-mac-an-zhuang-jiao-cheng/</id>
+    <published>2022-01-11T07:06:41.000Z</published>
+    <updated>2022-01-11T08:46:33.429Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一般情况下，我们使用数据库查找事物间的联系的时候，只需要&lt;strong&gt;短程关系&lt;/strong&gt;的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。&lt;/p&gt;
+&lt;p&gt;而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之</summary>
+        
+      
+    
+    
+    
+    <category term="Installment" scheme="http://passerby-w.github.io/categories/Installment/"/>
+    
+    
+    <category term="neo4j" scheme="http://passerby-w.github.io/tags/neo4j/"/>
+    
+    <category term="java" scheme="http://passerby-w.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式</title>
