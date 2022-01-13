@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-01-13T07:07:47.793Z</updated>
+  <updated>2022-01-13T10:26:19.084Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Getting Started with RDF</title>
+    <link href="http://passerby-w.github.io/2022/01/13/rdf/"/>
+    <id>http://passerby-w.github.io/2022/01/13/rdf/</id>
+    <published>2022-01-13T09:08:08.000Z</published>
+    <updated>2022-01-13T10:26:19.084Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;资源描述框架(Resource Description Framework，RDF)是一个使用&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Tutorial" scheme="http://passerby-w.github.io/categories/Tutorial/"/>
+    
+    
+    <category term="RDF" scheme="http://passerby-w.github.io/tags/RDF/"/>
+    
+  </entry>
   
   <entry>
     <title>知识图谱学习笔记</title>

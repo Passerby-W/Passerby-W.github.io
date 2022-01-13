@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mac上安装Neo4j教程, python,nlp,machine learning,hexo,data structue">
-    <meta name="description" content="一般情况下，我们使用数据库查找事物间的联系的时候，只需要短程关系的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。
-而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之间织起了一张巨">
+    <meta name="keywords" content="Getting Started with RDF, python,nlp,machine learning,hexo,data structue">
+    <meta name="description" content="资源描述框架(Resource Description Framework，RDF)是一个使用XML语法来表示的资料模型(Datamodel),用来描述Web资源的特性,及资源与资源之间的关系 。
+资源描述框架为表示数据及其含义提供了一个标">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Mac上安装Neo4j教程 | WAN</title>
+    <title>Getting Started with RDF | WAN</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -184,12 +184,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mac上安装Neo4j教程</h1>
+                    <h1 class="description center-align post-title">Getting Started with RDF</h1>
                 </div>
             </div>
         </div>
@@ -305,12 +305,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/neo4j/">
-                                <span class="chip bg-color">neo4j</span>
-                            </a>
-                        
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/RDF/">
+                                <span class="chip bg-color">RDF</span>
                             </a>
                         
                     </div>
@@ -321,8 +317,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Installment/" class="post-category">
-                                Installment
+                            <a href="/categories/Tutorial/" class="post-category">
+                                Tutorial
                             </a>
                         
                     </div>
@@ -334,7 +330,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-01-13
                 </div>
                 
 
@@ -348,7 +344,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    471
+                    412
                 </div>
                 
 
@@ -378,38 +374,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一般情况下，我们使用数据库查找事物间的联系的时候，只需要<strong>短程关系</strong>的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。</p>
-<p>而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之间织起了一张巨大复杂的关系网，传统数据库面对这样复杂关系往往束手无策。因此，图数据库应运而生。</p>
-<p>图数据库(Graph database)指的是以图数据结构的形式来存储和查询数据的数据库。</p>
-<p>Neo4j 是目前用的最多的图数据库，世界数据库排行榜上排名21位。下面讲介绍一下Neo4j在Mac上的安装流程。</p>
-<ol>
-<li><p>首先，去官网下载<a target="_blank" rel="noopener" href="https://neo4j.com/download/other-releases/">社区版neo4j</a></p>
-</li>
-<li><p>然后解压下载tar文件<img src="/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/截屏2022-01-11 下午4.40.50.png" alt="" style="zoom: 50%;"></p>
-</li>
-<li><p>然后打开终端，cd到解压的文件夹的bin目录下，输入./neo4j start</p>
-</li>
-<li><p>进入<a target="_blank" rel="noopener" href="http://localhost:7474/">http://localhost:7474/</a></p>
-</li>
-<li><p>如果想要退出，cd到解压的文件夹的bin目录下，输入./neo4j stop即可</p>
-</li>
-<li><p>在.bash_profile文件中添加如下两行代码，然后在终端输入source ~/.bash_profile 并回车</p>
-<pre class="line-numbers language-none"><code class="language-none">export NEO4J_HOME= /Users/haoranwan/neo4j-community-4.4.2
-export PATH=$PATH:$NEO4J_HOME/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ol>
-<p>在安装中，java版本的不匹配也可能导致安装失败。下面将详细介绍如何安装对应的java版本。首先去oracle下载jdk11。然后打开.bash_profile，配置java路径并设置默认java版本。最后在终端输入source ~/.bash_profile 并回车</p>
-<pre class="line-numbers language-none"><code class="language-none">export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home"
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
+                <p>资源描述框架(Resource Description Framework，RDF)是一个使用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/XML">XML</a>语法来表示的资料模型(Datamodel),用来描述Web资源的特性,及资源与资源之间的关系 。</p>
+<p>资源描述框架为表示数据及其含义提供了一个标准化的通用模型</p>
+<ul>
+<li>轻松支持混合、多样和不断变化的数据模型</li>
+<li>易于表示数据或模式中的任何更改</li>
+<li>可互操作和可组合</li>
+</ul>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.17.36.png" alt="" style="zoom:50%;">
 
-export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home"
-alias java17='export JAVA_HOME=$JAVA_17_HOME'
+<p>首先假设：类别“artist”包括solo artist和band，band成员是solo artist。</p>
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午5.35.15.png" alt="" style="zoom:50%;">
 
-# 默认使用java11
-export JAVA_HOME=$JAVA_11_HOME
-#java END%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>RDF描述这些关系的方式基于我们如何用言语表达。如果我们说“<strong>The Beatles</strong> has as a member <strong>Paul McCartney</strong>”，那么用RDF来表示就如图下所示：</p>
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午5.36.36.png" alt="" style="zoom:50%;">
 
-<p>然后可以输入<code>java -version</code>来查询当前版本</p>
-<p>可以输入java17 or java+其他数字来切换java版本</p>
+<h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><p>类（<strong>class</strong>）是指某种类型的事物（如artist和band），一个类由一组个体（<strong>individuals</strong>），如披头士或约翰·列侬组成，也可称为实例或对象。类或个体可以是RDF三元组结构中的<strong>subject</strong>或<strong>object</strong>。    </p>
+<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><p>RDF三元组的中间部分是谓词（<strong>predicate</strong>），有两种用法。当它在我们的模型中描述两个对象（<strong>classes</strong>或<strong>individuals</strong>）之间的关系时，它被称为对象属性（<strong>object property</strong>）。</p>
+<p>如果谓词提供有关对象的数据（数字、日期、字符串等），则称为描述属性的数据属性（<strong>attribute</strong>）。</p>
+<h2 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h2><p>上面这些元素合在一起构成了一个图（<strong>graph</strong>）。在图中，表示对象或数据的点称为节点（<strong>node</strong>），而连接它们的谓词（对象属性或数据属性）称为边（<strong>edge</strong>）。</p>
+<h2 id="RDF-Concepts"><a href="#RDF-Concepts" class="headerlink" title="RDF Concepts"></a><strong>RDF Concepts</strong></h2><ul>
+<li><strong>IRI:</strong> Nodes and edges with a unique identifier</li>
+<li><strong>Literal:</strong> Nodes representing values like numbers and dates</li>
+<li><strong>Blank node:</strong> Nodes without an explicit identifier</li>
+</ul>
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午5.54.24.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午5.54.54.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.02.03.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.02.33.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.03.16.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.03.46.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.04.30.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.04.54.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.07.27.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.05.12.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.07.58.png" alt="" style="zoom:50%;">
+
+<img src="/2022/01/13/rdf/截屏2022-01-13 下午6.08.44.png" alt="" style="zoom:50%;">
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://www.stardog.com/trainings/getting-started-with-rdf-sparql/">STARDOG</a></p>
 
                 
             </div>
@@ -436,7 +449,7 @@ export JAVA_HOME=$JAVA_11_HOME
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://passerby-w.github.io/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/">http://passerby-w.github.io/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/</a>
+                    <a href="http://passerby-w.github.io/2022/01/13/rdf/">http://passerby-w.github.io/2022/01/13/rdf/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -474,12 +487,8 @@ export JAVA_HOME=$JAVA_11_HOME
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/neo4j/">
-                                    <span class="chip bg-color">neo4j</span>
-                                </a>
-                            
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/RDF/">
+                                    <span class="chip bg-color">RDF</span>
                                 </a>
                             
                         </div>
@@ -680,9 +689,60 @@ export JAVA_HOME=$JAVA_11_HOME
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/01/13/rdf/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Getting Started with RDF">
+                        
+                        <span class="card-title">Getting Started with RDF</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Tutorial/" class="post-category">
+                                    Tutorial
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/RDF/">
+                        <span class="chip bg-color">RDF</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/">
                     <div class="card-image">
@@ -700,9 +760,9 @@ export JAVA_HOME=$JAVA_11_HOME
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -728,55 +788,6 @@ export JAVA_HOME=$JAVA_11_HOME
                     
                     <a href="/tags/yago/">
                         <span class="chip bg-color">yago</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/10/zheng-ze-biao-da-shi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
-                        
-                        <span class="card-title">正则表达式</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Regular-Expression/">
-                        <span class="chip bg-color">Regular Expression</span>
                     </a>
                     
                 </div>
