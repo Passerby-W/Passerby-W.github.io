@@ -4,9 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mac安装教程, python,nlp,machine learning,hexo,data structue">
-    <meta name="description" content="一般情况下，我们使用数据库查找事物间的联系的时候，只需要短程关系的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。
-而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之间织起了一张巨">
+    <meta name="keywords" content="知识图谱学习笔记, python,nlp,machine learning,hexo,data structue">
+    <meta name="description" content="2012 年 5 月 17 日，Google 正式提出了知识图谱（Knowledge Graph）的概念，其初衷是为了优化搜索引擎返回的结果，增强用户搜索质量及体验。传统的互联网技术是基于关键字匹配，然后通过一系列的打分策略来返回搜索结果的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mac安装教程 | WAN</title>
+    <title>知识图谱学习笔记 | WAN</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -184,12 +183,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mac安装教程</h1>
+                    <h1 class="description center-align post-title">知识图谱学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -309,8 +308,12 @@
                                 <span class="chip bg-color">neo4j</span>
                             </a>
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/py2neo/">
+                                <span class="chip bg-color">py2neo</span>
+                            </a>
+                        
+                            <a href="/tags/yago/">
+                                <span class="chip bg-color">yago</span>
                             </a>
                         
                     </div>
@@ -321,8 +324,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Installment/" class="post-category">
-                                Installment
+                            <a href="/categories/Knowledge-Graph/" class="post-category">
+                                Knowledge Graph
                             </a>
                         
                     </div>
@@ -334,28 +337,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-01-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-01-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    471
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -378,38 +381,88 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一般情况下，我们使用数据库查找事物间的联系的时候，只需要<strong>短程关系</strong>的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。</p>
-<p>而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之间织起了一张巨大复杂的关系网，传统数据库面对这样复杂关系往往束手无策。因此，图数据库应运而生。</p>
-<p>图数据库(Graph database)指的是以图数据结构的形式来存储和查询数据的数据库。</p>
-<p>Neo4j 是目前用的最多的图数据库，世界数据库排行榜上排名21位。下面讲介绍一下Neo4j在Mac上的安装流程。</p>
+                <p>2012 年 5 月 17 日，Google 正式提出了<strong>知识图谱（Knowledge Graph）</strong>的概念，其初衷是为了优化搜索引擎返回的结果，增强用户搜索质量及体验。传统的互联网技术是基于关键字匹配，然后通过一系列的打分策略来返回搜索结果的。这种方法的一个很大的缺陷就是无法让计算机理解背后的语义，因此构建知识图谱的目的就是为了解决这一问题，比如在Google搜索引擎里输入“Who is the wife of Bill Gates?”，我们直接可以得到答案-“Melinda Gates”。这是因为系统层面上已经创建好了一个包含“Bill Gates”和“Melinda Gates”的实体以及他俩之间关系的知识库。所以，当我们执行搜索的时候，就可以通过关键词提取（”Bill Gates”, “Melinda Gates”, “wife”）以及知识库上的匹配可以直接获得最终的答案。通过知识图谱，让机器可以具备认知能力，理解这个世界。</p>
+<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.36.31.png" alt="" style="zoom:100%;">
+
+<h2 id="知识图谱简介"><a href="#知识图谱简介" class="headerlink" title="知识图谱简介"></a>知识图谱简介</h2><p>知识图谱是一种基于图的语义网络，用来展示实体间的关系。由下图可见一个知识图谱是由节点和边组成的。﻿在知识图谱里，我们通常用“实体（Entity）”来表达图里的节点、用“关系（Relation）”来表达图里的“边”。实体指的是现实世界中的事物比如人、地名、概念、药物、公司等，关系则用来表达不同实体之间的某种联系，比如人-“居住在”-北京、张三和李四是“朋友”、逻辑回归是深度学习的“先导知识”等等。</p>
+<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.00.57.png" alt="构建知识图谱流程" style="zoom:50%;">
+
+<p>﻿在现实世界中，实体和关系也会拥有各自的属性，比如人可以有“姓名”和“年龄”。</p>
+<h2 id="知识图谱中的本体"><a href="#知识图谱中的本体" class="headerlink" title="知识图谱中的本体"></a>知识图谱中的本体</h2><p>本体的概念来源自哲学，指的是对客观存在系统的解释和说明。</p>
+<p>下面这张图就是一个本体的展示。</p>
+<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.57.20.png" alt="Yago知识库中的本体" style="zoom:50%;">
+
+<h2 id="知识图谱的架构"><a href="#知识图谱的架构" class="headerlink" title="知识图谱的架构"></a>知识图谱的架构</h2><p>知识图谱在架构上分，可以分为<strong>逻辑架构和技术架构</strong>。</p>
+<h3 id="逻辑架构"><a href="#逻辑架构" class="headerlink" title="逻辑架构"></a>逻辑架构</h3><p>知识图谱在逻辑上可分为<strong>模式层</strong>与<strong>数据层</strong>两个层次。</p>
+<ul>
+<li>模式层构建在数据层之上，是知识图谱的核心，通常采用本体库来管理知识图谱的模式层。本体是结构化知识库的概念模板，通过本体库而形成的知识库不仅层次结构较强，并且冗余程度较小。</li>
+</ul>
+<p><strong>模式层：实体-关系-实体，实体-属性-性值</strong></p>
+<ul>
+<li>数据层主要是由一系列的事实组成，而知识将以事实为单位进行存储。如果用(实体1，关系，实体2)、(实体、属性，属性值)这样的三元组来表达事实，可选择图数据库作为存储介质，例如开源的Neo4j、Twitter的FlockDB、sones的GraphDB等。</li>
+</ul>
+<p><strong>数据层：比尔盖茨-妻子-梅琳达·盖茨，比尔盖茨-总裁-微软</strong></p>
+<h3 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h3><p>知识图谱的整体架构如下图所示，其中虚线框内的部分为知识图谱的构建过程，同时也是知识图谱更新的过程。</p>
+<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.22.45.png" alt="知识图谱的技术架构" style="zoom:50%;">    
+
+<p>我们来一步一步的分析下这张图。</p>
 <ol>
-<li><p>首先，去官网下载<a target="_blank" rel="noopener" href="https://neo4j.com/download/other-releases/">社区版neo4j</a></p>
-</li>
-<li><p>然后解压下载tar文件<img src="截屏2022-01-11 下午4.40.50.png" alt="" style="zoom: 50%;"></p>
-</li>
-<li><p>然后打开终端，cd到解压的文件夹的bin目录下，输入./neo4j start</p>
-</li>
-<li><p>进入<a target="_blank" rel="noopener" href="http://localhost:7474/">http://localhost:7474/</a></p>
-</li>
-<li><p>如果想要退出，cd到解压的文件夹的bin目录下，输入./neo4j stop即可</p>
-</li>
-<li><p>在.bash_profile文件中添加如下两行代码，然后在终端输入source ~/.bash_profile 并回车</p>
-<pre class="line-numbers language-none"><code class="language-none">export NEO4J_HOME= /Users/haoranwan/neo4j-community-4.4.2
-export PATH=$PATH:$NEO4J_HOME/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>虚线框的最左边是三种输入数据结构，结构化数据、半结构化数据、非结构化数据。这些数据可以来自任何地方，只要它对要构建的这个知识图谱有帮助。</li>
+<li>虚线框里面的是整个的知识图谱的构建过程。其中主要包含了3个阶段，信息抽取、知识融合、知识加工。</li>
+<li>最右边是生成的知识图谱，而且这个技术架构是循环往复，迭代更新的过程。知识图谱不是一次性生成，是慢慢积累的过程。</li>
 </ol>
-<p>在安装中，java版本的不匹配也可能导致安装失败。下面将详细介绍如何安装对应的java版本。首先去oracle下载jdk11。然后打开.bash_profile，配置java路径并设置默认java版本。最后在终端输入source ~/.bash_profile 并回车</p>
-<pre class="line-numbers language-none"><code class="language-none">export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home"
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
+<ul>
+<li><strong>信息抽取</strong>：从各种类型的数据源中提取出实体、属性以及实体间的相互关系，在此基础上形成本体化的知识表达；</li>
+<li><strong>知识融合</strong>：在获得新知识之后，需要对其进行整合，以消除矛盾和歧义，比如某些实体可能有多种表达，某个特定称谓也许对应于多个不同的实体等；</li>
+<li><strong>知识加工</strong>：对于经过融合的新知识，需要经过质量评估之后（部分需要人工参与甄别），才能将合格的部分加入到知识库中，以确保知识库的质量。</li>
+</ul>
+<h2 id="知识图谱数据模型"><a href="#知识图谱数据模型" class="headerlink" title="知识图谱数据模型"></a>知识图谱数据模型</h2><p>知识图谱的原始数据类型一般来说有三类（也是互联网上的三类原始数据）：</p>
+<ul>
+<li><strong>结构化数据（Structed Data）</strong>：如关系数据库</li>
+<li><strong>半结构化数据（Semi-Structed Data）</strong>：如XML、JSON、百科</li>
+<li><strong>非结构化数据（UnStructed Data）</strong>：如图片、音频、视频、文本</li>
+</ul>
+<p>如何存储上面这三类数据类型呢？一般有两种选择，一个是通过RDF（资源描述框架）这样的规范存储格式来进行存储，还有一种方法，就是使用图数据库来进行存储，常用的有Neo4j等。</p>
+<h3 id="RDF"><a href="#RDF" class="headerlink" title="RDF"></a>RDF</h3><p>RDF(Resource Description Framework)，即资源描述框架，其本质是一个数据模型（Data Model）。它提供了一个统一的标准，用于描述实体/资源。简单来说，就是表示事物的一种方法和手段。RDF形式上表示为SPO三元组，有时候也称为一条语句（statement），知识图谱中我们也称其为一条知识，如下图。</p>
+<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.10.49.png" alt="SPO三元组" style="zoom:50%;">
 
-export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home"
-alias java17='export JAVA_HOME=$JAVA_17_HOME'
+<p>RDF在设计上的主要特点是易于发布和分享数据，但RDF的表达能力有限，无法区分类和对象，也无法定义和描述类的关系/属性。RDF是对具体事物的描述，缺乏抽象能力，无法对同一个类别的事物进行定义和描述。例如罗纳尔多和里约热内卢这两个实体，RDF能够表达罗纳尔多和里约热内卢这两个实体具有哪些属性，以及它们之间的关系。但如果我们想定义罗纳尔多是人，里约热内卢是地点，并且人具有哪些属性，地点具有哪些属性，人和地点之间存在哪些关系，这个时候RDF就表示无能为力了。不论是在智能的概念上，还是在现实的应用当中，这种泛化抽象能力都是相当重要的；同时，这也是知识图谱本身十分强调的。RDFS和OWL这两种技术或者说模式语言/本体语言（schema/ontology language）解决了RDF表达能力有限的困境。</p>
+<h3 id="RDFS"><a href="#RDFS" class="headerlink" title="RDFS"></a>RDFS</h3><p>RDFS，即“Resource Description Framework Schema”。是在RDF数据层基础上引入模式层，定义类，属性，关系，属性的定义域与值域来描述与约束资源。</p>
+<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.26.46.png" alt="RDFS" style="zoom:50%;">
 
-# 默认使用java11
-export JAVA_HOME=$JAVA_11_HOME
-#java END%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="OWL"><a href="#OWL" class="headerlink" title="OWL"></a>OWL</h3><p>上面提到，RDFS本质上是RDF词汇的一个扩展。后来人们发现RDFS的表达能力还是相当有限，因此提出了OWL。我们也可以把OWL当做是RDFS的一个扩展，其添加了额外的预定义词汇。</p>
+<p>OWL，即“Web Ontology Language”，语义网技术栈的核心之一。OWL有两个主要的功能：</p>
+<ol>
+<li><p>提供快速、灵活的数据建模能力。</p>
+</li>
+<li><p>高效的自动推理。</p>
+</li>
+</ol>
+<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.30.31.png" alt="OWL" style="zoom:50%;">
 
-<p>然后可以输入<code>java -version</code>来查询当前版本</p>
-<p>可以输入java17 or java+其他数字来切换java版本</p>
+<p>描述属性特征的词汇</p>
+<ol>
+<li><p>owl:TransitiveProperty. 表示该属性具有传递性质。例如，我们定义“位于”是具有传递性的属性，若A位于B，B位于C，那么A肯定位于C。</p>
+</li>
+<li><p>owl:SymmetricProperty. 表示该属性具有对称性。例如，我们定义“认识”是具有对称性的属性，若A认识B，那么B肯定认识A。</p>
+</li>
+<li><p>owl:FunctionalProperty. 表示该属性取值的唯一性。 例如，我们定义“母亲”是具有唯一性的属性，若A的母亲是B，在其他地方我们得知A的母亲是C，那么B和C指的是同一个人。</p>
+</li>
+<li><p>owl:inverseOf. 定义某个属性的相反关系。例如，定义“父母”的相反关系是“子女”，若A是B的父母，那么B肯定是A的子女。</p>
+</li>
+</ol>
+<p>本体映射词汇（Ontology Mapping）</p>
+<ol>
+<li><p>owl:equivalentClass. 表示某个类和另一个类是相同的。</p>
+</li>
+<li><p>owl:equivalentProperty. 表示某个属性和另一个属性是相同的。</p>
+</li>
+<li><p>owl:sameAs. 表示两个实体是同一个实体。</p>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/huangyc/p/10043749.html">通俗易懂解释知识图谱</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kg4y1i7GN?spm_id_from=333.999.0.0">知识图谱原理与应用概述-北京大学邹磊教授</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32122644">知识图谱基础之RDF，RDFS与OWL</a></p>
 
                 
             </div>
@@ -436,7 +489,7 @@ export JAVA_HOME=$JAVA_11_HOME
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://passerby-w.github.io/2022/01/11/neo4j-zai-mac-shang-an-zhuang-jiao-cheng/">http://passerby-w.github.io/2022/01/11/neo4j-zai-mac-shang-an-zhuang-jiao-cheng/</a>
+                    <a href="http://passerby-w.github.io/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/">http://passerby-w.github.io/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -478,8 +531,12 @@ export JAVA_HOME=$JAVA_11_HOME
                                     <span class="chip bg-color">neo4j</span>
                                 </a>
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/py2neo/">
+                                    <span class="chip bg-color">py2neo</span>
+                                </a>
+                            
+                                <a href="/tags/yago/">
+                                    <span class="chip bg-color">yago</span>
                                 </a>
                             
                         </div>
@@ -685,13 +742,71 @@ export JAVA_HOME=$JAVA_11_HOME
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/01/11/neo4j-zai-mac-shang-an-zhuang-jiao-cheng/">
+                <a href="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="mac安装教程">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="知识图谱学习笔记">
                         
-                        <span class="card-title">mac安装教程</span>
+                        <span class="card-title">知识图谱学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Knowledge-Graph/" class="post-category">
+                                    Knowledge Graph
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/neo4j/">
+                        <span class="chip bg-color">neo4j</span>
+                    </a>
+                    
+                    <a href="/tags/py2neo/">
+                        <span class="chip bg-color">py2neo</span>
+                    </a>
+                    
+                    <a href="/tags/yago/">
+                        <span class="chip bg-color">yago</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Mac上安装Neo4j教程">
+                        
+                        <span class="card-title">Mac上安装Neo4j教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -716,7 +831,6 @@ export JAVA_HOME=$JAVA_11_HOME
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -726,55 +840,6 @@ export JAVA_HOME=$JAVA_11_HOME
                     
                     <a href="/tags/java/">
                         <span class="chip bg-color">java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/10/zheng-ze-biao-da-shi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
-                        
-                        <span class="card-title">正则表达式</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Regular-Expression/">
-                        <span class="chip bg-color">Regular Expression</span>
                     </a>
                     
                 </div>
@@ -961,7 +1026,7 @@ export JAVA_HOME=$JAVA_11_HOME
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13.2k</span>
+                        class="white-color">15.3k</span>
             
             
             

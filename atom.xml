@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-01-11T08:53:40.782Z</updated>
+  <updated>2022-01-13T07:07:47.793Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>mac安装教程</title>
-    <link href="http://passerby-w.github.io/2022/01/11/neo4j-zai-mac-shang-an-zhuang-jiao-cheng/"/>
-    <id>http://passerby-w.github.io/2022/01/11/neo4j-zai-mac-shang-an-zhuang-jiao-cheng/</id>
+    <title>知识图谱学习笔记</title>
+    <link href="http://passerby-w.github.io/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/"/>
+    <id>http://passerby-w.github.io/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/</id>
+    <published>2022-01-13T02:35:09.000Z</published>
+    <updated>2022-01-13T07:07:47.793Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;2012 年 5 月 17 日，Google 正式提出了&lt;strong&gt;知识图谱（Knowledge</summary>
+        
+      
+    
+    
+    
+    <category term="Knowledge Graph" scheme="http://passerby-w.github.io/categories/Knowledge-Graph/"/>
+    
+    
+    <category term="neo4j" scheme="http://passerby-w.github.io/tags/neo4j/"/>
+    
+    <category term="py2neo" scheme="http://passerby-w.github.io/tags/py2neo/"/>
+    
+    <category term="yago" scheme="http://passerby-w.github.io/tags/yago/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac上安装Neo4j教程</title>
+    <link href="http://passerby-w.github.io/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/"/>
+    <id>http://passerby-w.github.io/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/</id>
     <published>2022-01-11T07:06:41.000Z</published>
-    <updated>2022-01-11T08:53:40.782Z</updated>
+    <updated>2022-01-13T03:07:55.097Z</updated>
     
     
       
@@ -49,14 +78,15 @@
     <link href="http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/"/>
     <id>http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/</id>
     <published>2022-01-10T07:29:52.000Z</published>
-    <updated>2022-01-10T08:37:05.349Z</updated>
+    <updated>2022-01-13T02:46:42.960Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Regular-Expression&quot;&gt;&lt;a href=&quot;#Regular-Expression&quot; class=&quot;headerlink&quot; title=&quot;Regular Expression&quot;&gt;&lt;/a&gt;Regular</summary>
+    <summary type="html">&lt;p&gt;正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。&lt;/p&gt;
+&lt;p&gt;在线测试正则表达式网站：&lt;a</summary>
         
       
     
