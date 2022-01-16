@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-01-14T06:36:22.977Z</updated>
+  <updated>2022-01-16T07:09:29.917Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Getting Started with SPARQL</title>
+    <link href="http://passerby-w.github.io/2022/01/14/sparql/"/>
+    <id>http://passerby-w.github.io/2022/01/14/sparql/</id>
+    <published>2022-01-14T07:18:29.000Z</published>
+    <updated>2022-01-16T07:09:29.917Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;SPARQL简介&quot;&gt;&lt;a href=&quot;#SPARQL简介&quot; class=&quot;headerlink&quot; title=&quot;SPARQL简介&quot;&gt;&lt;/a&gt;SPARQL简介&lt;/h2&gt;&lt;p&gt;SPARQL即SPARQL Protocol and RDF Query</summary>
+        
+      
+    
+    
+    
+    <category term="Tutorial" scheme="http://passerby-w.github.io/categories/Tutorial/"/>
+    
+    
+    <category term="SPARQL" scheme="http://passerby-w.github.io/tags/SPARQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Getting Started with RDF</title>
     <link href="http://passerby-w.github.io/2022/01/13/rdf/"/>
     <id>http://passerby-w.github.io/2022/01/13/rdf/</id>
     <published>2022-01-13T09:08:08.000Z</published>
-    <updated>2022-01-14T06:36:22.977Z</updated>
+    <updated>2022-01-14T07:08:39.110Z</updated>
     
     
       

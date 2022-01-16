@@ -31,10 +31,10 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -344,14 +344,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    412
+                    856
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -380,6 +380,23 @@
 <li>轻松支持混合、多样和不断变化的数据模型</li>
 <li>易于表示数据或模式中的任何更改</li>
 <li>可互操作和可组合</li>
+</ul>
+<h2 id="RDF模型的定义"><a href="#RDF模型的定义" class="headerlink" title="RDF模型的定义"></a>RDF模型的定义</h2><p>RDF提出了一个简单的二元关系模型来表示事物之间的语义关系，即使用三元组集合的方式来描述事物和关系。三元组是知识图谱中<strong>知识表示的基本单位，简称SPO</strong>，三元组被用来表示<strong>实体与实体之间的关系,或者实体的某个属性的属性值是什么</strong>。</p>
+<p>从内容上看三元组的结构为 “<strong>资源-属性-属性值</strong>” ，资源<strong>实体由URI表示</strong>，属性值可以是另一个资源实体的URI，也可以是某种数据类型的值,也称为literals（字面量）。</p>
+<p>主语和宾语也可以由第三种结点类型空节点（blank nodes）表示。blank node简单来说就是没有IRI和literal的资源，或者说匿名资源。</p>
+<p>由于RDF规定资源的命名必须使用URI，所以也直接解决了命名空间的问题。这里我们具体说一下<strong>IRI，URI，URL和URN这几个术语的区别</strong>：</p>
+<ul>
+<li>URI：<strong>统一资源标识符</strong>，字符集被限制为US-ASCII（英文字符），通过指定唯一名称来标识资源；</li>
+<li>IRI：<strong>国际化资源标识符</strong>（Internationalized Resource Identifier），定义与URI相同，URI，只是将字符集扩展到通用字符集（包含了非英文字符），所以它是URI的超集，同样唯一标识了一个资源；</li>
+<li>URN: <strong>统一资源名称</strong>（Uniform Resource Name），由命名空间标识符（NID）和命名空间特定字符串（NSS）组成；</li>
+<li>URL：<strong>统一资源定位符</strong>，即我们通常提到的网址，通常指的是不包含URN的URI子集</li>
+</ul>
+<p>以及它们的<strong>集合包涵关系</strong>：</p>
+<ul>
+<li>IRI ⊃ URI</li>
+<li>URI ⊃ URL</li>
+<li>URI ⊃ URN</li>
+<li>URL ∩ URN = ∅</li>
 </ul>
 <h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.17.36.png" alt="" style="zoom:50%;">
 
@@ -423,6 +440,7 @@
 <img src="/2022/01/13/rdf/截屏2022-01-13 下午6.08.44.png" alt="" style="zoom:50%;">
 
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://www.stardog.com/trainings/getting-started-with-rdf-sparql/">STARDOG</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqi/p/kg-study-part-1.html">知识图谱学习笔记</a></p>
 
                 
             </div>
@@ -689,18 +707,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/13/rdf/">
+                <a href="/2022/01/14/sparql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Getting Started with RDF">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Getting Started with SPARQL">
                         
-                        <span class="card-title">Getting Started with RDF</span>
+                        <span class="card-title">Getting Started with SPARQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -710,9 +727,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -725,12 +742,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/RDF/">
-                        <span class="chip bg-color">RDF</span>
+                    <a href="/tags/SPARQL/">
+                        <span class="chip bg-color">SPARQL</span>
                     </a>
                     
                 </div>
@@ -974,7 +990,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15.8k</span>
+                        class="white-color">16.8k</span>
             
             
             
