@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-01-16T07:09:29.917Z</updated>
+  <updated>2022-02-08T02:33:05.082Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Transformer</title>
+    <link href="http://passerby-w.github.io/2022/02/08/transformer/"/>
+    <id>http://passerby-w.github.io/2022/02/08/transformer/</id>
+    <published>2022-02-08T02:31:53.000Z</published>
+    <updated>2022-02-08T02:33:05.082Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Why-Transformer&quot;&gt;&lt;a href=&quot;#Why-Transformer&quot; class=&quot;headerlink&quot; title=&quot;Why Transformer?&quot;&gt;&lt;/a&gt;Why</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
+    
+    
+    <category term="Transformer" scheme="http://passerby-w.github.io/tags/Transformer/"/>
+    
+  </entry>
   
   <entry>
     <title>Getting Started with SPARQL</title>
@@ -71,7 +96,7 @@
     <link href="http://passerby-w.github.io/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/"/>
     <id>http://passerby-w.github.io/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/</id>
     <published>2022-01-13T02:35:09.000Z</published>
-    <updated>2022-01-13T07:07:47.793Z</updated>
+    <updated>2022-01-17T09:58:15.535Z</updated>
     
     
       

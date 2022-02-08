@@ -374,7 +374,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a><strong>背景</strong></h2><p>随着科技的发展，越来越多种类的智能语音产品出现。虽然智能语音产品种类，但是他们依赖着有着像汽车发动机一样重要的内核——语音对话系统（Spoken dialogue systems）。一个好的语音对话系统可以帮助用户高效的解决一些问题，或是可以和用户进行社交对话交流。下面这张图展示了语音对话系统的一般结构：</p>
-<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 上午10.29.52.png" alt="" style="zoom: 50%;">
+<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 上午10.29.52.png" alt style="zoom: 50%;">
 
 <p>在一般的语音对话系统中都会有一个唤醒功能来启动系统，如APPLE产品中的“Hi，Siri”。系统在唤醒后会开启Voice Activity Detection ( VAD ) 状态来检测当前有没有说话声音，如果有声音则会将语音记录下来传递到ASR模块。通过ASR模块将语音转文本后，这些信息讯号会依次经过三个不同的模块（红色）处理才会反馈回人类。这三个不同的模块大致的任务可以理解为——理解信息，规划反馈，生成反馈。在语音对话系统中，第一步首先要保证输入信息的准确性，这项任务相对于上面三个模块处于上游。因为在语音交互中，由于ASR等技术的缺陷，很容易出现记录噪声或者识别错误等情况，这会影响下游任务的准确性。 基于以上原因，准确的输入信息是保证下游任务质量的基础。</p>
 <p>在语音对话系统的信息输入中除了声音输入，还有使用文本输入的情况。中文文本纠错任务，常见错误类型包括：</p>
@@ -409,12 +409,12 @@
 <h4 id="候选排序"><a href="#候选排序" class="headerlink" title="候选排序"></a><strong>候选排序</strong></h4><p>基于统计语言模型计算对所有替换过的句子的似然概率，取概率最大的那一个</p>
 <h3 id="ConvSeq2Seq"><a href="#ConvSeq2Seq" class="headerlink" title="ConvSeq2Seq"></a><strong>ConvSeq2Seq</strong></h3><p>Paper: 微软亚洲研究院发表的”<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1807.01270.pdf">Reaching human-level performance in automatic grammatical error correction: An empirical study</a>“中使用了ConvSqe2Sqe，从而首次在英文语法纠错上超过人类水平。</p>
 <p>这篇文章的最大贡献就是提出了Fluency boost learning和Boost inference。因为在过往seq2seq的模型纠错时往往会出现两种问题，一是模型容易受训练数据的影响，对训练数据中没有见过的语法错误，改正能力很差。其二是模型很难一次修复多个错误。Fluency boost learning通过在训练过程中对数据进行增强（如下图），可以让模型看到更多的错误，增强模型的泛化能力。</p>
-<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-20 下午3.31.22.png" alt="" style="zoom:45%;">
+<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-20 下午3.31.22.png" alt style="zoom:45%;">
 
 <p>Boost inference即预测过程中进行增强，，一是多轮预测，二是循环预测。循环预测即从左到右预测和从右到左预测，比如右向左可以有效解决冠词出错问题，左向右可以解决主谓一致出错问题。</p>
 <h3 id="Bert模型"><a href="#Bert模型" class="headerlink" title="Bert模型"></a><strong>Bert模型</strong></h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h4><p>BERT模型的工作原理是，在大型语料库（Masked LM任务）上训练BERT模型，然后通过在最后添加一些额外的层来微调我们自己的任务的模型，该模型可以是分类，问题回答或NER等。Bert是通过使用Transformer-Encoder结构，成为了一个较好的的预训练语言表示模型。Bert有两种训练任务，一种是Masked Language Model ( MLM )，另一种是Next Sentence Prediction ( NSP )。通过把Bert模型来当作任务的预训练模型，可以对提取词向量的语义特征，从而提高下有任务的表现。</p>
 <h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a><strong>结构</strong></h4><p>Bert模型中与AS纠错任务相关的是MLM部分（如下图所示）， MLM训练阶段有 15% 的token被随机替换为 【MASK】 ( 占位符 )，模型需要学会根据 【MASK】 上下文预测这些被替换的token。</p>
-<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 下午4.53.30.png" alt="" style="zoom:67%;">
+<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 下午4.53.30.png" alt style="zoom:67%;">
 
 <p>因为在实际训练中任务中没有MASK的情况，如果只利用MASK机制训练无法让模型得到好的迁移，所以模型需要对MASK的方式进行优化。</p>
 <ul>
@@ -433,17 +433,17 @@
 <li>以检测网络的输出作为权重，将 masking-embedding以“soft方式”添加到各个字符特征上，即“Soft-Masked”。</li>
 </ul>
 <h4 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a><strong>结构</strong></h4><p>具体来看，模型Input是字粒度的word-embedding，可以使用BERT-Embedding层的输出或者word2vec。检测网络由Bi-GRU组成，充分学习输入的上下文信息，输出是每个位置 i 可能为错别字的概率 p(i)，值越大表示该位置出错的可能性越大。结构图如下：</p>
-<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-16 下午4.19.03.png" alt="" style="zoom: 33%;">
+<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-16 下午4.19.03.png" alt style="zoom: 33%;">
 
 <h5 id="检测网络与Soft-Masking"><a href="#检测网络与Soft-Masking" class="headerlink" title="检测网络与Soft Masking"></a><strong>检测网络与Soft Masking</strong></h5><p>Soft Masking 部分，将每个位置的特征以 $ pi $ 的概率乘上masking 字符的特征 $emark$，以 $1-pi$ 的概率乘上原始的输入特征，最后两部分相加作为每一个字符的特征，输入到纠正网络中。</p>
 <h5 id="纠正网络"><a href="#纠正网络" class="headerlink" title="纠正网络"></a><strong>纠正网络</strong></h5><p>纠正网络部分，是一个基于BERT的序列多分类标记模型。检测网络输出的特征作为BERT 12层Transformer模块的输入，最后一层的输出 + Input部分的Embedding特征 $ei$ (残差连接)作为每个字符最终的特征表示。最后，将每个字特征过一层 Softmax 分类器，从候选词表中输出概率最大的字符认为是每个位置的正确字符。</p>
 <h3 id="ELECTRA模型"><a href="#ELECTRA模型" class="headerlink" title="ELECTRA模型"></a><strong>ELECTRA模型</strong></h3><h4 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a><strong>简介</strong></h4><p>ELECTRA的全称是Efficiently Learning an Encoder that Classifies Token Replacements Accurately。ELECTRA通过类似GAN的结构和新的预训练任务，在更少的参数量和数据下超过了BERT，而且仅用1/4的算力就达到了当时SOTA模型RoBERTa的效果。</p>
-<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 下午5.06.53.png" alt="" style="zoom: 60%;">
+<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 下午5.06.53.png" alt style="zoom: 60%;">
 
 <center>纵轴是GLUE分数，横轴是FLOPs (floating point operations)</center>
 
 <h4 id="结构-2"><a href="#结构-2" class="headerlink" title="结构"></a><strong>结构</strong></h4><p>ELECTRA最主要的贡献是提出了新的预训练任务和框架，把生成式的Masked language model(MLM)预训练任务改成了判别式的Replaced token detection(RTD)任务，判断当前token是否被语言模型替换过。虽然BERT模型中也可以处理RTD任务，但是在随机替换一些词后，BERT在替换预测的效果并不好，因为随机替换过于简单了。ELECTRA使用一个MLM的G-BERT来对输入句子进行更改，然后丢给D-BERT去判断哪个字被改过，如下图所示：</p>
-<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 下午5.49.14.png" alt="" style="zoom:50%;">
+<img src="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/截屏2021-12-15 下午5.49.14.png" alt style="zoom:50%;">
 
 <ul>
 <li>生成器（Generator）的作用是输入一个正确的句子，负责生成一个错误的版本，如”the chef cooked the meal”经过生成器内部随机抽样15%的token进行MASK后，再对这些MASK的位置进行预测，输出结果为”the chef ate the meal”，生成器中语言模型保证了生成的错误句子仍然是比较合理的，只是区别于原始句子。</li>
@@ -1077,7 +1077,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.8k</span>
+                        class="white-color">17.8k</span>
             
             
             
