@@ -350,7 +350,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -401,7 +401,7 @@
 <img src="/2022/02/08/transformer/截屏2022-02-07 上午11.21.46.png" alt="" style="zoom: 25%;">
 
 <p>或许读到这里你很疑惑，这一堆东西tmd在做什么，他的模型有个锤子的物理意义？别着急，首先我们要知道矩阵相乘实际是对空间内向量的线性变换，内积其中的一个作用就是用来计算投影，所以可以拿来计算两个word embedding的相似度。如下面所示：</p>
-<img src="/2022/02/08/transformer/截屏2022-02-07 上午11.59.54.png" alt="截屏2022-02-07 上午11.59.54" style="zoom: 33%;">
+<img src="/2022/02/08/transformer/截屏2022-02-07 上午11.59.54.png" alt="" style="zoom: 33%;">
 
 <img src="/2022/02/08/transformer/截屏2022-02-07 下午12.01.18.png" alt="截屏2022-02-07 下午12.01.18" style="zoom:33%;">
 
@@ -420,7 +420,10 @@
 
 <h3 id="Positional-Encoding"><a href="#Positional-Encoding" class="headerlink" title="Positional Encoding"></a>Positional Encoding</h3><p>因为Attention机制里没有位置信息，所以要手动添加。</p>
 <h3 id="Feed-Forward-Network"><a href="#Feed-Forward-Network" class="headerlink" title="Feed Forward Network"></a>Feed Forward Network</h3><p>每一层经过attention之后，还会有一个FFN，FFN包含了2层linear transformation层，中间的激活函数是ReLu。FFN通过变换了attention output的空间, 从而增加了模型的表现能力。把FFN去掉模型也是可以用的，但是效果差了很多。</p>
-<h2 id="Encoder-and-Decoder"><a href="#Encoder-and-Decoder" class="headerlink" title="Encoder and Decoder"></a>Encoder and Decoder</h2><img src="/2022/02/08/transformer/截屏2022-02-07 下午5.11.39.png" alt="截屏2022-02-07 下午5.11.39" style="zoom:50%;">
+<h2 id="Encoder-and-Decoder"><a href="#Encoder-and-Decoder" class="headerlink" title="Encoder and Decoder"></a>Encoder and Decoder</h2><img src="/2022/02/08/transformer/截屏2022-02-07 下午5.11.39.png" alt="" style="zoom:50%;">
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/410776234">超详细图解Self-Attention</a></p>
 
                 
             </div>
@@ -964,7 +967,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.8k</span>
+                        class="white-color">17.9k</span>
             
             
             
