@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-02-08T03:05:49.416Z</updated>
+  <updated>2022-02-26T09:22:11.824Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Logging for Python</title>
+    <link href="http://passerby-w.github.io/2022/02/08/logging-for-python/"/>
+    <id>http://passerby-w.github.io/2022/02/08/logging-for-python/</id>
+    <published>2022-02-08T02:31:53.000Z</published>
+    <updated>2022-02-26T09:22:11.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;import logging&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;logging模块简介&quot;&gt;&lt;a href=&quot;#logging模块简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://passerby-w.github.io/categories/Python/"/>
+    
+    
+    <category term="Logging" scheme="http://passerby-w.github.io/tags/Logging/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Transformer</title>
     <link href="http://passerby-w.github.io/2022/02/08/transformer/"/>
     <id>http://passerby-w.github.io/2022/02/08/transformer/</id>
     <published>2022-02-08T02:31:53.000Z</published>
-    <updated>2022-02-08T03:05:49.416Z</updated>
+    <updated>2022-02-08T03:09:22.000Z</updated>
     
     
       
@@ -46,7 +74,7 @@
     <link href="http://passerby-w.github.io/2022/01/14/sparql/"/>
     <id>http://passerby-w.github.io/2022/01/14/sparql/</id>
     <published>2022-01-14T07:18:29.000Z</published>
-    <updated>2022-01-16T07:09:29.917Z</updated>
+    <updated>2022-01-16T07:09:29.000Z</updated>
     
     
       

@@ -406,7 +406,7 @@
 <img src="/2022/02/08/transformer/截屏2022-02-07 下午12.01.18.png" alt="" style="zoom:33%;">
 
 <p>其中“早上好”向量经过softmax进行归一化处理。这个过程可以用公式表示为:</p>
-<p>Softmax(XX^T)X$</p>
+<p>$Softmax(XX^T)X$</p>
 <p>通过$X$与$W^Q,W^K,W^V$相乘可以提高模型的拟合能力，因为$W^Q,W^K,W^V$是可以训练的，起到一个缓冲的效果。</p>
 <p>在新的向量中，每一个维度的数值都是由三个词向量在这一维度的数值加权求和得来的，这个新的行向量就是”早”词向量经过注意力机制加权求和之后的表示。</p>
 <p>至于$d_k$意思是W矩阵的dimension，假设$Q,K$里的元素的均值为0，方差为1，那么$A^T=Q^TK$中元素的均值为0，方差为d。当d变得很大时，$A$中的元素的方差也会变得很大，如果$A$中的元素方差很大，那么$Softmax(A)$的分布会趋于陡峭(分布的方差大，分布集中在绝对值大的区域)。总结一下就是$Softmax(A)$的分布会和d有关。因此$A$中每一个元素除以$\sqrt {d_k}$后，方差又变为1。这使得$Softmax(A)$的分布“陡峭”程度与d解耦，从而使得训练过程中梯度值保持稳定。</p>
@@ -690,18 +690,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02/08/transformer/">
+                <a href="/2022/02/08/logging-for-python/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Transformer">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Logging for Python">
                         
-                        <span class="card-title">Transformer</span>
+                        <span class="card-title">Logging for Python</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -711,27 +710,26 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/NLP/" class="post-category">
-                                    NLP
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Transformer/">
-                        <span class="chip bg-color">Transformer</span>
+                    <a href="/tags/Logging/">
+                        <span class="chip bg-color">Logging</span>
                     </a>
                     
                 </div>
@@ -967,7 +965,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.9k</span>
+                        class="white-color">18.9k</span>
             
             
             
