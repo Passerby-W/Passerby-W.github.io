@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-02-26T09:22:11.824Z</updated>
+  <updated>2022-07-26T10:05:17.353Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NLP学习笔记（1）——过拟合和欠拟合</title>
+    <link href="http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-1/"/>
+    <id>http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-1/</id>
+    <published>2022-07-26T09:08:08.000Z</published>
+    <updated>2022-07-26T10:05:17.353Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;过拟合和欠拟合&quot;&gt;&lt;a href=&quot;#过拟合和欠拟合&quot; class=&quot;headerlink&quot; title=&quot;过拟合和欠拟合&quot;&gt;&lt;/a&gt;过拟合和欠拟合&lt;/h1&gt;&lt;p&gt;推荐博客：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Tutorial" scheme="http://passerby-w.github.io/categories/Tutorial/"/>
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>Logging for Python</title>
@@ -116,31 +141,6 @@
     
     
     <category term="RDF" scheme="http://passerby-w.github.io/tags/RDF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NLP学习笔记（1）——过拟合和欠拟合</title>
-    <link href="http://passerby-w.github.io/2022/01/13/nlp-xue-xi-bi-ji-1/"/>
-    <id>http://passerby-w.github.io/2022/01/13/nlp-xue-xi-bi-ji-1/</id>
-    <published>2022-01-13T09:08:08.000Z</published>
-    <updated>2022-07-26T09:33:31.076Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;过拟合和欠拟合&quot;&gt;&lt;a href=&quot;#过拟合和欠拟合&quot; class=&quot;headerlink&quot; title=&quot;过拟合和欠拟合&quot;&gt;&lt;/a&gt;过拟合和欠拟合&lt;/h1&gt;&lt;p&gt;推荐博客：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Tutorial" scheme="http://passerby-w.github.io/categories/Tutorial/"/>
-    
-    
-    <category term="NLP" scheme="http://passerby-w.github.io/tags/NLP/"/>
     
   </entry>
   
