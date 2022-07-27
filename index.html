@@ -32,8 +32,8 @@
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+</head>
 
 
 
@@ -417,26 +417,27 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/07/26/nlp-xue-xi-bi-ji-1/">
+                    <a href="/2022/07/27/nlp-xue-xi-bi-ji-3/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="NLP学习笔记（1）—— 过拟合和欠拟合">
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="NLP学习笔记（3）—— Normalization">
                             
-                            <span class="card-title">NLP学习笔记（1）—— 过拟合和欠拟合</span>
+                            <span class="card-title">NLP学习笔记（3）—— Normalization</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                过拟合和欠拟合推荐博客：Understanding the Bias-Variance Tradeoff
-当我们讨论预测模型时，预测误差可以分解为两个我们关心的主要子成分：由“偏差”引起的误差和由“方差”引起的误差。模型最小化偏差和方差的能
+                                Normalization我们最希望输入网络模型中的数据具有什么样的特点？
+回答是：“独立同分布”。
+独立同分布的数据可以简化常规机器学习模型的训练、提升机器学习模型的预测能力，已经是一个共识。因此，在把数据喂给机器学习模型之前，“白化（w
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-27
                             </span>
                             <span class="publish-author">
                                 
@@ -467,7 +468,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/07/26/nlp-xue-xi-bi-ji-2/">
+                    <a href="/2022/07/27/nlp-xue-xi-bi-ji-2/">
                         <div class="card-image">
                             
                             
@@ -481,6 +482,56 @@
                         <div class="summary block-with-text">
                             
                                 归一化因为 每一列数据的量纲不同，导致 数据分布区间存在差异。（人的身高可以是 180cm，也可以是 1.8m，这两个虽然表示意义相同，但是由于单位的不同，导致 机器学习在计算过程中也容易出现差异，所以就需要对数据进行归一化）。通过归一化，
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-27
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tutorial/" class="post-category">
+                                    Tutorial
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/NLP/">
+                            <span class="chip bg-color">NLP</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/07/26/nlp-xue-xi-bi-ji-1/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="NLP学习笔记（1）—— 过拟合和欠拟合">
+                            
+                            <span class="card-title">NLP学习笔记（1）—— 过拟合和欠拟合</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                过拟合和欠拟合推荐博客：Understanding the Bias-Variance Tradeoff
+当我们讨论预测模型时，预测误差可以分解为两个我们关心的主要子成分：由“偏差”引起的误差和由“方差”引起的误差。模型最小化偏差和方差的能
                             
                         </div>
                         <div class="publish-info">
@@ -981,55 +1032,6 @@ def search(self, nums: List[int], target: int) -&
             </div>
               <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ASR错误自动识别与纠正">
-                            
-                            <span class="card-title">ASR错误自动识别与纠正</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                背景随着科技的发展，越来越多种类的智能语音产品出现。虽然智能语音产品种类，但是他们依赖着有着像汽车发动机一样重要的内核——语音对话系统（Spoken dialogue systems）。一个好的语音对话系统可以帮助用户高效的解决一些问题，或
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/NLP/" class="post-category">
-                                    NLP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ASR%E7%BA%A0%E9%94%99/">
-                            <span class="chip bg-color">ASR纠错</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
         </div>
     </article>
 
@@ -1078,7 +1080,7 @@ def search(self, nums: List[int], target: int) -&
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">20.3k</span>
+                        class="white-color">21.3k</span>
             
             
             
