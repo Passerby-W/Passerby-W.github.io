@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-07-26T10:05:17.353Z</updated>
+  <updated>2022-07-27T03:14:37.868Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>NLP学习笔记（1）——过拟合和欠拟合</title>
+    <title>NLP学习笔记（1）—— 过拟合和欠拟合</title>
     <link href="http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-1/"/>
     <id>http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-1/</id>
     <published>2022-07-26T09:08:08.000Z</published>
-    <updated>2022-07-26T10:05:17.353Z</updated>
+    <updated>2022-07-27T03:14:37.868Z</updated>
     
     
       
@@ -29,6 +29,31 @@
         
         
     <summary type="html">&lt;h1 id=&quot;过拟合和欠拟合&quot;&gt;&lt;a href=&quot;#过拟合和欠拟合&quot; class=&quot;headerlink&quot; title=&quot;过拟合和欠拟合&quot;&gt;&lt;/a&gt;过拟合和欠拟合&lt;/h1&gt;&lt;p&gt;推荐博客：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Tutorial" scheme="http://passerby-w.github.io/categories/Tutorial/"/>
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NLP学习笔记（2）—— 归一化</title>
+    <link href="http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-2/"/>
+    <id>http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-2/</id>
+    <published>2022-07-26T09:08:08.000Z</published>
+    <updated>2022-07-27T03:13:15.243Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;归一化&quot;&gt;&lt;a href=&quot;#归一化&quot; class=&quot;headerlink&quot; title=&quot;归一化&quot;&gt;&lt;/a&gt;归一化&lt;/h1&gt;&lt;p&gt;因为 每一列数据的量纲不同，导致 数据分布区间存在差异。（人的身高可以是 180cm，也可以是</summary>
         
       
     
