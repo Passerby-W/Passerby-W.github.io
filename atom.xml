@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-07-27T08:18:48.112Z</updated>
+  <updated>2022-08-09T08:51:30.635Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -17,11 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>NLP学习笔记（3）—— Normalization</title>
+    <title></title>
+    <link href="http://passerby-w.github.io/2022/08/09/ti-du-xia-jiang/"/>
+    <id>http://passerby-w.github.io/2022/08/09/ti-du-xia-jiang/</id>
+    <published>2022-08-09T06:39:51.652Z</published>
+    <updated>2022-08-09T08:51:30.635Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;梯度下降法作为机器学习中较常使用的优化算法，其有着3种不同的形式：&lt;strong&gt;批量梯度下降（Batch Gradient Descent）、随机梯度下降（Stochastic Gradient Descent）、小批量梯度下降（Mini-Batch Gradient</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Bert</title>
+    <link href="http://passerby-w.github.io/2022/07/29/bert/"/>
+    <id>http://passerby-w.github.io/2022/07/29/bert/</id>
+    <published>2022-07-29T02:11:15.000Z</published>
+    <updated>2022-07-29T07:15:26.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;BERT的全称是Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder，因为Decoder是不能获要预测的信息的。&lt;/p&gt;
+&lt;p&gt;BERT = Encoder of</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
+    
+    
+    <category term="Bert" scheme="http://passerby-w.github.io/tags/Bert/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NLP学习笔记3——Normalization</title>
     <link href="http://passerby-w.github.io/2022/07/27/nlp-xue-xi-bi-ji-3/"/>
     <id>http://passerby-w.github.io/2022/07/27/nlp-xue-xi-bi-ji-3/</id>
     <published>2022-07-27T03:28:07.000Z</published>
-    <updated>2022-07-27T08:18:48.112Z</updated>
+    <updated>2022-07-29T02:13:41.575Z</updated>
     
     
       
@@ -42,11 +89,11 @@
   </entry>
   
   <entry>
-    <title>NLP学习笔记（2）—— 归一化</title>
+    <title>NLP学习笔记2——归一化</title>
     <link href="http://passerby-w.github.io/2022/07/27/nlp-xue-xi-bi-ji-2/"/>
     <id>http://passerby-w.github.io/2022/07/27/nlp-xue-xi-bi-ji-2/</id>
     <published>2022-07-27T02:28:07.000Z</published>
-    <updated>2022-07-27T03:29:46.357Z</updated>
+    <updated>2022-07-29T02:12:59.078Z</updated>
     
     
       
@@ -67,11 +114,11 @@
   </entry>
   
   <entry>
-    <title>NLP学习笔记（1）—— 过拟合和欠拟合</title>
+    <title>NLP学习笔记1——过拟合和欠拟合</title>
     <link href="http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-1/"/>
     <id>http://passerby-w.github.io/2022/07/26/nlp-xue-xi-bi-ji-1/</id>
     <published>2022-07-26T09:08:08.000Z</published>
-    <updated>2022-07-27T03:14:37.868Z</updated>
+    <updated>2022-07-29T02:13:32.328Z</updated>
     
     
       
