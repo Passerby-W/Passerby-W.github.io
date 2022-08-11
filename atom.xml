@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-07-29T07:15:26.610Z</updated>
+  <updated>2022-08-11T03:02:02.020Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>梯度下降算法</title>
+    <link href="http://passerby-w.github.io/2022/08/11/ti-du-xia-jiang/"/>
+    <id>http://passerby-w.github.io/2022/08/11/ti-du-xia-jiang/</id>
+    <published>2022-08-11T06:42:05.000Z</published>
+    <updated>2022-08-11T03:02:02.020Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;梯度下降法作为机器学习中较常使用的优化算法，其有着3种不同的形式：&lt;strong&gt;批量梯度下降（Batch Gradient Descent）、随机梯度下降（Stochastic Gradient Descent）、小批量梯度下降（Mini-Batch Gradient</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>Bert</title>
@@ -308,7 +333,7 @@
     <link href="http://passerby-w.github.io/2022/01/06/suan-fa-er-fen-fa/"/>
     <id>http://passerby-w.github.io/2022/01/06/suan-fa-er-fen-fa/</id>
     <published>2022-01-06T06:42:05.000Z</published>
-    <updated>2022-01-10T08:24:45.760Z</updated>
+    <updated>2022-01-10T08:24:45.000Z</updated>
     
     
       
@@ -327,31 +352,6 @@
     
     
     <category term="Binary Search" scheme="http://passerby-w.github.io/tags/Binary-Search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>梯度下降算法</title>
-    <link href="http://passerby-w.github.io/2022/01/06/ti-du-xia-jiang/"/>
-    <id>http://passerby-w.github.io/2022/01/06/ti-du-xia-jiang/</id>
-    <published>2022-01-06T06:42:05.000Z</published>
-    <updated>2022-08-09T08:58:00.446Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;梯度下降法作为机器学习中较常使用的优化算法，其有着3种不同的形式：&lt;strong&gt;批量梯度下降（Batch Gradient Descent）、随机梯度下降（Stochastic Gradient Descent）、小批量梯度下降（Mini-Batch Gradient</summary>
-        
-      
-    
-    
-    
-    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
-    
-    
-    <category term="NLP" scheme="http://passerby-w.github.io/tags/NLP/"/>
     
   </entry>
   
