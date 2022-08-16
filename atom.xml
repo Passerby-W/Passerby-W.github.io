@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-08-11T03:07:34.061Z</updated>
+  <updated>2022-08-16T06:20:54.258Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Word Embedding Download</title>
+    <link href="http://passerby-w.github.io/2022/08/16/word-embedding-download/"/>
+    <id>http://passerby-w.github.io/2022/08/16/word-embedding-download/</id>
+    <published>2022-08-16T06:18:19.000Z</published>
+    <updated>2022-08-16T06:20:54.258Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Word2Vector&quot;&gt;&lt;a href=&quot;#Word2Vector&quot; class=&quot;headerlink&quot; title=&quot;Word2Vector&quot;&gt;&lt;/a&gt;Word2Vector&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Sources" scheme="http://passerby-w.github.io/categories/Sources/"/>
+    
+    
+    <category term="Word Embedding" scheme="http://passerby-w.github.io/tags/Word-Embedding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://passerby-w.github.io/2022/08/16/zhong-ying-ci-xiang-liang/"/>
+    <id>http://passerby-w.github.io/2022/08/16/zhong-ying-ci-xiang-liang/</id>
+    <published>2022-08-16T02:36:32.456Z</published>
+    <updated>2022-08-16T06:13:03.606Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Word2Vector&quot;&gt;&lt;a href=&quot;#Word2Vector&quot; class=&quot;headerlink&quot; title=&quot;Word2Vector&quot;&gt;&lt;/a&gt;Word2Vector&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>梯度下降算法</title>
