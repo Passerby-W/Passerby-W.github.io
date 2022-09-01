@@ -4,12 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="正则表达式, python,nlp,machine learning,hexo,data structue">
-    <meta name="description" content="正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。
-在线测试正则表达式网站：regex101
+    <meta name="keywords" content="高斯过程, python,nlp,machine learning,hexo,data structue">
+    <meta name="description" content="高斯过程(Gaussian process)，简单的说，就是一系列关于连续域（时间或空间）的随机变量的联合，而且针对每一个时间或是空间点上的随机变量都是服从高斯分布的。
+下图就是一个大概的高斯过程的步骤：
 
-
-im">
+首先先设定均值，然后随机生成一些">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@ im">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>正则表达式 | WAN</title>
+    <title>高斯过程 | WAN</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -187,12 +186,12 @@ im">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">正则表达式</h1>
+                    <h1 class="description center-align post-title">高斯过程</h1>
                 </div>
             </div>
         </div>
@@ -308,8 +307,8 @@ im">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Regular-Expression/">
-                                <span class="chip bg-color">Regular Expression</span>
+                            <a href="/tags/Gaussian-Process/">
+                                <span class="chip bg-color">Gaussian Process</span>
                             </a>
                         
                     </div>
@@ -320,8 +319,8 @@ im">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/Math/" class="post-category">
+                                Math
                             </a>
                         
                     </div>
@@ -333,28 +332,28 @@ im">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-10
+                    2022-09-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-09-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    917
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -377,126 +376,59 @@ im">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
-<p>在线测试正则表达式网站：<a target="_blank" rel="noopener" href="https://regex101.com/">regex101</a></p>
-<img src="/2022/01/10/zheng-ze-biao-da-shi/截屏2021-12-28 下午2.58.08.png" alt="" style="zoom: 33%;">
+                <p>高斯过程(Gaussian process)，简单的说，就是一系列关于连续域（时间或空间）的随机变量的联合，而且针对每一个时间或是空间点上的随机变量都是服从高斯分布的。</p>
+<p>下图就是一个大概的高斯过程的步骤：</p>
+<ol>
+<li>首先先设定均值，然后随机生成一些先验的函数。</li>
+<li>根据观测数据得到后验函数。</li>
+<li>若干这些函数的曲线共同构成了高斯过程给出的置信区间。</li>
+</ol>
+<img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 14.54.32.png" alt="截屏2022-09-01 14.54.32" style="zoom:50%;">
 
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import re
+<p>上图一共有5条不同颜色的线，每一条曲线代表了一个GP的样本。首先来看其中的蓝色的线，对应x轴上找一个点，比如x=2大概对应的的y轴约为0.6左右。它所代表的是对应x=2时的一个随机变量$X(x=2)$”正好”出现的点罢了，本质上对应x=2的是一个随机变量而不是一个确定的点。另外对应于任一时刻的随机变量还需要服从一个确定的高斯分布（并不是说所有时刻对应的随机变量需要服从同一个高斯，只是服从的高斯分布的具体参数只跟时刻有关）。除此之外，若是GP的样本，还需要满足的是，任意个点（对应不同时刻的随机变量）联合需要服从多元高斯分布。<strong>因此GP的分布就是对于时间域上所有随机变量的联合分布。</strong></p>
+<p>既然是满足多元高斯分布，那么必定需要一个确定的mean和确定的covariance 吧。反过来说，若是给定一个mean和covariance，那么自然不同时刻的随机变量的出现的整体位置和相关情况也就被限定住。<strong>因此，一个GP可以被mean和covariance function共同唯一决定</strong>。</p>
+<p>至于covariance function么，这个才是之后在machine learning的应用中被广为探讨的部分，因而就被称为了核函数kernel，<strong>原因就是它捕捉了不同输入点之间的关系，并且反映在了之后样本的位置上。这样的话，就可以做到，利用点与点之间关系，以从输入的训练数据预测未知点的值</strong>。</p>
+<p>高斯过程是一种无参数方法，只通过训练得到，不用关心也不用显式的指定模型长什么样子。</p>
+<p><strong>自然底数</strong></p>
+<blockquote>
+<p>$e=(1+1/n)^n\approx2.71828…$</p>
+</blockquote>
+<p><strong>协方差矩阵</strong></p>
+<blockquote>
+<p>$\sum=Cov(X_i,X_j)=E[(X_i-\mu_i)(X_j-\mu_j)^T]$</p>
+<p>可以一定程度反映两组分布的线性相关关系</p>
+<p>若两组分布独立，那他们的协方差矩阵在非对角线位置都应该是0</p>
+<img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 11.27.12.png" alt="截屏2022-09-01 11.27.12" style="zoom: 25%;">
+</blockquote>
+<p><strong>一元高斯分布</strong></p>
+<blockquote>
+<p>$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$</p>
+<p>$\mu：期望$</p>
+<p>$\sigma:方差$</p>
+<p>$\frac{1}{\sigma\sqrt{2\pi}}$：个常数项，为了让高斯分布的积分等于1不了/。，</p>
+</blockquote>
+<p><strong>多元高斯分布</strong></p>
+<blockquote>
+<img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.35.34.png" alt="截屏2022-09-01 16.35.34" style="zoom:80%;">
+</blockquote>
+<p><strong>无限元高斯分布</strong></p>
+<blockquote>
+<p>在多元高斯分布的基础上考虑进一步扩展，假设有无限多维呢？用一个例子来展示这个扩展的过程。假设我们在周一到周四每天的 7:00 测试了 4 次心率，如下图中 4 个点，可能的高斯分布如图所示（高瘦的那条）。这是一个一元高斯分布，只有每天 7: 00 的心率这个维度。</p>
+<img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.53.56.png" alt="截屏2022-09-01 16.53.56" style="zoom:40%;">
 
-# matching string
-pattern1 = "cat"
-pattern2 = "bird"
-string = "dog runs to cat"
-print(pattern1 in string)    # True
-print(pattern2 in string)    # False
+<p>现在考虑不仅在每天的 7: 00 测心率（横轴），在 8:00 时也进行测量（纵轴），这个时候变成两个维度（二元高斯分布）。</p>
+<img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 17.09.01.png" alt="截屏2022-09-01 17.09.01" style="zoom:45%;">
 
+<p>更进一步，如果我们在每天的无数个时间点都进行测量，则变成了下图的情况。注意下图中把测量时间作为横轴，则每个颜色的一条线代表一个（无限个时间点的测量）无限维的采样。当对每次对无限维进行采样得到无限多个点时，其实可以理解为我们采样得到了一个函数。</p>
+<img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.55.30.png" alt="截屏2022-09-01 16.55.30" style="zoom:45%;">
 
-# regular expression
-pattern1 = "cat"
-pattern2 = "bird"
-string = "dog runs to cat"
-print(re.search(pattern1, string))  # &lt;_sre.SRE_Match object; span=(12, 15), match='cat'&gt;
-print(re.search(pattern2, string))  # None
-
-
-# multiple patterns ("run" or "ran")
-ptn = r"r[au]n"       # start with "r" means raw string
-print(re.search(ptn, "dog runs to cat"))    # &lt;_sre.SRE_Match object; span=(4, 7), match='run'&gt;
-
-
-# continue
-print(re.search(r"r[A-Z]n", "dog runs to cat"))     # None
-print(re.search(r"r[a-z]n", "dog runs to cat"))     # &lt;_sre.SRE_Match object; span=(4, 7), match='run'&gt;
-print(re.search(r"r[0-9]n", "dog r2ns to cat"))     # &lt;_sre.SRE_Match object; span=(4, 7), match='r2n'&gt;
-print(re.search(r"r[0-9a-z]n", "dog runs to cat"))  # &lt;_sre.SRE_Match object; span=(4, 7), match='run'&gt;
-
-
-# \d : decimal digit
-print(re.search(r"r\dn", "run r4n"))                # &lt;_sre.SRE_Match object; span=(4, 7), match='r4n'&gt;
-# \D : any non-decimal digit
-print(re.search(r"r\Dn", "run r4n"))                # &lt;_sre.SRE_Match object; span=(0, 3), match='run'&gt;
-# \s : any white space [\t\n\r\f\v]
-print(re.search(r"r\sn", "r\nn r4n"))               # &lt;_sre.SRE_Match object; span=(0, 3), match='r\nn'&gt;
-# \S : opposite to \s, any non-white space
-print(re.search(r"r\Sn", "r\nn r4n"))               # &lt;_sre.SRE_Match object; span=(4, 7), match='r4n'&gt;
-# \w : [a-zA-Z0-9_]
-print(re.search(r"r\wn", "r\nn r4n"))               # &lt;_sre.SRE_Match object; span=(4, 7), match='r4n'&gt;
-# \W : opposite to \w
-print(re.search(r"r\Wn", "r\nn r4n"))               # &lt;_sre.SRE_Match object; span=(0, 3), match='r\nn'&gt;
-# \b : empty string (only at the start or end of the word)
-print(re.search(r"\bruns\b", "dog runs to cat"))    # &lt;_sre.SRE_Match object; span=(4, 8), match='runs'&gt;
-# \B : empty string (but not at the start or end of a word)
-print(re.search(r"\B runs \B", "dog   runs  to cat"))  # &lt;_sre.SRE_Match object; span=(8, 14), match=' runs '&gt;
-# \\ : match \
-print(re.search(r"runs\\", "runs\ to me"))          # &lt;_sre.SRE_Match object; span=(0, 5), match='runs\\'&gt;
-# . : match anything (except \n)
-print(re.search(r"r.n", "r[ns to me"))              # &lt;_sre.SRE_Match object; span=(0, 3), match='r[n'&gt;
-# ^ : match line beginning
-print(re.search(r"^dog", "dog runs to cat"))        # &lt;_sre.SRE_Match object; span=(0, 3), match='dog'&gt;
-# $ : match line ending
-print(re.search(r"cat$", "dog runs to cat"))        # &lt;_sre.SRE_Match object; span=(12, 15), match='cat'&gt;
-# ? : may or may not occur
-print(re.search(r"Mon(day)?", "Monday"))            # &lt;_sre.SRE_Match object; span=(0, 6), match='Monday'&gt;
-print(re.search(r"Mon(day)?", "Mon"))               # &lt;_sre.SRE_Match object; span=(0, 3), match='Mon'&gt;
-
-
-# multi-line
-string = """
-dog runs to cat.
-I run to dog.
-"""
-print(re.search(r"^I", string))                     # None
-print(re.search(r"^I", string, flags=re.M))         # &lt;_sre.SRE_Match object; span=(18, 19), match='I'&gt;
-
-
-# * : occur 0 or more times
-print(re.search(r"ab*", "a"))                       # &lt;_sre.SRE_Match object; span=(0, 1), match='a'&gt;
-print(re.search(r"ab*", "abbbbb"))                  # &lt;_sre.SRE_Match object; span=(0, 6), match='abbbbb'&gt;
-
-# + : occur 1 or more times
-print(re.search(r"ab+", "a"))                       # None
-print(re.search(r"ab+", "abbbbb"))                  # &lt;_sre.SRE_Match object; span=(0, 6), match='abbbbb'&gt;
-
-# {n, m} : occur n to m times
-print(re.search(r"ab{2,10}", "a"))                  # None
-print(re.search(r"ab{2,10}", "abbbbb"))             # &lt;_sre.SRE_Match object; span=(0, 6), match='abbbbb'&gt;
-
-
-# group
-match = re.search(r"(\d+), Date: (.+)", "ID: 021523, Date: Feb/12/2017")
-print(match.group())                                # 021523, Date: Feb/12/2017
-print(match.group(1))                               # 021523
-print(match.group(2))                               # Date: Feb/12/2017
-
-match = re.search(r"(?P&lt;id&gt;\d+), Date: (?P&lt;date&gt;.+)", "ID: 021523, Date: Feb/12/2017")
-print(match.group('id'))                            # 021523
-print(match.group('date'))                          # Date: Feb/12/2017
-
-# findall
-print(re.findall(r"r[ua]n", "run ran ren"))         # ['run', 'ran']
-
-# | : or
-print(re.findall(r"(run|ran)", "run ran ren"))      # ['run', 'ran']
-
-# re.sub() replace
-print(re.sub(r"r[au]ns", "catches", "dog runs to cat"))     # dog catches to cat
-
-# re.split()
-print(re.split(r"[,;\.]", "a;b,c.d;e"))             # ['a', 'b', 'c', 'd', 'e']
-
-
-# compile
-compiled_re = re.compile(r"r[ua]n")
-print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; span=(4, 7), match='ran'&gt;
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>贪婪模式：会匹配最长的以开始位置开始，以结束位置结束的字符串；</p>
-<p>懒惰模式：匹配尽可能少的字符。</p>
-<img src="/2022/01/10/zheng-ze-biao-da-shi/截屏2022-01-10 下午3.27.32.png" alt="" style="zoom: 33%;">
-
-<img src="/2022/01/10/zheng-ze-biao-da-shi/截屏2022-01-10 下午3.28.07.png" alt="" style="zoom: 33%;">
-
+<p>当从函数的视角去看待采样，理解了每次采样无限维相当于采样一个函数之后，原本的概率密度函数不再是点的分布 ，而变成了<strong>函数的分布</strong>。这个无限元高斯分布即称为高斯过程。高斯过程正式地定义为：对于所有 $x=[x_1,x_2,⋯,x_n] ,f(x)=[f(x_1),f(x_2),⋯,f(x_n)] $都服从多元高斯分布，则称 f 是一个高斯过程，表示如下：</p>
+<p>$f(x)\sim N(\mu(x),k(x,x))$</p>
+<p>这里 $μ(x):\mathbb{R}^n→\mathbb{R}^n$表示均值函数（Mean function），返回各个维度的均值；$k(x,x):\mathbb{R}^n×\mathbb{R}^n→\mathbb{R}^n$ 为协方差函数 Covariance Function（也叫核函数 Kernel Function）返回两个向量各个维度之间的协方差矩阵。一个高斯过程为一个均值函数和协方差函数唯一地定义，并且<strong>一个高斯过程的有限维度的子集都服从一个多元高斯分布</strong>（为了方便理解，可以想象二元高斯分布两个维度各自都服从一个高斯分布）。</p>
+</blockquote>
+<p><strong>参考</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36982945">多元正态分布与高斯判别分析算法</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75589452">高斯过程 Gaussian Processes 原理、可视化及代码实现</a></p>
 
                 
             </div>
@@ -523,7 +455,7 @@ print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/">http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/</a>
+                    <a href="http://passerby-w.github.io/2022/09/01/gao-si-guo-cheng/">http://passerby-w.github.io/2022/09/01/gao-si-guo-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -561,8 +493,8 @@ print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Regular-Expression/">
-                                    <span class="chip bg-color">Regular Expression</span>
+                                <a href="/tags/Gaussian-Process/">
+                                    <span class="chip bg-color">Gaussian Process</span>
                                 </a>
                             
                         </div>
@@ -763,17 +695,18 @@ print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/">
+                <a href="/2022/09/01/gao-si-guo-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Mac上安装Neo4j教程">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="高斯过程">
                         
-                        <span class="card-title">Mac上安装Neo4j教程</span>
+                        <span class="card-title">高斯过程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -783,30 +716,27 @@ print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Installment/" class="post-category">
-                                    Installment
+                            <a href="/categories/Math/" class="post-category">
+                                    Math
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/neo4j/">
-                        <span class="chip bg-color">neo4j</span>
-                    </a>
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/Gaussian-Process/">
+                        <span class="chip bg-color">Gaussian Process</span>
                     </a>
                     
                 </div>
@@ -820,13 +750,13 @@ print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/06/suan-fa-er-fen-fa/">
+                <a href="/2022/08/16/word-embedding-download/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法-二分法">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Word Embedding Download">
                         
-                        <span class="card-title">算法-二分法</span>
+                        <span class="card-title">Word Embedding Download</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -837,14 +767,14 @@ print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/Sources/" class="post-category">
+                                    Sources
                                 </a>
                             
                             
@@ -854,8 +784,8 @@ print(compiled_re.search("dog ran to cat"))     # &lt;_sre.SRE_Match object; spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Binary-Search/">
-                        <span class="chip bg-color">Binary Search</span>
+                    <a href="/tags/Word-Embedding/">
+                        <span class="chip bg-color">Word Embedding</span>
                     </a>
                     
                 </div>

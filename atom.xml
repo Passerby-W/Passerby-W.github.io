@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-08-16T06:34:35.290Z</updated>
+  <updated>2022-09-01T09:33:39.610Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>高斯过程</title>
+    <link href="http://passerby-w.github.io/2022/09/01/gao-si-guo-cheng/"/>
+    <id>http://passerby-w.github.io/2022/09/01/gao-si-guo-cheng/</id>
+    <published>2022-09-01T09:29:06.000Z</published>
+    <updated>2022-09-01T09:33:39.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;高斯过程(Gaussian</summary>
+        
+      
+    
+    
+    
+    <category term="Math" scheme="http://passerby-w.github.io/categories/Math/"/>
+    
+    
+    <category term="Gaussian Process" scheme="http://passerby-w.github.io/tags/Gaussian-Process/"/>
+    
+  </entry>
   
   <entry>
     <title>Word Embedding Download</title>
@@ -71,15 +96,14 @@
     <link href="http://passerby-w.github.io/2022/07/29/bert/"/>
     <id>http://passerby-w.github.io/2022/07/29/bert/</id>
     <published>2022-07-29T02:11:15.000Z</published>
-    <updated>2022-07-29T07:15:26.610Z</updated>
+    <updated>2022-08-30T06:11:41.714Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;BERT的全称是Bidirectional Encoder Representation from Transformers，即双向Transformer的Encoder，因为Decoder是不能获要预测的信息的。&lt;/p&gt;
-&lt;p&gt;BERT = Encoder of</summary>
+    <summary type="html">&lt;p&gt;BERT的全称是Bidirectional Encoder Representation from</summary>
         
       
     
