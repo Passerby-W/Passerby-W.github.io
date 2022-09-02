@@ -11,13 +11,15 @@ FasttextFind more fasttext pretrained model at: fastText.
 
 
 
+
 语言
 文件名
 
 
 
+
 zh
-cc">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -42,10 +44,10 @@ cc">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -387,35 +389,39 @@ cc">
             <div id="articleContent">
                 <h2 id="Word2Vector"><a href="#Word2Vector" class="headerlink" title="Word2Vector"></a>Word2Vector</h2><p><a target="_blank" rel="noopener" href="https://github.com/Embedding/Chinese-Word-Vectors">Chinese Word Vectors 中文词向量</a></p>
 <p><a target="_blank" rel="noopener" href="https://radimrehurek.com/gensim/models/word2vec.html#pretrained-models">英文词向量</a></p>
-<h2 id="Fasttext"><a href="#Fasttext" class="headerlink" title="Fasttext"></a>Fasttext</h2><p>Find more fasttext pretrained model at: <a target="_blank" rel="noopener" href="https://fasttext.cc/">fastText</a>.</p>
+<h2 id="Fasttext"><a href="#Fasttext" class="headerlink" title="Fasttext"></a>Fasttext</h2><p>Find more fasttext pretrained model at: <a target="_blank" rel="noopener" href="https://fasttext.cc">fastText</a>.</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">语言</th>
-<th align="center">文件名</th>
+<th style="text-align:center">语言</th>
+<th style="text-align:center">文件名</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">zh</td>
-<td align="center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.zh.300.vec.gz">cc.zh.300.vec.zip</a></td>
+<tbody>
+<tr>
+<td style="text-align:center">zh</td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.zh.300.vec.gz">cc.zh.300.vec.zip</a></td>
 </tr>
 <tr>
-<td align="center">en</td>
-<td align="center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip">wiki-news-300d-1M.vec.zip</a></td>
+<td style="text-align:center">en</td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip">wiki-news-300d-1M.vec.zip</a></td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M-subword.vec.zip">wiki-news-300d-1M-subword.vec.zip</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M-subword.vec.zip">wiki-news-300d-1M-subword.vec.zip</a></td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip">crawl-300d-2M.vec.zip</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip">crawl-300d-2M.vec.zip</a></td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M-subword.zip">crawl-300d-2M-subword.zip</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M-subword.zip">crawl-300d-2M-subword.zip</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>The first line of the file contains the number of words in the vocabulary and the size of the vectors. Each line contains a word followed by its vectors, like in the default fastText text format. Each value is space separated. Words are ordered by descending frequency. These text models can easily be loaded in Python using the following code:</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">import io
 
@@ -427,8 +433,8 @@ def load_vectors(fname):
         tokens = line.rstrip().split(' ')
         data[tokens[0]] = map(float, tokens[1:])
     return data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Bert"><a href="#Bert" class="headerlink" title="Bert"></a>Bert</h2><table>
+<h2 id="Bert"><a href="#Bert" class="headerlink" title="Bert"></a>Bert</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -438,7 +444,8 @@ def load_vectors(fname):
 <th>H=768</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>L=2</strong></td>
 <td><a target="_blank" rel="noopener" href="https://huggingface.co/uer/chinese_roberta_L-2_H-128"><strong>2/128 (Tiny)</strong></a></td>
 <td><a target="_blank" rel="noopener" href="https://huggingface.co/uer/chinese_roberta_L-2_H-256">2/256</a></td>
@@ -480,7 +487,9 @@ def load_vectors(fname):
 <td><a target="_blank" rel="noopener" href="https://huggingface.co/uer/chinese_roberta_L-12_H-512">12/512</a></td>
 <td><a target="_blank" rel="noopener" href="https://huggingface.co/uer/chinese_roberta_L-12_H-768"><strong>12/768 (Base)</strong></a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="其他资源"><a href="#其他资源" class="headerlink" title="其他资源"></a>其他资源</h2><p><a target="_blank" rel="noopener" href="https://sunyancn.github.io/post/28052.html">NLP 常用模型和数据集高速下载</a></p>
 <p><a target="_blank" rel="noopener" href="https://docs.qq.com/sheet/DVnpkTnF6VW9UeXdh?tab=BB08J2&amp;c=D22A0I0">fastNLP可加载embedding与数据集</a></p>
 
@@ -1024,7 +1033,7 @@ def load_vectors(fname):
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             

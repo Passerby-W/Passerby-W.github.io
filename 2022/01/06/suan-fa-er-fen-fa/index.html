@@ -32,10 +32,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -386,10 +386,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 		else:
 			right = mid - 1
 	return left # select2 left, right<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在做题的时候经常会对上面的选择部分感到迷惑，在具体情况下应该怎么选择呢？</p>
 <p>我先设定一个数组——&gt;[1,2,3,5,6,6,6,6,8,8,9]</p>
 <p>首先我们要先明确一个概念，在while left &lt;= right这个条件下，我们要确保数组的完整性，所以left, right = 0, len(nums) - 1，这样可以保证index的取值空间为[0, len(nums) - 1]这个闭区间。其次while的终止条件如下面表格所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -406,7 +406,8 @@ def search(self, nums: List[int], target: int) -&amp;">
 <th>9</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>L</td>
 <td></td>
 <td></td>
@@ -430,21 +431,23 @@ def search(self, nums: List[int], target: int) -&amp;">
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>由表格可见，在左右指针交换位置的时候终止循环。那么L和R指针分别的意义是什么呢？</p>
 <p>场景1：寻找小于target的位置，则目标位置是6，index为3</p>
 <p>则在终止循环前的一个循环时L,R的位置如下：</p>
-<p>如果select1为&lt;时，等价于求&lt;6和first&gt;=6，如下所示：</p>
+<p>如果select1为&lt;时，等价于求&lt;6和first&gt;=6，如下所示：<!--6和first--></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
 <th>1</th>
-<th align="left">2</th>
+<th style="text-align:left">2</th>
 <th>3</th>
 <th>5</th>
-<th align="center">6</th>
+<th style="text-align:center">6</th>
 <th>6</th>
 <th>6</th>
 <th>6</th>
@@ -453,12 +456,13 @@ def search(self, nums: List[int], target: int) -&amp;">
 <th>9</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>L</td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -468,10 +472,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td>L</td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center">R</td>
+<td style="text-align:center">R</td>
 <td></td>
 <td></td>
 <td></td>
@@ -481,10 +485,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td></td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td>L</td>
-<td align="center">R</td>
+<td style="text-align:center">R</td>
 <td></td>
 <td></td>
 <td></td>
@@ -494,10 +498,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td></td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center">L,R</td>
+<td style="text-align:center">L,R</td>
 <td></td>
 <td></td>
 <td></td>
@@ -507,27 +511,29 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td></td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td>R</td>
-<td align="center">L</td>
-<td></td>
+<td style="text-align:center">L</td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>如果select1为&lt;=时，等价于求 &gt;6 和last &lt;= 6，如下所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
 <th>1</th>
-<th align="left">2</th>
+<th style="text-align:left">2</th>
 <th>3</th>
 <th>5</th>
-<th align="center">6</th>
+<th style="text-align:center">6</th>
 <th>6</th>
 <th>6</th>
 <th>6</th>
@@ -536,12 +542,13 @@ def search(self, nums: List[int], target: int) -&amp;">
 <th>9</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>L</td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -551,10 +558,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td></td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
 <td></td>
 <td>L</td>
 <td></td>
@@ -564,10 +571,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td></td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
 <td></td>
 <td>L</td>
 <td>R</td>
@@ -577,10 +584,10 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td></td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
 <td></td>
 <td></td>
 <td>L,R</td>
@@ -590,18 +597,19 @@ def search(self, nums: List[int], target: int) -&amp;">
 </tr>
 <tr>
 <td></td>
-<td align="left"></td>
+<td style="text-align:left"></td>
 <td></td>
 <td></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
 <td></td>
 <td></td>
 <td>R</td>
 <td>L</td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>场景1：寻找小于target的位置</p>
 <p>场景2：寻找大于target的位置</p>
 <p>场景3：寻找小于等于target的首次出现的位置</p>
@@ -700,7 +708,6 @@ int BinarySearchLastLowerEqualTarget(int* arr, int arrSize, int target)
 
     return right;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><strong>总结：</strong></p>
 <ol>
 <li><p>L一定是要+1，R一定是-1，因为区间要不断收缩才能退出，如果没有+1，和-1，会导致死循环风险。</p>
@@ -1251,7 +1258,7 @@ int BinarySearchLastLowerEqualTarget(int* arr, int arrSize, int target)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             

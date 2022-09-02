@@ -30,10 +30,10 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -382,16 +382,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>2012 年 5 月 17 日，Google 正式提出了<strong>知识图谱（Knowledge Graph）</strong>的概念，其初衷是为了优化搜索引擎返回的结果，增强用户搜索质量及体验。传统的互联网技术是基于关键字匹配，然后通过一系列的打分策略来返回搜索结果的。这种方法的一个很大的缺陷就是无法让计算机理解背后的语义，因此构建知识图谱的目的就是为了解决这一问题，比如在Google搜索引擎里输入“Who is the wife of Bill Gates?”，我们直接可以得到答案-“Melinda Gates”。这是因为系统层面上已经创建好了一个包含“Bill Gates”和“Melinda Gates”的实体以及他俩之间关系的知识库。所以，当我们执行搜索的时候，就可以通过关键词提取（”Bill Gates”, “Melinda Gates”, “wife”）以及知识库上的匹配可以直接获得最终的答案。通过知识图谱，让机器可以具备认知能力，理解这个世界。</p>
-<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.36.31.png" alt="" style="zoom:100%;">
-
+<p><img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.36.31.png" alt="" style="zoom:100%;"></p>
 <h2 id="知识图谱简介"><a href="#知识图谱简介" class="headerlink" title="知识图谱简介"></a>知识图谱简介</h2><p>知识图谱是一种基于图的语义网络，用来展示实体间的关系。由下图可见一个知识图谱是由节点和边组成的。﻿在知识图谱里，我们通常用“实体（Entity）”来表达图里的节点、用“关系（Relation）”来表达图里的“边”。实体指的是现实世界中的事物比如人、地名、概念、药物、公司等，关系则用来表达不同实体之间的某种联系，比如人-“居住在”-北京、张三和李四是“朋友”、逻辑回归是深度学习的“先导知识”等等。</p>
-<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.00.57.png" alt="构建知识图谱流程" style="zoom:50%;">
-
+<p><img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.00.57.png" alt="构建知识图谱流程" style="zoom:50%;"></p>
 <p>﻿在现实世界中，实体和关系也会拥有各自的属性，比如人可以有“姓名”和“年龄”。</p>
 <h2 id="知识图谱中的本体"><a href="#知识图谱中的本体" class="headerlink" title="知识图谱中的本体"></a>知识图谱中的本体</h2><p>本体的概念来源自哲学，指的是对客观存在系统的解释和说明。</p>
 <p>下面这张图就是一个本体的展示。</p>
-<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.57.20.png" alt="Yago知识库中的本体" style="zoom:50%;">
-
+<p><img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 上午11.57.20.png" alt="Yago知识库中的本体" style="zoom:50%;"></p>
 <h2 id="知识图谱的架构"><a href="#知识图谱的架构" class="headerlink" title="知识图谱的架构"></a>知识图谱的架构</h2><p>知识图谱在架构上分，可以分为<strong>逻辑架构和技术架构</strong>。</p>
 <h3 id="逻辑架构"><a href="#逻辑架构" class="headerlink" title="逻辑架构"></a>逻辑架构</h3><p>知识图谱在逻辑上可分为<strong>模式层</strong>与<strong>数据层</strong>两个层次。</p>
 <ul>
@@ -403,8 +400,7 @@
 </ul>
 <p><strong>数据层：比尔盖茨-妻子-梅琳达·盖茨，比尔盖茨-总裁-微软</strong></p>
 <h3 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h3><p>知识图谱的整体架构如下图所示，其中虚线框内的部分为知识图谱的构建过程，同时也是知识图谱更新的过程。</p>
-<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.22.45.png" alt="知识图谱的技术架构" style="zoom:50%;">    
-
+<p><img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.22.45.png" alt="知识图谱的技术架构" style="zoom:50%;">    </p>
 <p>我们来一步一步的分析下这张图。</p>
 <ol>
 <li>虚线框的最左边是三种输入数据结构，结构化数据、半结构化数据、非结构化数据。这些数据可以来自任何地方，只要它对要构建的这个知识图谱有帮助。</li>
@@ -424,12 +420,10 @@
 </ul>
 <p>如何存储上面这三类数据类型呢？一般有两种选择，一个是通过RDF（资源描述框架）这样的规范存储格式来进行存储，还有一种方法，就是使用图数据库来进行存储，常用的有Neo4j等。</p>
 <h3 id="RDF"><a href="#RDF" class="headerlink" title="RDF"></a>RDF</h3><p>RDF(Resource Description Framework)，即资源描述框架，其本质是一个数据模型（Data Model）。它提供了一个统一的标准，用于描述实体/资源。简单来说，就是表示事物的一种方法和手段。RDF形式上表示为SPO三元组，有时候也称为一条语句（statement），知识图谱中我们也称其为一条知识，如下图。</p>
-<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.10.49.png" alt="SPO三元组" style="zoom:50%;">
-
+<p><img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.10.49.png" alt="SPO三元组" style="zoom:50%;"></p>
 <p>RDF在设计上的主要特点是易于发布和分享数据，但RDF的表达能力有限，无法区分类和对象，也无法定义和描述类的关系/属性。RDF是对具体事物的描述，缺乏抽象能力，无法对同一个类别的事物进行定义和描述。例如罗纳尔多和里约热内卢这两个实体，RDF能够表达罗纳尔多和里约热内卢这两个实体具有哪些属性，以及它们之间的关系。但如果我们想定义罗纳尔多是人，里约热内卢是地点，并且人具有哪些属性，地点具有哪些属性，人和地点之间存在哪些关系，这个时候RDF就表示无能为力了。不论是在智能的概念上，还是在现实的应用当中，这种泛化抽象能力都是相当重要的；同时，这也是知识图谱本身十分强调的。RDFS和OWL这两种技术或者说模式语言/本体语言（schema/ontology language）解决了RDF表达能力有限的困境。</p>
 <h3 id="RDFS"><a href="#RDFS" class="headerlink" title="RDFS"></a>RDFS</h3><p>RDFS，即“Resource Description Framework Schema”。是在RDF数据层基础上引入模式层，定义类，属性，关系，属性的定义域与值域来描述与约束资源。</p>
-<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.26.46.png" alt="RDFS" style="zoom:50%;">
-
+<p><img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.26.46.png" alt="RDFS" style="zoom:50%;"></p>
 <h3 id="OWL"><a href="#OWL" class="headerlink" title="OWL"></a>OWL</h3><p>上面提到，RDFS本质上是RDF词汇的一个扩展。后来人们发现RDFS的表达能力还是相当有限，因此提出了OWL。我们也可以把OWL当做是RDFS的一个扩展，其添加了额外的预定义词汇。</p>
 <p>OWL，即“Web Ontology Language”，语义网技术栈的核心之一。OWL有两个主要的功能：</p>
 <ol>
@@ -438,8 +432,7 @@
 <li><p>高效的自动推理。</p>
 </li>
 </ol>
-<img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.30.31.png" alt="OWL" style="zoom:50%;">
-
+<p><img src="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/截屏2022-01-13 下午2.30.31.png" alt="OWL" style="zoom:50%;"></p>
 <p>描述属性特征的词汇</p>
 <ol>
 <li><p>owl:TransitiveProperty. 表示该属性具有传递性质。例如，我们定义“位于”是具有传递性的属性，若A位于B，B位于C，那么A肯定位于C。</p>
@@ -1016,7 +1009,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             

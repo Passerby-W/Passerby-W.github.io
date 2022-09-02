@@ -31,10 +31,10 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -380,14 +380,12 @@
 <p>Transformer的网络架构下图所示，Transformer是一个encoder-decoder的结构，由若干个编码器和解码器堆叠形成。</p>
 <p>左侧部分为编码器，由Multi-Head Attention和一个全连接组成，用于将输入语料转化成特征向量。</p>
 <p>右侧部分是解码器，其输入为编码器的输出以及已经预测的结果，由Masked Multi-Head Attention, Multi-Head Attention以及一个全连接组成，用于输出最后结果的条件概率。</p>
-<img src="/2022/07/29/bert/Transformer模型结构.png" alt="Transformer模型结构" style="zoom:45%;">
-
+<p><img src="/2022/07/29/bert/Transformer模型结构.png" alt="Transformer模型结构" style="zoom:45%;"></p>
 <p>Self- Attention与传统的Attention机制非常的不同：传统的Attention是基于source端和target端的隐变量（hidden state）计算Attention的，得到的结果是源端（source端）的每个词与目标端（target端）每个词之间的依赖关系。</p>
 <p>但Self -Attention不同，它首先分别在source端和target端进行自身的attention，仅与source input或者target input自身相关的Self -Attention，以捕捉source端或target端自身的词与词之间的依赖关系；然后再把source端的得到的self -Attention加入到target端得到的Attention中，称作为Cross-Attention，以捕捉source端和target端词与词之间的依赖关系。</p>
 <p>因此，Self -Attention比传统的Attention mechanism效果要好，主要原因之一是，传统的Attention机制<strong>忽略了源端或目标端句子中词与词之间的依赖关系</strong>，相对比，self Attention可以不仅可以得到源端与目标端词与词之间的依赖关系，同时还可以有效获取源端或目标端自身词与词之间的依赖关系。</p>
 <p>当隐藏了Transformer的详细结构后，我们就可以用一个只有输入和输出的黑盒子来表示它了，而Transformer又可以进行堆叠，形成一个更深的神经网络：</p>
-<img src="/2022/07/29/bert/Bert模型结构.png" alt="Bert模型结构" style="zoom:50%;">
-
+<p><img src="/2022/07/29/bert/Bert模型结构.png" alt="Bert模型结构" style="zoom:50%;"></p>
 <p>huggingface库：</p>
 <blockquote>
 <p>128维度：uer/chinese_roberta_L-2_H-128 </p>
@@ -404,34 +402,32 @@
     Users should refer to this superclass for more information regarding those methods.
     ...
     """<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>BertTokenizer</code> 是基于<code>BasicTokenizer</code>和<code>WordPieceTokenizer</code> 的分词器：</p>
-<p>**<code>BasicTokenizer</code>**负责处理的第一步——按标点、空格等分割句子，并处理是否统一小写，以及清理非法字符。</p>
+<p><strong><code>BasicTokenizer</code></strong>负责处理的第一步——按标点、空格等分割句子，并处理是否统一小写，以及清理非法字符。</p>
 <ul>
 <li>对于中文字符，通过预处理（加空格）来按字分割；</li>
 <li>同时可以通过<code>never_split</code>指定对某些词不进行分割；这一步是可选的（默认执行）。</li>
 </ul>
-<p><strong><code>WordPieceTokenizer</code><strong>在词的基础上，进一步将词分解为</strong>子词</strong>（subword） 。</p>
+<p><strong><code>WordPieceTokenizer</code></strong>在词的基础上，进一步将词分解为<strong>子词</strong>（subword） 。</p>
 <ul>
 <li>subword介于char和word之间，既在一定程度保留了词的含义，又能够照顾到英文中单复数、时态导致的词表爆炸和未登录词的OOV（Out-Of-Vocabulary）问题，将词根与时态词缀等分割出来，从而减小词表，也降低了训练难度；</li>
 <li>例如，tokenizer这个词就可以拆解为“token”和“##izer”两部分，注意后面一个词的“##”表示接在前一个词后面。</li>
 </ul>
 <p><code>BertTokenizer</code> 有以下常用方法：</p>
 <ul>
-<li>**<code>from_pretrained</code>**：从包含词表文件（vocab.txt）的目录中初始化一个分词器；</li>
-<li>**<code>tokenize</code>**：将文本（词或者句子）分解为子词列表；</li>
-<li>**<code>convert_tokens_to_ids</code>**：将子词列表转化为子词对应下标的列表；</li>
+<li><strong><code>from_pretrained</code></strong>：从包含词表文件（vocab.txt）的目录中初始化一个分词器；</li>
+<li><strong><code>tokenize</code></strong>：将文本（词或者句子）分解为子词列表；</li>
+<li><strong><code>convert_tokens_to_ids</code></strong>：将子词列表转化为子词对应下标的列表；</li>
 <li><strong><code>convert_ids_to_tokens</code></strong> ：与上一个相反；</li>
-<li>**<code>convert_tokens_to_string</code>**：将subword列表按“##”拼接回词或者句子；</li>
-<li>**<code>encode</code>**：对于单个句子输入，分解词并加入特殊词形成“[CLS], x, [SEP]”的结构并转换为词表对应下标的列表；对于两个句子输入（多个句子只取前两个），分解词并加入特殊词形成“[CLS], x1, [SEP], x2, [SEP]”的结构并转换为下标列表；</li>
-<li>**<code>decode</code>**：可以将encode方法的输出变为完整句子。</li>
+<li><strong><code>convert_tokens_to_string</code></strong>：将subword列表按“##”拼接回词或者句子；</li>
+<li><strong><code>encode</code></strong>：对于单个句子输入，分解词并加入特殊词形成“[CLS], x, [SEP]”的结构并转换为词表对应下标的列表；对于两个句子输入（多个句子只取前两个），分解词并加入特殊词形成“[CLS], x1, [SEP], x2, [SEP]”的结构并转换为下标列表；</li>
+<li><strong><code>decode</code></strong>：可以将encode方法的输出变为完整句子。</li>
 </ul>
 <p>以及，类自身的方法：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; from transformers import BertTokenizer
 &gt;&gt;&gt; bt = BertTokenizer.from_pretrained('./bert-base-uncased/')
 &gt;&gt;&gt; bt('I like natural language progressing!')
 {'input_ids': [101, 1045, 2066, 3019, 2653, 27673, 999, 102], 'token_type_ids': [0, 0, 0, 0, 0, 0, 0, 0], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1]}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Model（BertModel）"><a href="#Model（BertModel）" class="headerlink" title="Model（BertModel）"></a>Model（BertModel）</h3><p>和BERT模型有关的代码主要写在<code>/models/bert/modeling_bert.py</code>中，这一份代码有一千多行，包含BERT模型的基本结构和基于它的微调模型等。</p>
 <p>下面从BERT模型本体入手分析：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">class BertModel(BertPreTrainedModel):
@@ -447,12 +443,11 @@
     argument and :obj:`add_cross_attention` set to :obj:`True`; an :obj:`encoder_hidden_states` is then expected as an
     input to the forward pass.
     """ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>BertModel主要为transformer encoder结构，包含三个部分：</p>
 <ol>
-<li>**<code>embeddings</code>**，即<code>BertEmbeddings</code>类的实体，对应词嵌入； </li>
-<li>**<code>encoder</code>**，即<code>BertEncoder</code>类的实体；</li>
-<li>**<code>pooler</code>**， 即<code>BertPooler</code>类的实体，这一部分是可选的。（BertPooler模块本质上就是一个全连接层网络），使BertPooler模块的全连接层只接收BertEncoder模块中第一个token（[CLS]）对应的输出，因为BertPooler模块用于解决序列级任务，而序列级任务只会用到[CLS]位置对应的输出。</li>
+<li><strong><code>embeddings</code></strong>，即<code>BertEmbeddings</code>类的实体，对应词嵌入； </li>
+<li><strong><code>encoder</code></strong>，即<code>BertEncoder</code>类的实体；</li>
+<li><strong><code>pooler</code></strong>， 即<code>BertPooler</code>类的实体，这一部分是可选的。（BertPooler模块本质上就是一个全连接层网络），使BertPooler模块的全连接层只接收BertEncoder模块中第一个token（[CLS]）对应的输出，因为BertPooler模块用于解决序列级任务，而序列级任务只会用到[CLS]位置对应的输出。</li>
 </ol>
 <blockquote>
 <p><strong>补充：注意BertModel也可以配置为Decoder，不过下文中不包含对这一部分的讨论。</strong></p>
@@ -474,21 +469,20 @@
     output_hidden_states=None,
     return_dict=None,
 ): ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
-<li>**<code>input_ids</code>**：经过tokenizer分词后的subword对应的下标列表；</li>
-<li>**<code>attention_mask</code>**：在self-attention过程中，这一块mask用于标记subword所处句子和padding的区别，将padding部分填充为0；</li>
-<li>**<code>token_type_ids</code>**： 标记subword当前所处句子（第一句/第二句/padding）；</li>
-<li>**<code>position_ids</code>**： 标记当前词所在句子的位置下标；</li>
-<li>**<code>head_mask</code>**： 用于将某些层的某些注意力计算无效化；</li>
-<li>**<code>inputs_embeds</code>**： 如果提供了，那就不需要<code>input_ids</code>，跨过embedding lookup过程直接作为Embedding进入Encoder计算；</li>
-<li>**<code>encoder_hidden_states</code>**： 这一部分在BertModel配置为decoder时起作用，将执行cross-attention而不是self-attention；</li>
-<li>**<code>encoder_attention_mask</code>**： 同上，在cross-attention中用于标记encoder端输入的padding；</li>
-<li>**<code>past_key_values</code>**：这个参数貌似是把预先计算好的K-V乘积传入，以降低cross-attention的开销（因为原本这部分是重复计算）；</li>
-<li>**<code>use_cache</code>**： 将保存上一个参数并传回，加速decoding；</li>
-<li>**<code>output_attentions</code>**：是否返回中间每层的attention输出；</li>
-<li>**<code>output_hidden_states</code>**：是否返回中间每层的输出；</li>
-<li>**<code>return_dict</code>**：是否按键值对的形式（ModelOutput类，也可以当作tuple用）返回输出，默认为真。</li>
+<li><strong><code>input_ids</code></strong>：经过tokenizer分词后的subword对应的下标列表；</li>
+<li><strong><code>attention_mask</code></strong>：在self-attention过程中，这一块mask用于标记subword所处句子和padding的区别，将padding部分填充为0；</li>
+<li><strong><code>token_type_ids</code></strong>： 标记subword当前所处句子（第一句/第二句/padding）；</li>
+<li><strong><code>position_ids</code></strong>： 标记当前词所在句子的位置下标；</li>
+<li><strong><code>head_mask</code></strong>： 用于将某些层的某些注意力计算无效化；</li>
+<li><strong><code>inputs_embeds</code></strong>： 如果提供了，那就不需要<code>input_ids</code>，跨过embedding lookup过程直接作为Embedding进入Encoder计算；</li>
+<li><strong><code>encoder_hidden_states</code></strong>： 这一部分在BertModel配置为decoder时起作用，将执行cross-attention而不是self-attention；</li>
+<li><strong><code>encoder_attention_mask</code></strong>： 同上，在cross-attention中用于标记encoder端输入的padding；</li>
+<li><strong><code>past_key_values</code></strong>：这个参数貌似是把预先计算好的K-V乘积传入，以降低cross-attention的开销（因为原本这部分是重复计算）；</li>
+<li><strong><code>use_cache</code></strong>： 将保存上一个参数并传回，加速decoding；</li>
+<li><strong><code>output_attentions</code></strong>：是否返回中间每层的attention输出；</li>
+<li><strong><code>output_hidden_states</code></strong>：是否返回中间每层的输出；</li>
+<li><strong><code>return_dict</code></strong>：是否按键值对的形式（ModelOutput类，也可以当作tuple用）返回输出，默认为真。</li>
 </ul>
 <blockquote>
 <p><strong>补充：注意，这里的head_mask对注意力计算的无效化，和下文提到的注意力头剪枝不同，而仅仅把某些注意力的计算结果给乘以这一系数。</strong></p>
@@ -506,7 +500,6 @@
             attentions=encoder_outputs.attentions,
             cross_attentions=encoder_outputs.cross_attentions,
         )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>可以看出，返回值不但包含了encoder和pooler的输出，也包含了其他指定输出的部分（hidden_states和attention等，这一部分在<code>encoder_outputs[1:]</code>）方便取用：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># BertEncoder的前向传播返回部分，即上面的encoder_outputs
         if not return_dict:
@@ -527,12 +520,11 @@
             attentions=all_self_attentions,
             cross_attentions=all_cross_attentions,
         )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>此外，BertModel还有以下的方法，方便BERT玩家进行各种操作：</p>
 <ol>
-<li>**<code>get_input_embeddings</code>**：提取embedding中的word_embeddings即词向量部分；</li>
-<li>**<code>set_input_embeddings</code>**：为embedding中的word_embeddings赋值；</li>
-<li>**<code>_prune_heads</code>**：提供了将注意力头剪枝的函数，输入为<code>{layer_num: list of heads to prune in this layer}</code>的字典，可以将指定层的某些注意力头剪枝。</li>
+<li><strong><code>get_input_embeddings</code></strong>：提取embedding中的word_embeddings即词向量部分；</li>
+<li><strong><code>set_input_embeddings</code></strong>：为embedding中的word_embeddings赋值；</li>
+<li><strong><code>_prune_heads</code></strong>：提供了将注意力头剪枝的函数，输入为<code>{layer_num: list of heads to prune in this layer}</code>的字典，可以将指定层的某些注意力头剪枝。</li>
 </ol>
 <blockquote>
 <p><strong>补充：剪枝是一个复杂的操作，需要将保留的注意力头部分的Wq、Kq、Vq和拼接后全连接部分的权重拷贝到一个新的较小的权重矩阵（注意先禁止grad再拷贝），并实时记录被剪掉的头以防下标出错。具体参考<code>BertAttention</code>部分的<code>prune_heads</code>方法。</strong></p>
@@ -1083,7 +1075,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             

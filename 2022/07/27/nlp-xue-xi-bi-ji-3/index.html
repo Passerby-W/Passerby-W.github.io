@@ -32,10 +32,10 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -388,8 +388,7 @@
 <p>其二，下层输入的变化可能趋向于变大或者变小，导致上层落入饱和区，使得学习过早停止</p>
 <p>其三，每层的更新都会影响到其它层，因此每层的参数更新策略需要尽可能的谨慎。</p>
 </blockquote>
-<h2 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h2><img src="/2022/07/27/nlp-xue-xi-bi-ji-3/Batch Normalization.png" alt="Batch Normalization" style="zoom: 33%;">
-
+<h2 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h2><p><img src="/2022/07/27/nlp-xue-xi-bi-ji-3/Batch Normalization.png" alt="Batch Normalization" style="zoom: 33%;"></p>
 <p>针对单个神经元进行，利用网络训练时一个 mini-batch 的数据来计算该神经元 x_i的均值和方差,因而称为 Batch Normalization</p>
 <h3 id="适用的场景"><a href="#适用的场景" class="headerlink" title="适用的场景"></a>适用的场景</h3><p>每个 mini-batch 比较大，数据分布比较接近。在进行训练之前，要做好充分的 shuffle. 否则效果会差很多。</p>
 <h3 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h3><ol>
@@ -397,8 +396,7 @@
 <li>BN对处理序列化数据的网络比如RNN是不太适用的。</li>
 <li>BN只在训练的时候用，inference的时候不会用到，因为inference的输入不是批量输入。</li>
 </ol>
-<h2 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h2><img src="/2022/07/27/nlp-xue-xi-bi-ji-3/Layer Normalization.png" alt="Layer Normalization" style="zoom:33%;">
-
+<h2 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h2><p><img src="/2022/07/27/nlp-xue-xi-bi-ji-3/Layer Normalization.png" alt="Layer Normalization" style="zoom:33%;"></p>
 <p>方式：综合考虑一层所有维度的输入，计算该层的平均输入值和输入方差，然后用同一个规范化操作来转换各个维度的输入。</p>
 <h3 id="适用的场景-1"><a href="#适用的场景-1" class="headerlink" title="适用的场景"></a>适用的场景</h3><p>LN 针对单个训练样本进行，不依赖于其他数据，因此可以避免 BN 中受 mini-batch 数据分布影响的问题，可以用于 小mini-batch场景、动态网络场景和 RNN，特别是自然语言处理领域。此外，LN 不需要保存 mini-batch 的均值和方差，节省了额外的存储空间。</p>
 <h2 id="BN-vs-LN"><a href="#BN-vs-LN" class="headerlink" title="BN vs LN"></a>BN vs LN</h2><p>BN 的转换是针对单个神经元可训练的——不同神经元的输入经过再平移和再缩放后分布在不同的区间，而 LN 对于一整层的神经元训练得到同一个转换——所有的输入都在同一个区间范围内。如果不同输入特征不属于相似的类别（比如颜色和大小），那么 LN 的处理可能会降低模型的表达能力。</p>
@@ -943,7 +941,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             

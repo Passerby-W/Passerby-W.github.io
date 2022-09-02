@@ -30,10 +30,10 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -383,7 +383,7 @@
 <li><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.714.342&amp;rep=rep1&amp;type=pdf">2013-Named entity recognition: fallacies, challenges and opportunities</a></li>
 <li><a target="_blank" rel="noopener" href="https://time.mk/trajkovski/thesis/li07.pdf">2007-A survey of named entity recognition and classification</a></li>
 </ul>
-<h2 id="NER数据集、评测方法、工具库"><a href="#NER数据集、评测方法、工具库" class="headerlink" title="NER数据集、评测方法、工具库"></a>NER数据集、评测方法、工具库</h2><h3 id="NER相关的数据集"><a href="#NER相关的数据集" class="headerlink" title="NER相关的数据集"></a>NER相关的数据集</h3><p>NER相关数据集可以参考：<a href="https://link.zhihu.com/?target=https://github.com/SimmerChan/corpus">SimmerChan/corpus</a></p>
+<h2 id="NER数据集、评测方法、工具库"><a href="#NER数据集、评测方法、工具库" class="headerlink" title="NER数据集、评测方法、工具库"></a>NER数据集、评测方法、工具库</h2><h3 id="NER相关的数据集"><a href="#NER相关的数据集" class="headerlink" title="NER相关的数据集"></a>NER相关的数据集</h3><p>NER相关数据集可以参考：<a href="https://link.zhihu.com/?target=https%3A//github.com/SimmerChan/corpus">SimmerChan/corpus</a></p>
 <h3 id="NER评测方法"><a href="#NER评测方法" class="headerlink" title="NER评测方法"></a>NER评测方法</h3><p>命名实体识别评测方式分为两种，一是通用的基于token标签进行直接评测，二是考虑实体边界+实体类型的评测，实际中往往是采用后者的评测方法，按照实体边界+实体类型的评测，分为exact match和relaxed match两类。对于exact match来说，只有命名实体的开始和结束索引以及类型完全正确才算正确，relaxed match只需要类型正确且将ground truth覆盖即可，基于此有Precision，Recall，F-Score等标准。另外，对于多实体类型，经常需要评估模型跨实体类的表现，这时候会用到macro-averaged F-Score和micro-average F-Score。</p>
 <h3 id="NER标注方法"><a href="#NER标注方法" class="headerlink" title="NER标注方法"></a>NER标注方法</h3><p>一般来说，不同的NER任务会有不同的Tags，但都基本基于以下两种：</p>
 <ul>
@@ -394,38 +394,35 @@
 <h3 id="NER工具库"><a href="#NER工具库" class="headerlink" title="NER工具库"></a>NER工具库</h3><p>《Survey on Deep Learning for Named Entity Recognition》对学术界和工业界一些NER工具进行汇总，工具中通常都包含预训练模型，可以直接在自己的语料上做实体识别。不过一般研究使用的话（所定义实体类别与工具预定的不符），还需要依据待抽取领域语料再训练模型，或重新训练模型。</p>
 <h2 id="输入的分布式表示"><a href="#输入的分布式表示" class="headerlink" title="输入的分布式表示"></a>输入的分布式表示</h2><p>分布式表示是使用维度向量表示词的信息，每一维都表示一种特征。在NER模型中使用的三种分布式表示：字级、字符级和混合表示。</p>
 <ul>
-<li><em><strong>Word - Level Representation：</strong></em>通常是预训练的词表示。可以使用bag of - words (CBOW) 或 continuous skip-gram models。CBOW本质是通过context word来预测target word，复杂度$O(vocabulary length)$，skip-gram的训练过程则和CBOW相反，但是复杂度为$O(vocabulary length * window length)$。但是在skip-gram当中，每个词都要收到周围的词的影响，每个词在作为中心词的时候，都要进行K次的预测、调整。因此， 当数据量较少，或者词为生僻词出现次数较少时， 这种多次的调整会使得词向量相对的更加准确。尽管cbow从另外一个角度来说，某个词也是会受到多次周围词的影响（多次将其包含在内的窗口移动），进行词向量的跳帧，但是他的调整是跟周围的词一起调整的，grad的值会平均分到该词上， 相当于该生僻词没有收到专门的训练，它只是沾了周围词的光而已。</li>
-<li><em><strong>Character - Level Representation：</strong></em>字符级表示对于利用显式子词级信息（如前缀和后缀）非常有用。字符级表示法的另一个优点是，它不需要词汇表并且还能避免在模型输出上的计算瓶颈。此外，基于字符的模型能够推断不可见词的表示并且能弹性地处理拼写错误，并共享语素级规则的信息，可以解决OOV等信息。提取字符级别嵌入的方法有基于CNN的模型和基于RNN的模型。其中CNN中字符经过卷积池化获得字符级别的嵌入；RNN中为每个字符预测生成标签的分布，词级别的标签由字符级别的标签计算得到。Word - Level Representation和Character - Level Representation通常连接在一起表示。</li>
-<li><em><strong>Hybrid Representation：</strong></em>除了单词级和字符级表示外，一些研究还将其他信息（如地名录、词汇相似性、语言依赖性和视觉特征纳入单词的最终表示，然后再输入上下文编码层。添加额外信息可能会导致NER性能的改善，代价是损害这些系统的通用性。相当于联合使用基于深度学习的方法和基于特征的方法。BiLSTM-CRF模型中融合4种特征：spelling features, context features, word embeddings, gazetteer features。</li>
+<li><strong><em>Word - Level Representation：</em></strong>通常是预训练的词表示。可以使用bag of - words (CBOW) 或 continuous skip-gram models。CBOW本质是通过context word来预测target word，复杂度$O(vocabulary length)$，skip-gram的训练过程则和CBOW相反，但是复杂度为$O(vocabulary length * window length)$。但是在skip-gram当中，每个词都要收到周围的词的影响，每个词在作为中心词的时候，都要进行K次的预测、调整。因此， 当数据量较少，或者词为生僻词出现次数较少时， 这种多次的调整会使得词向量相对的更加准确。尽管cbow从另外一个角度来说，某个词也是会受到多次周围词的影响（多次将其包含在内的窗口移动），进行词向量的跳帧，但是他的调整是跟周围的词一起调整的，grad的值会平均分到该词上， 相当于该生僻词没有收到专门的训练，它只是沾了周围词的光而已。</li>
+<li><strong><em>Character - Level Representation：</em></strong>字符级表示对于利用显式子词级信息（如前缀和后缀）非常有用。字符级表示法的另一个优点是，它不需要词汇表并且还能避免在模型输出上的计算瓶颈。此外，基于字符的模型能够推断不可见词的表示并且能弹性地处理拼写错误，并共享语素级规则的信息，可以解决OOV等信息。提取字符级别嵌入的方法有基于CNN的模型和基于RNN的模型。其中CNN中字符经过卷积池化获得字符级别的嵌入；RNN中为每个字符预测生成标签的分布，词级别的标签由字符级别的标签计算得到。Word - Level Representation和Character - Level Representation通常连接在一起表示。</li>
+<li><strong><em>Hybrid Representation：</em></strong>除了单词级和字符级表示外，一些研究还将其他信息（如地名录、词汇相似性、语言依赖性和视觉特征纳入单词的最终表示，然后再输入上下文编码层。添加额外信息可能会导致NER性能的改善，代价是损害这些系统的通用性。相当于联合使用基于深度学习的方法和基于特征的方法。BiLSTM-CRF模型中融合4种特征：spelling features, context features, word embeddings, gazetteer features。</li>
 </ul>
 <h2 id="上下文编码器体系结构"><a href="#上下文编码器体系结构" class="headerlink" title="上下文编码器体系结构"></a>上下文编码器体系结构</h2><p>表示单词的一个简单选项是热向量表示。在一个热向量空间中，两个不同的单词具有完全不同的表示形式，并且是正交的。分布式表示表示低维实值密集向量中的单词，其中每个维度表示潜在特征。分布式表示从文本中自动学习，捕获单词的语义和句法属性，而这些属性在文本中并不显式出现，所以需要Context Encoder Architectures去学习这些属性。有主流的方法有：</p>
 <ul>
-<li><p><em><strong>Convolutional Neural Networks：</strong></em>使用每个词的嵌入作为输入，卷积层计算得到本地特征，将所有局部特征综合之后得到输入的全局特征。其中提取全局特征的方法可以对句中的位置进行最大或平均运算，然后将句子的全局特征将输入到tag decoder里计算所有可能标签的分布。即每个单词的标签由整个句子决定。ID-CNNs适用于大规模文本和结构化预测。</p>
+<li><p><strong><em>Convolutional Neural Networks：</em></strong>使用每个词的嵌入作为输入，卷积层计算得到本地特征，将所有局部特征综合之后得到输入的全局特征。其中提取全局特征的方法可以对句中的位置进行最大或平均运算，然后将句子的全局特征将输入到tag decoder里计算所有可能标签的分布。即每个单词的标签由整个句子决定。ID-CNNs适用于大规模文本和结构化预测。</p>
 </li>
-<li><p><em><strong>Recurrent Neural Networks：</strong></em>RNN通常使用两大变种GRU、LSTM，利用门机制缓解长程依赖的问题。双向RNNs有效利用过去的信息和未来的信息，适合建模上下文存在依赖的表示。Recurrent是时间维度的展开（如下图所示），代表信息在时间维度从前往后的的传递和积累，可以类比markov假设，后面的信息的概率建立在前面信息的基础上，在神经网络结构上表现为后面的神经网络的隐藏层的输入是前面的神经网络的隐藏层的输出。</p>
+<li><p><strong><em>Recurrent Neural Networks：</em></strong>RNN通常使用两大变种GRU、LSTM，利用门机制缓解长程依赖的问题。双向RNNs有效利用过去的信息和未来的信息，适合建模上下文存在依赖的表示。Recurrent是时间维度的展开（如下图所示），代表信息在时间维度从前往后的的传递和积累，可以类比markov假设，后面的信息的概率建立在前面信息的基础上，在神经网络结构上表现为后面的神经网络的隐藏层的输入是前面的神经网络的隐藏层的输出。</p>
 </li>
-<li><p><em><strong>Recursive Neural Networks：</strong></em>循环神经网络也是递归神经网路的一种。一般而言，循环神经网络是在时间维度上的递归，而递归神经网络是在结构上的递归。递归神经网络是一种自适应的非线性模型，能够按照拓扑顺序遍历给定结构来学习深层结构信息。</p>
-</li>
-<li><p><em><strong>Neural Language Models：</strong></em>通过前向/后向神经语言模型在分别给定前面/后面的词情况下预测当前词，通过根据双向RNN得到当前位置的表示，这种表示在序列标注任务中很实用。ELMo通过双层的双向语言模型可以词的复杂特定，例如，语法语义等。</p>
-</li>
-<li><p><em><strong>Deep Transformer：</strong></em>transformer使用堆叠的自注意力和逐点连接的全连接层构建编码器和解码器，彻底消除CNN和RNN。Bert模型（双向Transformer的Encoder）通过同时使用上下文可以更好的捕捉词语和句子级别的representation。</p>
-</li>
+<li><strong><em>Recursive Neural Networks：</em></strong>循环神经网络也是递归神经网路的一种。一般而言，循环神经网络是在时间维度上的递归，而递归神经网络是在结构上的递归。递归神经网络是一种自适应的非线性模型，能够按照拓扑顺序遍历给定结构来学习深层结构信息。</li>
+<li><strong><em>Neural Language Models：</em></strong>通过前向/后向神经语言模型在分别给定前面/后面的词情况下预测当前词，通过根据双向RNN得到当前位置的表示，这种表示在序列标注任务中很实用。ELMo通过双层的双向语言模型可以词的复杂特定，例如，语法语义等。</li>
+<li><strong><em>Deep Transformer：</em></strong>transformer使用堆叠的自注意力和逐点连接的全连接层构建编码器和解码器，彻底消除CNN和RNN。Bert模型（双向Transformer的Encoder）通过同时使用上下文可以更好的捕捉词语和句子级别的representation。</li>
 </ul>
 <h2 id="标签解码器结构"><a href="#标签解码器结构" class="headerlink" title="标签解码器结构"></a>标签解码器结构</h2><p>输入上下文相关的表示，输出标签序列。常用的解码器结构包括：MLP+softmax、CRFs、RNN和Pointer Network。</p>
 <ul>
-<li><em><strong>多层感知机+softmax：</strong></em>多层感知机和softmax层将序列标注任务转换成为多分类任务，为每个词标注tag。</li>
-<li><em><strong>CRFs：</strong></em>基于深度学习的CRFs主要用在双向LSTM或者CNN层上，例如CoNLL03, OntoNotes5.0。CRFs的缺陷在于无法充分利用分段信息，因为分段信息无法完全使用词嵌入表示。改进方法是直接建模分段的表示，而不是词的表示。</li>
-<li><em><strong>RNN：</strong></em>当命名实体类别很多时，使用RNN作为解码器表现更好，且更容易训练。</li>
-<li><em><strong>Pointer Networks：</strong></em>指针网络应用在RNN上，输出位置下标集合，形成离散的位置范围。使用softmax概率分布作为指针，表示可变长的词典。NER中，PN将输入的序列分段，然后输出标签。</li>
+<li><strong><em>多层感知机+softmax：</em></strong>多层感知机和softmax层将序列标注任务转换成为多分类任务，为每个词标注tag。</li>
+<li><strong><em>CRFs：</em></strong>基于深度学习的CRFs主要用在双向LSTM或者CNN层上，例如CoNLL03, OntoNotes5.0。CRFs的缺陷在于无法充分利用分段信息，因为分段信息无法完全使用词嵌入表示。改进方法是直接建模分段的表示，而不是词的表示。</li>
+<li><strong><em>RNN：</em></strong>当命名实体类别很多时，使用RNN作为解码器表现更好，且更容易训练。</li>
+<li><strong><em>Pointer Networks：</em></strong>指针网络应用在RNN上，输出位置下标集合，形成离散的位置范围。使用softmax概率分布作为指针，表示可变长的词典。NER中，PN将输入的序列分段，然后输出标签。</li>
 </ul>
 <h2 id="NER主要方法"><a href="#NER主要方法" class="headerlink" title="NER主要方法"></a>NER主要方法</h2><ol>
-<li><em><strong>基于专家规则的方法：</strong></em>一般情况下，由于使用领域内的特定规则和不完整的词典，这种方法会出现precision高，recall低的情况。这种方法非常适合字典有限且内容量不是过多的的场景，而当已知据大多数词时，基于规则的NER方法效果很好。但是在一些内容种类和数量不断拓展的领域，这种方法需要耗费大量的人力成本和精力成本，并且可移植性差。</li>
-<li><em><strong>无监督学习方法：</strong></em>典型的无监督NER方法是clustering，通过context相似度抽取命名实体。聚类算法基于上下文的相似性将命名实体集聚在特定的聚类簇中。常用到的特征或者辅助信息有词汇资源、语料统计信息（TF-IDF）、浅层语义信息（分块NP-chunking）等。该项技术往往依赖于词汇资源例如WordNet，依赖于词汇模式，依赖于统计等。</li>
-<li><em><strong>监督学习方法：</strong></em>监督学习方法可以将NER转换为多分类问题或者序列标注任务。监督学习往往需要进行一些特征工程来提取特定的特征。监督学习中特征工程的设计非常重要，使用特征向量表示文本的摘要信息，一般有三种类型的特征：（1）布尔型特征 （2）数值型特征 （3）类别特征。模型选择有：隐马尔可夫模型、决策树、最大熵模型、最大熵马尔科夫模型、支持向量机、条件随机场。</li>
-<li><em><strong>深度学习方法：</strong></em>将深度学习技术应用于NER有三个核心优势。首先，NER受益于非线性转换，它生成从输入到输出的非线性映射。与线性模型（如对数线性HMM和线性链CRF）相比，基于DL的模型能够通过非线性激活函数从数据中学习复杂的特征。第二，深度学习节省了设计NER特性的大量精力。传统的基于特征的方法需要大量的工程技术和领域专业知识。另一方面，基于DL的模型可以有效地从原始数据中自动学习有用的表示形式和潜在因素。第三，深层神经网络模型可以通过梯度下降法在端到端范式中进行训练。这一特性使我们能够设计可能复杂的NER系统。基于深度学习的NER模型有很多种，下面将列举几种深度学习解决NER的例子。</li>
+<li><strong><em>基于专家规则的方法：</em></strong>一般情况下，由于使用领域内的特定规则和不完整的词典，这种方法会出现precision高，recall低的情况。这种方法非常适合字典有限且内容量不是过多的的场景，而当已知据大多数词时，基于规则的NER方法效果很好。但是在一些内容种类和数量不断拓展的领域，这种方法需要耗费大量的人力成本和精力成本，并且可移植性差。</li>
+<li><strong><em>无监督学习方法：</em></strong>典型的无监督NER方法是clustering，通过context相似度抽取命名实体。聚类算法基于上下文的相似性将命名实体集聚在特定的聚类簇中。常用到的特征或者辅助信息有词汇资源、语料统计信息（TF-IDF）、浅层语义信息（分块NP-chunking）等。该项技术往往依赖于词汇资源例如WordNet，依赖于词汇模式，依赖于统计等。</li>
+<li><strong><em>监督学习方法：</em></strong>监督学习方法可以将NER转换为多分类问题或者序列标注任务。监督学习往往需要进行一些特征工程来提取特定的特征。监督学习中特征工程的设计非常重要，使用特征向量表示文本的摘要信息，一般有三种类型的特征：（1）布尔型特征 （2）数值型特征 （3）类别特征。模型选择有：隐马尔可夫模型、决策树、最大熵模型、最大熵马尔科夫模型、支持向量机、条件随机场。</li>
+<li><strong><em>深度学习方法：</em></strong>将深度学习技术应用于NER有三个核心优势。首先，NER受益于非线性转换，它生成从输入到输出的非线性映射。与线性模型（如对数线性HMM和线性链CRF）相比，基于DL的模型能够通过非线性激活函数从数据中学习复杂的特征。第二，深度学习节省了设计NER特性的大量精力。传统的基于特征的方法需要大量的工程技术和领域专业知识。另一方面，基于DL的模型可以有效地从原始数据中自动学习有用的表示形式和潜在因素。第三，深层神经网络模型可以通过梯度下降法在端到端范式中进行训练。这一特性使我们能够设计可能复杂的NER系统。基于深度学习的NER模型有很多种，下面将列举几种深度学习解决NER的例子。</li>
 </ol>
 <h3 id="BiLSTM-CRF"><a href="#BiLSTM-CRF" class="headerlink" title="BiLSTM+CRF"></a>BiLSTM+CRF</h3><p>BiLSTM+CRF结构如下图所示：首先，句中的每个单词是一条包含词嵌入和字嵌入的词向量，词嵌入通常是事先训练好的，字嵌入则是随机初始化的。所有的嵌入都会随着训练的迭代过程被调整。其次，BiLSTM-CRF的输入是词嵌入向量，输出是每个单词对应的预测标签。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-80fc94217cfd3ae9d85636859a8b27bc_1440w.jpg"></p>
+<p><img src="https://pic1.zhimg.com/80/v2-80fc94217cfd3ae9d85636859a8b27bc_1440w.jpg" alt=""></p>
 <p>BiLSTM层的输入表示该单词对应各个类别的分数。如W0，BiLSTM节点的输出是1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) and 0.05 (O)。这些分数将会是CRF层的输入。所有的经BiLSTM层输出的分数将作为CRF层的输入，类别序列中分数最高的类别就是预测的最终结果。</p>
 <h5 id="为什么使用CRF层"><a href="#为什么使用CRF层" class="headerlink" title="为什么使用CRF层"></a>为什么使用CRF层</h5><p>使用CRF层的的原因是LSTM在进行序列建模时只考虑了输入序列的信息，无法对标签转移关系进行建模，以BIO标注为例，可能会出现如下问题：</p>
 <p><strong>例如输入序列为：“北京烤鸭“</strong></p>
@@ -433,6 +430,7 @@
 <p><strong>可能出现结果：“B-食物 ｜ I-地名 ｜B-地名 ｜ I-食物”</strong></p>
 <p>这时候就需要考虑对标签转移矩阵和标签转移关系进行建模。对于状态关系转移这种问题，常见的模型有HMM（生成模型）和CRF（判别模型）两种。不过在这里选择CRF这种判别式模型。这是因为NER问题中，标签的特性都是固定的，如”B-食物“后只能加“I-食物”或者“O”，不能是”B-食物“后加“I-地名“。而生成模型有更高的泛化能力和普适性，也就意味着更高的计算复杂度，CRF能帮助发现数据中新的特性。下面一个例子将展示判别模型和生成模型的区别：</p>
 <p><strong>假如有4个samples：</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -443,7 +441,8 @@
 <th>Sample4</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>x</td>
 <td>0</td>
 <td>0</td>
@@ -457,9 +456,13 @@
 <td>0</td>
 <td>1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>生成模型的预测主要基于联合概率：</strong></p>
-<p>$$<br>\sum_{}P(x,y)=1<br>$$<br>​    </p>
+<script type="math/tex; mode=display">
+\sum_{}P(x,y)=1</script><p>​    </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -468,7 +471,8 @@
 <th>y=1</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>x=0</td>
 <td>1/2</td>
 <td>0</td>
@@ -478,8 +482,12 @@
 <td>1/4</td>
 <td>1/4</td>
 </tr>
-</tbody></table>
-<p><strong>而判别模型的预测主要基于后验概率：</strong><br>$$<br>\sum_{y}P(y|x)=1<br>$$</p>
+</tbody>
+</table>
+</div>
+<p><strong>而判别模型的预测主要基于后验概率：</strong></p>
+<script type="math/tex; mode=display">
+\sum_{y}P(y|x)=1</script><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -488,7 +496,8 @@
 <th>y=1</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>x=0</td>
 <td>1</td>
 <td>0</td>
@@ -498,7 +507,9 @@
 <td>1/2</td>
 <td>1/2</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>因此结合LSTM和CRF，可以在LSTM进行序列建模的基础上对标签转移矩阵和标签转移关系进行建模。CRF层的作用是加入一些约束来保证最终预测结果是有效的。这些约束可以在训练数据时被CRF层自动学习得到。</p>
 <p>可能的约束条件有：</p>
 <ul>
@@ -511,7 +522,7 @@
 </li>
 </ul>
 <p>有了这些有用的约束，错误的预测序列将会大大减少。</p>
-<h5 id="CRF层损失函数"><a href="#CRF层损失函数" class="headerlink" title="CRF层损失函数"></a>CRF层损失函数</h5><p>CRF损失函数由两部分组成，<strong>发射分数(Emission Score)</strong> 和 **转移分数(Transition Score)**。真实路径的分数应该是所有路径中分数最高的。</p>
+<h5 id="CRF层损失函数"><a href="#CRF层损失函数" class="headerlink" title="CRF层损失函数"></a>CRF层损失函数</h5><p>CRF损失函数由两部分组成，<strong>发射分数(Emission Score)</strong> 和 <strong>转移分数(Transition Score)</strong>。真实路径的分数应该是所有路径中分数最高的。</p>
 <h6 id="发射分数"><a href="#发射分数" class="headerlink" title="发射分数"></a>发射分数</h6><p>分别对单词和类别建立索引。如$i $是 word 的索引，$y$ 是 label 的索引，则发射分数为$X_i,_y$</p>
 <p>$X_1,_0$意思就是词汇表第二个单词$W_1$转移到第一个标签$L_0$的概率。</p>
 <h6 id="转移分数"><a href="#转移分数" class="headerlink" title="转移分数"></a>转移分数</h6><p>使用 $T_{y_i},_{y_j}$来表示转移分数。$y$代表不同Lable。为了使 transition 评分矩阵更健壮，需要添加另外两个标签，START 和 END。START 是指一个句子的开头，而不是第一个单词。END 表示句子的结尾。</p>
@@ -523,23 +534,18 @@
 <h3 id="IDCNN-CRF"><a href="#IDCNN-CRF" class="headerlink" title="IDCNN+CRF"></a>IDCNN+CRF</h3><p>尽管BILSTM在NER任务中有很好的表现，但是却不能充分利用GPU的并行性，因此出现了一种新的NER模型方案IDCNN+CRF。</p>
 <p>尽管传统的CNN有明显的计算优势，但是传统的CNN在经过卷积之后，末梢神经元只能得到输入文本的一小部分信息，为了获取上下文信息，需要加入更多的卷积层，导致网络越来越深，参数越来越多，容易发生过拟合。</p>
 <p>IDCNN的改进基于CNN做出了改进，卷积操作更换为空洞卷积，那么为什么要做空洞卷积呢？因为正常CNN卷积之后会接一个池化层，池化层会损失信息，降低精度，那么不如不加池化层，直接在卷积操作中增大感受野，所以就有了空洞卷积（如下图所示）。</p>
-<img src="https://pic4.zhimg.com/v2-4959201e816888c6648f2e78cccfd253_b.jpg" alt="" style="zoom:67%;">
-
+<p><img src="https://pic4.zhimg.com/v2-4959201e816888c6648f2e78cccfd253_b.jpg" alt="" style="zoom:67%;"></p>
 <p>IDCNN为这片filter增加了一个dilation width，作用在输入矩阵的时候，会skip掉所有dilation width中间的输入数据；而filter矩阵本身的大小仍然不变，这样filter获取到了更广阔的输入矩阵上的数据，看上去就像是“膨胀”了一般。dilated width会随着层数的增加而指数增加。这样随着层数的增加，参数数量是线性增加的，而receptive field却是指数增加的，可以很快覆盖到全部的输入数据。图像的空洞卷积如下图所示：</p>
-<img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.53.09.png" alt="" style="zoom: 33%;">
-
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.53.09.png" alt="" style="zoom: 33%;"></p>
 <p>对应到文本中的卷积操作如下图所示：</p>
-<img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.55.50.png" alt="" style="zoom:33%;">
-
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.55.50.png" alt="" style="zoom:33%;"></p>
 <p>IDCNN获取特征之后，与BiLSTM一样，将结果输入到CRF层，利用维特比解码，得到最终的标签。</p>
 <h3 id="Bert-BiLSTM-CRF"><a href="#Bert-BiLSTM-CRF" class="headerlink" title="Bert+BiLSTM+CRF"></a>Bert+BiLSTM+CRF</h3><p>BERT的全称为Bidirectional Encoder Representation from Transformers，由谷歌2018年提出来，是一个预训练的语言表征模型。它采用新的masked language model（MLM），以致能生成深度的双向语言表征。BERT通过微调的方法可以灵活的应用到下游业务，所以可以考虑使用Bert作为embedding层，将特征输入到Bilstm+CRF中，以谋求更好的效果。</p>
 <p>该模型有以下主要优点：</p>
 <p>1）以往的预训练模型的结构会受到单向语言模型<em>（从左到右或者从右到左）</em>的限制，因而也限制了模型的表征能力，使其只能获取单方向的上下文信息。而BERT利用MLM进行预训练并且采用深层的双向Transformer组件/（单向的Transformer一般被称为Transformer decoder，而双向的Transformer则被称为Transformer encoder）来构建整个模型，因此最终生成能融合左右上下文信息的深层双向语言表征。Transformer结构如下：</p>
-<img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.36.43.png" alt="" style="zoom: 30%;">
-
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.36.43.png" alt="" style="zoom: 30%;"></p>
 <p>而Transformer又可以进行堆叠，形成一个更深的神经网络：</p>
-<img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.51.32.png" alt="" style="zoom: 20%;">
-
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.51.32.png" alt="" style="zoom: 20%;"></p>
 <p>MLM是BERT能够不受单向语言模型所限制的原因。简单来说就是以15%的概率用mask token （[MASK]）随机地对每一个训练序列中的token进行替换，然后预测出[MASK]位置原有的单词。然而，由于[MASK]并不会出现在下游任务的微调（fine-tuning）阶段，因此预训练阶段和微调阶段之间产生了不匹配（预训练的目标会令产生的语言表征对[MASK]敏感，但是却对其他token不敏感）。因此BERT采用了以下策略来解决这个问题：</p>
 <p>首先在每一个训练序列中以15%的概率随机地选中某个token位置用于预测，假如是第i个token被选中，则会被替换成以下三个token之一</p>
 <ul>
@@ -549,20 +555,22 @@
 </ul>
 <p>再用该位置对应的$T_i$去预测出原来的token（<em>输入到全连接，然后用softmax输出每个token的概率，最后用交叉熵计算loss）</em>。该策略令到BERT不再只对[MASK]敏感，而是对所有的token都敏感，以致能抽取出任何token的表征信息。</p>
 <p>2）预训练后，只需要添加一个额外的输出层进行fine-tune，就可以在各种各样的下游任务中取得state-of-the-art的表现。在这过程中并不需要对BERT进行任务特定的结构修改。</p>
-<h3 id="FLAT"><a href="#FLAT" class="headerlink" title="FLAT"></a>FLAT</h3><img src="https://pic4.zhimg.com/80/v2-a317ee70e90df352fe518386fd0b1c3b_1440w.jpg" alt="" style="zoom:50%;">
-
+<h3 id="FLAT"><a href="#FLAT" class="headerlink" title="FLAT"></a>FLAT</h3><p><img src="https://pic4.zhimg.com/80/v2-a317ee70e90df352fe518386fd0b1c3b_1440w.jpg" alt="" style="zoom:50%;"></p>
 <p>FLAT的基本思想来源于Lattice-LSTM（如上图），Lattice-LSTM采取的RNN结构无法捕捉长距离依赖，同时引入词汇信息是有损的，同时动态的Lattice结构也不能充分进行GPU并行。为解决计算效率低下、引入词汇信息有损的这两个问题，FLAT基于Transformer结构进行了两大改进：</p>
 <p><strong>改进1：Flat-Lattice Transformer，无损引入词汇信息</strong></p>
 <p>FLAT设计了一种巧妙position encoding来融合Lattice 结构，具体地情况如下上图所示，对于每一个字符和词汇都构建两个head position encoding 和tail position encoding，这种方式可以重构原有的Lattice结构。</p>
-<img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 下午1.48.04.png" alt="" style="zoom:50%;">
-
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 下午1.48.04.png" alt="" style="zoom:50%;"></p>
 <p><strong>改进2：相对位置编码，让Transformer适用NER任务</strong></p>
-<p>Lattice结构由不同长度的跨度组成。为了编码跨域之间的交互，FLAT提出了跨域的相对位置编码。对于两个空间的 $x_i $和 $x_j$，它们之间有三种关系:交集、包含和分离，由它们的正面和反面决定。这三种关系不是直接对其编码，而是使用密集向量来建模它们的关系。它是通过对头部和尾部信息的连续变换来计算的。因此，相对位置编码不仅可以表示两个符号之间的关系，还可以表示更详细的信息，如字符和单词之间的距离。让$head[i]$和$tail[i]$表示跨度$x_i$的头和尾位置。可以用四种相对距离来表示$x_i $和 $x_j$和 之间的关系,具体公式如下所示：<br>$$<br>d_{ij}^{hh}=head[i]-head[j]\<br>d_{ij}^{ht}=head[i]-tail[j]\<br>d_{ij}^{th}=tail[i]-head[j]\<br>d_{ij}^{tt}=tail[i]-tail[j]\<br>$$</p>
-<h2 id="中文NER任务特点"><a href="#中文NER任务特点" class="headerlink" title="中文NER任务特点"></a>中文NER任务特点</h2><p>近年来，引入词汇信息逐渐成为提升中文NER指标的重要手段。不同于英文NER，中文NER通常以字符为单位进行序列标注建模。这主要是由于中文分词存在误差，导致基于字符通常要好于基于词汇（经过分词）的序列标注建模方法。但是中文NER仍然需要词汇信息，因为引入词汇信息往往可以强化实体边界，特别是对于span较长的实体边界更加有效。此外引入词汇信息也是一种增强方式。对于NLP分类任务增益明显的数据增强方法，往往不能直接应用于NER任务，并且指标增益也极为有限。相反，引入词汇信息的增强方式对于小样本下的中文NER增益明显。</p>
+<p>Lattice结构由不同长度的跨度组成。为了编码跨域之间的交互，FLAT提出了跨域的相对位置编码。对于两个空间的 $x_i $和 $x_j$，它们之间有三种关系:交集、包含和分离，由它们的正面和反面决定。这三种关系不是直接对其编码，而是使用密集向量来建模它们的关系。它是通过对头部和尾部信息的连续变换来计算的。因此，相对位置编码不仅可以表示两个符号之间的关系，还可以表示更详细的信息，如字符和单词之间的距离。让$head[i]$和$tail[i]$表示跨度$x_i$的头和尾位置。可以用四种相对距离来表示$x_i $和 $x_j$和 之间的关系,具体公式如下所示：</p>
+<script type="math/tex; mode=display">
+d_{ij}^{hh}=head[i]-head[j]\\
+d_{ij}^{ht}=head[i]-tail[j]\\
+d_{ij}^{th}=tail[i]-head[j]\\
+d_{ij}^{tt}=tail[i]-tail[j]\\</script><h2 id="中文NER任务特点"><a href="#中文NER任务特点" class="headerlink" title="中文NER任务特点"></a>中文NER任务特点</h2><p>近年来，引入词汇信息逐渐成为提升中文NER指标的重要手段。不同于英文NER，中文NER通常以字符为单位进行序列标注建模。这主要是由于中文分词存在误差，导致基于字符通常要好于基于词汇（经过分词）的序列标注建模方法。但是中文NER仍然需要词汇信息，因为引入词汇信息往往可以强化实体边界，特别是对于span较长的实体边界更加有效。此外引入词汇信息也是一种增强方式。对于NLP分类任务增益明显的数据增强方法，往往不能直接应用于NER任务，并且指标增益也极为有限。相反，引入词汇信息的增强方式对于小样本下的中文NER增益明显。</p>
 <p>下面列举两种词汇增强的方法：</p>
 <ol>
-<li><em><strong>词向量&amp;词汇列表：</strong></em>利用一个具备良好分词结果的词向量；或者不再利用词向量，仅利用词汇或者实体边界信息，通常可通过图网络提取相关信息。这种增强方式主要分为Dynamic Architecture和Adaptive Embedding两种。</li>
-<li><em><strong>分词器：</strong></em>单一的分词器会造成边界错误，可以引入多源分词器并pooling不同分词结果。</li>
+<li><strong><em>词向量&amp;词汇列表：</em></strong>利用一个具备良好分词结果的词向量；或者不再利用词向量，仅利用词汇或者实体边界信息，通常可通过图网络提取相关信息。这种增强方式主要分为Dynamic Architecture和Adaptive Embedding两种。</li>
+<li><strong><em>分词器：</em></strong>单一的分词器会造成边界错误，可以引入多源分词器并pooling不同分词结果。</li>
 </ol>
 <h2 id="NER的应用"><a href="#NER的应用" class="headerlink" title="NER的应用"></a>NER的应用</h2><ul>
 <li>知识图谱]</li>
@@ -1127,7 +1135,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             

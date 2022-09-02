@@ -35,10 +35,10 @@ logger：提供日">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -385,8 +385,8 @@ logger：提供日">
 <ul>
 <li>logger：提供日志接口，供应用代码使用。logger最长用的操作有两类：配置和发送日志消息。可以通过logging.getLogger(name)获取logger对象，如果不指定name则返回root对象，多次使用相同的name调用getLogger方法返回同一个logger对象。</li>
 <li>handler：将日志记录（log record）发送到合适的目的地（destination），比如文件，socket等。一个logger对象可以通过addHandler方法添加0到多个handler，每个handler又可以定义不同日志级别，以实现日志分级过滤显示。</li>
-<li> filter：提供一种优雅的方式决定一个日志记录是否发送到handler。</li>
-<li> formatter：指定日志记录输出的具体格式。formatter的构造方法需要两个参数：消息的格式字符串和日期字符串，这两个参数都是可选的。</li>
+<li>filter：提供一种优雅的方式决定一个日志记录是否发送到handler。</li>
+<li>formatter：指定日志记录输出的具体格式。formatter的构造方法需要两个参数：消息的格式字符串和日期字符串，这两个参数都是可选的。</li>
 </ul>
 <h2 id="Logging-Level"><a href="#Logging-Level" class="headerlink" title="Logging Level"></a>Logging Level</h2><p>DEBUG: Detailed information, typically of interest only when diagnosing problems.</p>
 <p>INFO: Confirmation that things are working as expected.</p>
@@ -395,8 +395,7 @@ logger：提供日">
 <p>CRITICAL: A serious error, indicating that the program maybe unable to continue running.</p>
 <h2 id="Set-Level"><a href="#Set-Level" class="headerlink" title="Set Level"></a>Set Level</h2><p>Logging.basicConfig(filename=’’, level=logging.DEBUG</p>
 <p>​                                    format=’%(asctime)s:%(levelname)s:%(name)s:%(message)s’)</p>
-<p>#default by warning</p>
-<h2 id="Output-to-Console"><a href="#Output-to-Console" class="headerlink" title="Output to Console"></a>Output to Console</h2><p>logging.debug(‘{}’.format())</p>
+<h1 id="default-by-warning"><a href="#default-by-warning" class="headerlink" title="default by warning"></a>default by warning</h1><h2 id="Output-to-Console"><a href="#Output-to-Console" class="headerlink" title="Output to Console"></a>Output to Console</h2><p>logging.debug(‘{}’.format())</p>
 <h2 id="Set-Logger"><a href="#Set-Logger" class="headerlink" title="Set Logger"></a>Set Logger</h2><p>以上部分是设置的root logger，下面是设置logger，以方便import时日志文件不会混乱。</p>
 <p>import logging</p>
 <p>logger = logging.getlogger(__name__)</p>
@@ -445,7 +444,6 @@ logger.info("info message")
 logger.warn("warn message")
 logger.error("error message")
 logger.critical("critical message")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>当一个项目比较大的时候，不同的文件中都要用到Log,可以考虑将其封装为一个类来使用</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">#! /usr/bin/env python
 #coding=gbk
@@ -489,10 +487,8 @@ if __name__ =='__main__':
  logyyx.war('一个warning信息')
  logyyx.error('一个error信息')
  logyyx.cri('一个致命critical信息')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这样每次使用的时候只要实例化一个对象就可以了</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">logobj = Logger(‘filename',clevel,Flevel)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1034,7 +1030,7 @@ if __name__ =='__main__':
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             

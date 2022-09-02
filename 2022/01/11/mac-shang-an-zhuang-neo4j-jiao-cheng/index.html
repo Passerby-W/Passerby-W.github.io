@@ -31,10 +31,10 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -395,7 +395,8 @@
 </li>
 <li><p>在.bash_profile文件中添加如下两行代码，然后在终端输入source ~/.bash_profile 并回车</p>
 <pre class="line-numbers language-none"><code class="language-none">export NEO4J_HOME= /Users/haoranwan/neo4j-community-4.4.2
-export PATH=$PATH:$NEO4J_HOME/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+export PATH=$PATH:$NEO4J_HOME/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <p>在安装中，java版本的不匹配也可能导致安装失败。下面将详细介绍如何安装对应的java版本。首先去oracle下载jdk11。然后打开.bash_profile，配置java路径并设置默认java版本。最后在终端输入source ~/.bash_profile 并回车</p>
 <pre class="line-numbers language-none"><code class="language-none">export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home"
@@ -407,7 +408,6 @@ alias java17='export JAVA_HOME=$JAVA_17_HOME'
 # 默认使用java11
 export JAVA_HOME=$JAVA_11_HOME
 #java END%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>然后可以输入<code>java -version</code>来查询当前版本</p>
 <p>可以输入java17 or java+其他数字来切换java版本</p>
 
@@ -963,7 +963,7 @@ export JAVA_HOME=$JAVA_11_HOME
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">26.4k</span>
             
             
             
