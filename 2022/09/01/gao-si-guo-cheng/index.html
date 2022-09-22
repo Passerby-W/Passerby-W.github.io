@@ -35,8 +35,8 @@
 
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -383,7 +383,7 @@
 <li>根据观测数据得到后验函数。</li>
 <li>若干这些函数的曲线共同构成了高斯过程给出的置信区间。</li>
 </ol>
-<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 14.54.32.png" alt style="zoom:50%;"></p>
+<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 14.54.32.png" alt="" style="zoom:50%;"></p>
 <p>上图一共有5条不同颜色的线，每一条曲线代表了一个GP的样本。首先来看其中的蓝色的线，对应x轴上找一个点，比如x=2大概对应的的y轴约为0.6左右。它所代表的是对应x=2时的一个随机变量$X(x=2)$”正好”出现的点罢了，本质上对应x=2的是一个随机变量而不是一个确定的点。另外对应于任一时刻的随机变量还需要服从一个确定的高斯分布（并不是说所有时刻对应的随机变量需要服从同一个高斯，只是服从的高斯分布的具体参数只跟时刻有关）。除此之外，若是GP的样本，还需要满足的是，任意个点（对应不同时刻的随机变量）联合需要服从多元高斯分布。<strong>因此GP的分布就是对于时间域上所有随机变量的联合分布。</strong></p>
 <p>既然是满足多元高斯分布，那么必定需要一个确定的mean和确定的covariance 吧。反过来说，若是给定一个mean和covariance，那么自然不同时刻的随机变量的出现的整体位置和相关情况也就被限定住。<strong>因此，一个GP可以被mean和covariance function共同唯一决定</strong>。</p>
 <p>至于covariance function么，这个才是之后在machine learning的应用中被广为探讨的部分，因而就被称为了核函数kernel，<strong>原因就是它捕捉了不同输入点之间的关系，并且反映在了之后样本的位置上。这样的话，就可以做到，利用点与点之间关系，以从输入的训练数据预测未知点的值</strong>。</p>
@@ -397,7 +397,7 @@
 <p>$\sum=Cov(X_i,X_j)=E[(X_i-\mu_i)(X_j-\mu_j)^T]$</p>
 <p>可以一定程度反映两组分布的线性相关关系</p>
 <p>若两组分布独立，那他们的协方差矩阵在非对角线位置都应该是0</p>
-<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 11.27.12.png" alt style="zoom: 25%;"></p>
+<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 11.27.12.png" alt="" style="zoom: 25%;"></p>
 </blockquote>
 <p><strong>一元高斯分布</strong></p>
 <blockquote>
@@ -408,16 +408,16 @@
 </blockquote>
 <p><strong>多元高斯分布</strong></p>
 <blockquote>
-<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.35.34.png" alt style="zoom:80%;"></p>
+<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.35.34.png" alt="" style="zoom:80%;"></p>
 </blockquote>
 <p><strong>无限元高斯分布</strong></p>
 <blockquote>
 <p>在多元高斯分布的基础上考虑进一步扩展，假设有无限多维呢？用一个例子来展示这个扩展的过程。假设我们在周一到周四每天的 7:00 测试了 4 次心率，如下图中 4 个点，可能的高斯分布如图所示（高瘦的那条）。这是一个一元高斯分布，只有每天 7: 00 的心率这个维度。</p>
-<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.53.56.png" alt style="zoom:40%;"></p>
+<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.53.56.png" alt="" style="zoom:40%;"></p>
 <p>现在考虑不仅在每天的 7: 00 测心率（横轴），在 8:00 时也进行测量（纵轴），这个时候变成两个维度（二元高斯分布）。</p>
-<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 17.09.01.png" alt style="zoom:45%;"></p>
+<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 17.09.01.png" alt="" style="zoom:45%;"></p>
 <p>更进一步，如果我们在每天的无数个时间点都进行测量，则变成了下图的情况。注意下图中把测量时间作为横轴，则每个颜色的一条线代表一个（无限个时间点的测量）无限维的采样。当对每次对无限维进行采样得到无限多个点时，其实可以理解为我们采样得到了一个函数。</p>
-<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.55.30.png" alt style="zoom:45%;"></p>
+<p><img src="/2022/09/01/gao-si-guo-cheng/截屏2022-09-01 16.55.30.png" alt="" style="zoom:45%;"></p>
 <p>当从函数的视角去看待采样，理解了每次采样无限维相当于采样一个函数之后，原本的概率密度函数不再是点的分布 ，而变成了<strong>函数的分布</strong>。这个无限元高斯分布即称为高斯过程。高斯过程正式地定义为：对于所有 $x=[x_1,x_2,⋯,x_n] ,f(x)=[f(x_1),f(x_2),⋯,f(x_n)] $都服从多元高斯分布，则称 f 是一个高斯过程，表示如下：</p>
 <p>$f(x)\sim N(\mu(x),k(x,x))$</p>
 <p>这里 $μ(x):\mathbb{R}^n→\mathbb{R}^n$表示均值函数（Mean function），返回各个维度的均值；$k(x,x):\mathbb{R}^n×\mathbb{R}^n→\mathbb{R}^n$ 为协方差函数 Covariance Function（也叫核函数 Kernel Function）返回两个向量各个维度之间的协方差矩阵。一个高斯过程为一个均值函数和协方差函数唯一地定义，并且<strong>一个高斯过程的有限维度的子集都服从一个多元高斯分布</strong>（为了方便理解，可以想象二元高斯分布两个维度各自都服从一个高斯分布）。</p>
@@ -693,18 +693,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/01/gao-si-guo-cheng/">
+                <a href="/2022/09/22/dcnn-lun-wen-jie-du/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="高斯过程">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="DCNN论文解读">
                         
-                        <span class="card-title">高斯过程</span>
+                        <span class="card-title">DCNN论文解读</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -714,27 +713,26 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Math/" class="post-category">
-                                    Math
+                            <a href="/categories/Paper/" class="post-category">
+                                    Paper
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Gaussian-Process/">
-                        <span class="chip bg-color">Gaussian Process</span>
+                    <a href="/tags/DCNN/">
+                        <span class="chip bg-color">-DCNN</span>
                     </a>
                     
                 </div>
@@ -977,7 +975,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">27.6k</span>
             
             
             
