@@ -374,38 +374,38 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Why-Transformer"><a href="#Why-Transformer" class="headerlink" title="Why Transformer?"></a>Why Transformer?</h2><p>在谷歌2007年提出《Attention Is All You Need》后，基于Attention思想的Transformer模型开始越来越多地出现在大众眼中。Transformer模型基于encoder-decoder架构，抛弃了传统的RNN、CNN模型，仅由Attention机制实现，并且由于encoder端是并行计算的，训练时间大大缩短。<br>Transformer模型广泛应用于NLP领域，机器翻译、文本摘要、问答系统等等，目前火热的Bert模型就是基于Transformer模型构建的。</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-08 上午9.54.17.png" alt="" style="zoom: 25%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-08 上午9.54.17.png" alt style="zoom: 25%;"></p>
 <h2 id="What-is-Transformer"><a href="#What-is-Transformer" class="headerlink" title="What is Transformer?"></a>What is Transformer?</h2><p>上一节说到Transformer模型基于encoder-decoder架构。下面拿一个机器翻译的模型来进行演示。</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午10.45.07.png" alt="" style="zoom: 25%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午10.45.07.png" alt style="zoom: 25%;"></p>
 <p>那么Encoders和Decoders里面有哪些东西呢？在《Attention Is All You Need》里分别对Encoders和Decoders使用了6个chunks。结构如下：</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午10.50.06.png" alt="" style="zoom:25%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午10.50.06.png" alt style="zoom:25%;"></p>
 <p>其中Encoders和Decoders里的每个chunk的结构如下。</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午10.54.42.png" alt="" style="zoom:25%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午10.54.42.png" alt style="zoom:25%;"></p>
 <p>读到这里你或许会发现transformer的核心就是这个attention机制。那么attention又是个什么东西呢？</p>
 <h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><p>假设以下句子是我们要翻译的输入句子：</p>
 <pre class="line-numbers language-none"><code class="language-none">The animal didn't cross the street because it was too tired<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这个句子中的“it”指的是什么？它指的是街道还是动物？对人类来说，这是一个简单的问题，但对算法来说，就不那么简单了。当模型处理it这个词时，Attention允许它将it与animal联系起来。<br>当模型处理每个单词（输入序列中的每个位置）时，Attention允许它查看输入序列中的其他位置，以寻找有助于更好地编码该单词的线索。</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.10.12.png" alt="" style="zoom: 33%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.10.12.png" alt style="zoom: 33%;"></p>
 <p>如上图所示，在对it进行encode时，it这个单词主要focus on “The animal”。</p>
 <p>在attention中有三个非常重要的矩阵——Q，K，V。由下图可见，x为embedding过的词汇向量，其attention的计算过程如下：</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.15.08.png" alt="" style="zoom:50%;"></p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.18.18.png" alt="" style="zoom: 25%;"></p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.21.46.png" alt="" style="zoom: 25%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.15.08.png" alt style="zoom:50%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.18.18.png" alt style="zoom: 25%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.21.46.png" alt style="zoom: 25%;"></p>
 <p>或许读到这里你很疑惑，这一堆东西tmd在做什么，他的模型有个锤子的物理意义？别着急，首先我们要知道矩阵相乘实际是对空间内向量的线性变换，内积其中的一个作用就是用来计算投影，所以可以拿来计算两个word embedding的相似度。如下面所示：</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.59.54.png" alt="" style="zoom: 33%;"></p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 下午12.01.18.png" alt="" style="zoom:33%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 上午11.59.54.png" alt style="zoom: 33%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 下午12.01.18.png" alt style="zoom:33%;"></p>
 <p>其中“早上好”向量经过softmax进行归一化处理。这个过程可以用公式表示为:</p>
 <p>$Softmax(XX^T)X$</p>
 <p>通过$X$与$W^Q,W^K,W^V$相乘可以提高模型的拟合能力，因为$W^Q,W^K,W^V$是可以训练的，起到一个缓冲的效果。</p>
 <p>在新的向量中，每一个维度的数值都是由三个词向量在这一维度的数值加权求和得来的，这个新的行向量就是”早”词向量经过注意力机制加权求和之后的表示。</p>
 <p>至于$d_k$意思是W矩阵的dimension，假设$Q,K$里的元素的均值为0，方差为1，那么$A^T=Q^TK$中元素的均值为0，方差为d。当d变得很大时，$A$中的元素的方差也会变得很大，如果$A$中的元素方差很大，那么$Softmax(A)$的分布会趋于陡峭(分布的方差大，分布集中在绝对值大的区域)。总结一下就是$Softmax(A)$的分布会和d有关。因此$A$中每一个元素除以$\sqrt {d_k}$后，方差又变为1。这使得$Softmax(A)$的分布“陡峭”程度与d解耦，从而使得训练过程中梯度值保持稳定。</p>
 <h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><p>可以理解为在多个关注点上的attention。其过程如下：</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 下午2.31.23.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 下午2.31.23.png" alt style="zoom:50%;"></p>
 <h3 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a><strong>Layer Normalization</strong></h3><p><strong>随着网络层数的增加，数据分布不断发生变化，偏差越来越大，导致我们不得不使用更小的学习率来稳定梯度</strong>。Layer Normalization 的作用就是保证数据特征分布的稳定性，将数据标准化到ReLU激活函数的作用区域，可以使得激活函数更好的发挥作用。</p>
-<p><img src="/2022/02/08/transformer/截屏2022-02-07 下午5.27.54.png" alt="" style="zoom:25%;"></p>
+<p><img src="/2022/02/08/transformer/截屏2022-02-07 下午5.27.54.png" alt style="zoom:25%;"></p>
 <h3 id="Positional-Encoding"><a href="#Positional-Encoding" class="headerlink" title="Positional Encoding"></a>Positional Encoding</h3><p>因为Attention机制里没有位置信息，所以要手动添加。</p>
 <h3 id="Feed-Forward-Network"><a href="#Feed-Forward-Network" class="headerlink" title="Feed Forward Network"></a>Feed Forward Network</h3><p>每一层经过attention之后，还会有一个FFN，FFN包含了2层linear transformation层，中间的激活函数是ReLu。FFN通过变换了attention output的空间, 从而增加了模型的表现能力。把FFN去掉模型也是可以用的，但是效果差了很多。</p>
-<h2 id="Encoder-and-Decoder"><a href="#Encoder-and-Decoder" class="headerlink" title="Encoder and Decoder"></a>Encoder and Decoder</h2><p><img src="/2022/02/08/transformer/截屏2022-02-07 下午5.11.39.png" alt="" style="zoom:50%;"></p>
+<h2 id="Encoder-and-Decoder"><a href="#Encoder-and-Decoder" class="headerlink" title="Encoder and Decoder"></a>Encoder and Decoder</h2><p><img src="/2022/02/08/transformer/截屏2022-02-07 下午5.11.39.png" alt style="zoom:50%;"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/410776234">超详细图解Self-Attention</a></p>
 
