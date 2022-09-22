@@ -293,19 +293,10 @@
                 </a>
                 
                 
-                <a href="/categories/Algorithm/" title="Algorithm: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">Algorithm
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Knowledge-Graph/" title="Knowledge Graph: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">Knowledge Graph
+                            style="background-color: #82E0AA;">Knowledge Graph
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -314,7 +305,16 @@
                 <a href="/categories/Math/" title="Math: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">Math
+                            style="background-color: #D7BDE2;">Math
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Algorithm/" title="Algorithm: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">Algorithm
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -362,7 +362,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"NLP","max":6},{"name":"Paper","max":6},{"name":"Python","max":6},{"name":"Installment","max":6},{"name":"Tutorial","max":6},{"name":"Sources","max":6},{"name":"Algorithm","max":6},{"name":"Knowledge Graph","max":6},{"name":"Math","max":6}],
+            indicator: [{"name":"NLP","max":6},{"name":"Paper","max":6},{"name":"Python","max":6},{"name":"Installment","max":6},{"name":"Tutorial","max":6},{"name":"Sources","max":6},{"name":"Knowledge Graph","max":6},{"name":"Math","max":6},{"name":"Algorithm","max":6}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -692,6 +692,22 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 
