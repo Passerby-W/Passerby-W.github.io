@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-09-22T07:05:23.236Z</updated>
+  <updated>2022-10-10T06:51:56.358Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>einsum函数</title>
+    <link href="http://passerby-w.github.io/2022/10/10/einsum-han-shu/"/>
+    <id>http://passerby-w.github.io/2022/10/10/einsum-han-shu/</id>
+    <published>2022-10-10T06:07:25.000Z</published>
+    <updated>2022-10-10T06:51:56.358Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;einsum全称Einstein summation</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Math" scheme="http://passerby-w.github.io/tags/Math/"/>
+    
+  </entry>
   
   <entry>
     <title>DCNN论文解读</title>

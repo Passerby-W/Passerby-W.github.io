@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="M1搭建hexo博客, python,nlp,machine learning,hexo,data structue">
-    <meta name="description" content="重度引用：Aspoir的《在M1上搭建hexo博客》
-简述在M1系统上搭建hexo博客，使用master主题
-本地搭建hexo安装Node.js首先检查是否已经安装
-npm
-&amp;gt; zsh: command not found: npm
-">
+    <meta name="keywords" content="einsum函数, python,nlp,machine learning,hexo,data structue">
+    <meta name="description" content="einsum全称Einstein summation convention（爱因斯坦求和约定），又称为爱因斯坦标记法，是爱因斯坦1916年提出的一种标记约定，简单的说就是省去求和式中的求和符号，例如下面的公式：
+
+$c=\sum_ia_ib">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +19,7 @@ npm
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>M1搭建hexo博客 | WAN</title>
+    <title>einsum函数 | WAN</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -188,12 +185,12 @@ npm
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">M1搭建hexo博客</h1>
+                    <h1 class="description center-align post-title">einsum函数</h1>
                 </div>
             </div>
         </div>
@@ -309,27 +306,14 @@ npm
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Node-js/">
-                                <span class="chip bg-color">Node.js</span>
-                            </a>
-                        
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Math/">
+                                <span class="chip bg-color">Math</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Installment/" class="post-category">
-                                Installment
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -338,28 +322,28 @@ npm
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-31
+                    2022-10-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-06
+                    2022-10-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    523
+                    442
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -382,62 +366,41 @@ npm
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>重度引用：<a target="_blank" rel="noopener" href="http://www.aspoir.cn/posts/20210715195018/">Aspoir的《在M1上搭建hexo博客》</a></p>
-<p>简述在M1系统上搭建hexo博客，使用master主题</p>
-<h2 id="本地搭建hexo"><a href="#本地搭建hexo" class="headerlink" title="本地搭建hexo"></a>本地搭建hexo</h2><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>首先检查是否已经安装</p>
-<pre class="line-numbers language-none"><code class="language-none">npm
-&gt; zsh: command not found: npm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>提示<code>command not found</code>则未安装，去<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">node.js官网</a>下载安装包，按照提示安装。</p>
-<p>再次在终端中输入npm显示已经安装</p>
-<pre class="line-numbers language-none"><code class="language-none">npm
-&gt; Usage: npm &lt;command&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>在终端中输入</p>
-<pre class="line-numbers language-none"><code class="language-none">sudo npm install hexo-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>再次输入hexo，若显示如下则安装成功</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo
-Usage: hexo &lt;command&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h3><pre class="line-numbers language-none"><code class="language-none">cd Documents/
-hexo init blog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>提示安装git直接安装即可</p>
-<h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h3><pre class="line-numbers language-none"><code class="language-none">cd blog
-npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><pre class="line-numbers language-none"><code class="language-none">hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://miro.medium.com/max/1400/0*2JvuTw2MYcjCYjo1" alt=""></p>
-<h2 id="发布到github上"><a href="#发布到github上" class="headerlink" title="发布到github上"></a>发布到github上</h2><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>登录github，新建项目</p>
-<p>Respository name必须以自己用户名为开头：<code>用户名.github.io</code></p>
-<p>选择public，点击创建即可</p>
-<h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><pre class="line-numbers language-none"><code class="language-none">git config --global user.name "your name" &lt;-引号内为自定义内容
-git config --global user.email "mail" &lt;-引号内为自定义内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h3><pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C "mail" &lt;-之前输入的邮箱<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="进入ssh文件夹"><a href="#进入ssh文件夹" class="headerlink" title="进入ssh文件夹"></a>进入ssh文件夹</h3><p>返回根目录（当前目录为blog）</p>
-<pre class="line-numbers language-none"><code class="language-none">cd ..
-cd ..
-cd .ssh/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="生成ssh-keys"><a href="#生成ssh-keys" class="headerlink" title="生成ssh keys"></a>生成ssh keys</h3><pre class="line-numbers language-none"><code class="language-none">vim id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>复制粘贴到github上：settings -&gt; SSH and GPG keys -&gt; SSH keys</p>
-<p><a target="_blank" rel="noopener" href="https://tva1.sinaimg.cn/large/008i3skNly1gshwdk2h9cj312o0o6q5r.jpg"><img src="https://tva1.sinaimg.cn/large/008i3skNly1gshwdk2h9cj312o0o6q5r.jpg" alt=""></a></p>
-<h3 id="测试连接github"><a href="#测试连接github" class="headerlink" title="测试连接github"></a>测试连接github</h3><pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>当前位于根目录</p>
-<pre class="line-numbers language-none"><code class="language-none">cd Documents/blog/
-npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="更改配置"><a href="#更改配置" class="headerlink" title="更改配置"></a>更改配置</h3><p>打开blog/_config.yml，在最下方更改配，然后保存，最好使用ssh 来git clone来避免输入账号密码</p>
-<pre class="line-numbers language-none"><code class="language-none">deploy:
-  type: 'git'
-  repo: git@github.com:github名字/github名字.github.io.git
-  branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class="line-numbers language-none"><code class="language-none">hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>本人博客使用<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">matery</a>主题</p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><pre class="line-numbers language-none"><code class="language-none">git clone git@github.com:blinkfox/hexo-theme-matery.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置文档详见<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md</a></p>
-<p>每次更新文章需要做:</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo clean // 清除
-hexo g //generate
-hexo d //deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h2><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/#toc-heading-7">Hexo博客主题之hexo-theme-matery的介绍</a></p>
-<p><a target="_blank" rel="noopener" href="https://m3df.xyz/2020/06/13/e9fff968/#toc-heading-84">Hexo进阶：基于matery主题的网站配置教程</a></p>
-<p><a target="_blank" rel="noopener" href="https://chen-shang.github.io/2019/08/15/ji-zhu-zong-jie/hexo/hexo-theme-matery-zhu-ti-you-hua/#toc-heading-5">hexo-theme-matery主题优化</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/howareyou2104/article/details/106312703">如何用Hexo优雅的书写文章</a></p>
-<p><a target="_blank" rel="noopener" href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片</a></p>
+                <p>einsum全称Einstein summation convention（爱因斯坦求和约定），又称为爱因斯坦标记法，是爱因斯坦1916年提出的一种标记约定，简单的说就是省去求和式中的求和符号，例如下面的公式：</p>
+<blockquote>
+<p>$c=\sum_ia_ib_i$</p>
+</blockquote>
+<p>以einsum的写法就是：</p>
+<blockquote>
+<p>$c=a_ib_i$</p>
+</blockquote>
+<p>后者将$\sum$符号给省去了，显得更加简洁；再比如：</p>
+<blockquote>
+<p>$c_i=\sum_ja_{ij}b_j$    (1)</p>
+<p>$c_{klmn}=\sum_i\sum_ja_{ijkl}b_{ijmn}$    (2)</p>
+</blockquote>
+<p>上面两个例子换成einsum的写法就变成：</p>
+<blockquote>
+<p>$c_i=a_{ij}b_j$    (1)</p>
+<p>$c_{klmn}=a_{ijkl}b_{ijmn}$    (2)</p>
+</blockquote>
+<p>在实现一些算法时，数学表达式已经求出来了，需要将之转换为代码实现，简单的一些还好，有时碰到例如矩阵转置、矩阵乘法、求迹、张量乘法、数组求和等等，若是以分别以transopse、sum、trace、tensordot等函数实现的话，不但复杂，还容易出错。</p>
+<p>现在，这些问题统统可以用einsum函数搞定，einsum函数就是根据上面的标记法实现的一种函数，可以根据给定的表达式进行运算，可以替代但不限于以下函数：</p>
+<blockquote>
+<p>矩阵求迹：trace<br>求矩阵对角线：diag<br>张量（沿轴）求和：sum<br>张量转置：transopose<br>矩阵乘法：dot<br>张量乘法：tensordot<br>向量内积：inner<br>外积：outer</p>
+</blockquote>
+<p>该函数在numpy、tensorflow、pytorch上都有实现，用法基本一样，定义如下：</p>
+<blockquote>
+<p>einsum(equation, *operands)</p>
+</blockquote>
+<p>equation是字符串的表达式，operands是操作数，是一个元组参数，并不是只能有两个，所以只要是能够通过einsum标记法表示的乘法求和公式，都可以用一个einsum解决，下面以numpy举几个例子：</p>
+<p>元素求和</p>
+<p><img src="/2022/10/10/einsum-han-shu/截屏2022-10-10 14.22.11-5382946-5382952.png" alt="元素之和" style="zoom: 50%;"></p>
+<p>矩阵乘法</p>
+<p><img src="/2022/10/10/einsum-han-shu/截屏2022-10-10 14.24.16-5383063.png" alt="矩阵乘法" style="zoom:50%;"></p>
+<p>张量乘法</p>
+<p><img src="/2022/10/10/einsum-han-shu/截屏2022-10-10 14.28.51-5383336.png" alt="张量乘法" style="zoom:50%;"></p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/71639781">一个函数打天下，einsum</a></p>
 
                 
             </div>
@@ -464,7 +427,7 @@ hexo d //deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://passerby-w.github.io/2021/12/31/m1-da-jian-hexo-bo-ke/">http://passerby-w.github.io/2021/12/31/m1-da-jian-hexo-bo-ke/</a>
+                    <a href="http://passerby-w.github.io/2022/10/10/einsum-han-shu/">http://passerby-w.github.io/2022/10/10/einsum-han-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -502,12 +465,8 @@ hexo d //deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Node-js/">
-                                    <span class="chip bg-color">Node.js</span>
-                                </a>
-                            
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Math/">
+                                    <span class="chip bg-color">Math</span>
                                 </a>
                             
                         </div>
@@ -708,66 +667,18 @@ hexo d //deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/">
+                <a href="/2022/10/10/einsum-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ASR错误自动识别与纠正">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="einsum函数">
                         
-                        <span class="card-title">ASR错误自动识别与纠正</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-31
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/NLP/" class="post-category">
-                                    NLP
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/ASR%E7%BA%A0%E9%94%99/">
-                        <span class="chip bg-color">ASR纠错</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/12/31/m1-da-jian-hexo-bo-ke/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="M1搭建hexo博客">
-                        
-                        <span class="card-title">M1搭建hexo博客</span>
+                        <span class="card-title">einsum函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -778,16 +689,12 @@ hexo d //deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Installment/" class="post-category">
-                                    Installment
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Passerby-W
                             
                         </span>
                     </div>
@@ -796,12 +703,61 @@ hexo d //deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Node-js/">
-                        <span class="chip bg-color">Node.js</span>
+                    <a href="/tags/Math/">
+                        <span class="chip bg-color">Math</span>
                     </a>
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/09/22/dcnn-lun-wen-jie-du/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="DCNN论文解读">
+                        
+                        <span class="card-title">DCNN论文解读</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Paper/" class="post-category">
+                                    Paper
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CNN/">
+                        <span class="chip bg-color">CNN</span>
+                    </a>
+                    
+                    <a href="/tags/DCNN/">
+                        <span class="chip bg-color">DCNN</span>
                     </a>
                     
                 </div>

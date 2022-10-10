@@ -438,7 +438,7 @@ def search(self, nums: List[int], target: int) -&amp;">
 <p>由表格可见，在左右指针交换位置的时候终止循环。那么L和R指针分别的意义是什么呢？</p>
 <p>场景1：寻找小于target的位置，则目标位置是6，index为3</p>
 <p>则在终止循环前的一个循环时L,R的位置如下：</p>
-<p>如果select1为&lt;时，等价于求&lt;6和first&gt;=6，如下所示：</p>
+<p>如果select1为&lt;时，等价于求&lt;6和first&gt;=6，如下所示：<!--6和first--></p>
 <div class="table-container">
 <table>
 <thead>
@@ -1258,7 +1258,7 @@ int BinarySearchLastLowerEqualTarget(int* arr, int arrSize, int target)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.6k</span>
+                        class="white-color">28.1k</span>
             
             
             
@@ -1546,6 +1546,22 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 
