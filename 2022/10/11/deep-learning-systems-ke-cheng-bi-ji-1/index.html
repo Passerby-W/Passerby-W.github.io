@@ -4,9 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mac上安装Neo4j教程, python,nlp,machine learning,hexo,data structue">
-    <meta name="description" content="一般情况下，我们使用数据库查找事物间的联系的时候，只需要短程关系的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。
-而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之间织起了一张巨">
+    <meta name="keywords" content="Deep Learning Systems课程笔记（1）, python,nlp,machine learning,hexo,data structue">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Mac上安装Neo4j教程 | WAN</title>
+    <title>Deep Learning Systems课程笔记（1） | WAN</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -189,7 +188,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mac上安装Neo4j教程</h1>
+                    <h1 class="description center-align post-title">Deep Learning Systems课程笔记（1）</h1>
                 </div>
             </div>
         </div>
@@ -305,12 +304,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/neo4j/">
-                                <span class="chip bg-color">neo4j</span>
-                            </a>
-                        
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/Softmax/">
+                                <span class="chip bg-color">Softmax</span>
                             </a>
                         
                     </div>
@@ -321,8 +316,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Installment/" class="post-category">
-                                Installment
+                            <a href="/categories/Deep-Learning-Systems%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                Deep Learning Systems课程笔记
                             </a>
                         
                     </div>
@@ -334,21 +329,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-10-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-10-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    471
+                    0
                 </div>
                 
 
@@ -378,39 +373,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一般情况下，我们使用数据库查找事物间的联系的时候，只需要<strong>短程关系</strong>的查询（两层以内的关联）。当需要进行更长程的，更广范围的关系查询时，就需要图数据库的功能。</p>
-<p>而随着社交、电商、金融、零售、物联网等行业的快速发展，现实世界的事物之间织起了一张巨大复杂的关系网，传统数据库面对这样复杂关系往往束手无策。因此，图数据库应运而生。</p>
-<p>图数据库(Graph database)指的是以图数据结构的形式来存储和查询数据的数据库。</p>
-<p>Neo4j 是目前用的最多的图数据库，世界数据库排行榜上排名21位。下面讲介绍一下Neo4j在Mac上的安装流程。</p>
-<ol>
-<li><p>首先，去官网下载<a target="_blank" rel="noopener" href="https://neo4j.com/download/other-releases/">社区版neo4j</a></p>
-</li>
-<li><p>然后解压下载tar文件<img src="/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/截屏2022-01-11 下午4.40.50.png" alt="" style="zoom: 50%;"></p>
-</li>
-<li><p>然后打开终端，cd到解压的文件夹的bin目录下，输入./neo4j start</p>
-</li>
-<li><p>进入<a target="_blank" rel="noopener" href="http://localhost:7474/">http://localhost:7474/</a></p>
-</li>
-<li><p>如果想要退出，cd到解压的文件夹的bin目录下，输入./neo4j stop即可</p>
-</li>
-<li><p>在.bash_profile文件中添加如下两行代码，然后在终端输入source ~/.bash_profile 并回车</p>
-<pre class="line-numbers language-none"><code class="language-none">export NEO4J_HOME= /Users/haoranwan/neo4j-community-4.4.2
-export PATH=$PATH:$NEO4J_HOME/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<p>在安装中，java版本的不匹配也可能导致安装失败。下面将详细介绍如何安装对应的java版本。首先去oracle下载jdk11。然后打开.bash_profile，配置java路径并设置默认java版本。最后在终端输入source ~/.bash_profile 并回车</p>
-<pre class="line-numbers language-none"><code class="language-none">export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home"
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
-
-export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home"
-alias java17='export JAVA_HOME=$JAVA_17_HOME'
-
-# 默认使用java11
-export JAVA_HOME=$JAVA_11_HOME
-#java END%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然后可以输入<code>java -version</code>来查询当前版本</p>
-<p>可以输入java17 or java+其他数字来切换java版本</p>
-
+                
                 
             </div>
             <hr/>
@@ -436,7 +399,7 @@ export JAVA_HOME=$JAVA_11_HOME
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://passerby-w.github.io/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/">http://passerby-w.github.io/2022/01/11/mac-shang-an-zhuang-neo4j-jiao-cheng/</a>
+                    <a href="http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/">http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -474,12 +437,8 @@ export JAVA_HOME=$JAVA_11_HOME
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/neo4j/">
-                                    <span class="chip bg-color">neo4j</span>
-                                </a>
-                            
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/Softmax/">
+                                    <span class="chip bg-color">Softmax</span>
                                 </a>
                             
                         </div>
@@ -680,17 +639,18 @@ export JAVA_HOME=$JAVA_11_HOME
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/13/zhi-shi-tu-pu-xue-xi-bi-ji/">
+                <a href="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="知识图谱学习笔记">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Deep Learning Systems课程笔记（1）">
                         
-                        <span class="card-title">知识图谱学习笔记</span>
+                        <span class="card-title">Deep Learning Systems课程笔记（1）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -700,34 +660,27 @@ export JAVA_HOME=$JAVA_11_HOME
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Knowledge-Graph/" class="post-category">
-                                    Knowledge Graph
+                            <a href="/categories/Deep-Learning-Systems%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    Deep Learning Systems课程笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/neo4j/">
-                        <span class="chip bg-color">neo4j</span>
-                    </a>
-                    
-                    <a href="/tags/py2neo/">
-                        <span class="chip bg-color">py2neo</span>
-                    </a>
-                    
-                    <a href="/tags/yago/">
-                        <span class="chip bg-color">yago</span>
+                    <a href="/tags/Softmax/">
+                        <span class="chip bg-color">Softmax</span>
                     </a>
                     
                 </div>
@@ -741,13 +694,13 @@ export JAVA_HOME=$JAVA_11_HOME
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/10/zheng-ze-biao-da-shi/">
+                <a href="/2022/10/10/einsum-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="einsum函数">
                         
-                        <span class="card-title">正则表达式</span>
+                        <span class="card-title">einsum函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,14 +711,14 @@ export JAVA_HOME=$JAVA_11_HOME
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Pytorch/" class="post-category">
+                                    Pytorch
                                 </a>
                             
                             
@@ -775,8 +728,8 @@ export JAVA_HOME=$JAVA_11_HOME
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Regular-Expression/">
-                        <span class="chip bg-color">Regular Expression</span>
+                    <a href="/tags/Pytorch-Function/">
+                        <span class="chip bg-color">Pytorch Function</span>
                     </a>
                     
                 </div>
