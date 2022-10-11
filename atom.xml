@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-10-11T06:13:24.891Z</updated>
+  <updated>2022-10-11T06:17:46.300Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/"/>
     <id>http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/</id>
     <published>2022-10-11T03:00:20.000Z</published>
-    <updated>2022-10-11T06:13:24.891Z</updated>
+    <updated>2022-10-11T06:17:46.300Z</updated>
     
     
       
@@ -38,7 +38,7 @@
     
     
     
-    <category term="Deep Learning Systems课程笔记" scheme="http://passerby-w.github.io/categories/Deep-Learning-Systems%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    <category term="Deep-Learning-Systems课程笔记" scheme="http://passerby-w.github.io/categories/Deep-Learning-Systems%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
     
     
     <category term="Softmax" scheme="http://passerby-w.github.io/tags/Softmax/"/>
