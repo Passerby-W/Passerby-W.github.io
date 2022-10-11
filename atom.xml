@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-10-11T02:54:47.367Z</updated>
+  <updated>2022-10-11T02:59:00.833Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://passerby-w.github.io/2022/10/10/einsum-han-shu/"/>
     <id>http://passerby-w.github.io/2022/10/10/einsum-han-shu/</id>
     <published>2022-10-10T06:07:25.000Z</published>
-    <updated>2022-10-11T02:54:47.367Z</updated>
+    <updated>2022-10-11T02:59:00.833Z</updated>
     
     
       
@@ -37,7 +37,7 @@
     <category term="Pytorch" scheme="http://passerby-w.github.io/categories/Pytorch/"/>
     
     
-    <category term="‘Pytorch Function’" scheme="http://passerby-w.github.io/tags/%E2%80%98Pytorch-Function%E2%80%99/"/>
+    <category term="Pytorch Function" scheme="http://passerby-w.github.io/tags/Pytorch-Function/"/>
     
   </entry>
   
