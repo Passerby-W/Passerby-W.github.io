@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-10-11T03:01:42.205Z</updated>
+  <updated>2022-10-11T03:43:33.079Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -21,8 +21,20 @@
     <link href="http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/"/>
     <id>http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/</id>
     <published>2022-10-11T03:00:20.000Z</published>
-    <updated>2022-10-11T03:01:42.205Z</updated>
+    <updated>2022-10-11T03:43:33.079Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先介绍一下Softmax的公式：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$a_i=\frac{e^{z_i}}{\sum_j^ne^{z_j}}$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;它接受一个向量（或者一组变量）作为输入，每个变量指数化后除以所有指数化变量之和，</summary>
+        
+      
     
     
     
