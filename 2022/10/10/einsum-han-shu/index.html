@@ -306,14 +306,23 @@ $c=\sum_ia_ib">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Math/">
-                                <span class="chip bg-color">Math</span>
+                            <a href="/tags/%E2%80%98Pytorch-Function%E2%80%99/">
+                                <span class="chip bg-color">‘Pytorch Function’</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Pytorch/" class="post-category">
+                                Pytorch
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -329,21 +338,21 @@ $c=\sum_ia_ib">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-10
+                    2022-10-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    442
+                    784
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -400,7 +409,65 @@ $c=\sum_ia_ib">
 <p><img src="/2022/10/10/einsum-han-shu/截屏2022-10-10 14.24.16-5383063.png" alt="矩阵乘法" style="zoom:50%;"></p>
 <p>张量乘法</p>
 <p><img src="/2022/10/10/einsum-han-shu/截屏2022-10-10 14.28.51-5383336.png" alt="张量乘法" style="zoom:50%;"></p>
+<p>pytorch版本</p>
+<blockquote>
+<pre class="line-numbers language-none"><code class="language-none"># trace
+&gt;&gt;&gt; torch.einsum('ii', torch.randn(4, 4))
+tensor(-1.2104)
+
+# diagonal
+&gt;&gt;&gt; torch.einsum('ii-&gt;i', torch.randn(4, 4))
+tensor([-0.1034,  0.7952, -0.2433,  0.4545])
+
+# outer product
+&gt;&gt;&gt; x = torch.randn(5)
+&gt;&gt;&gt; y = torch.randn(4)
+&gt;&gt;&gt; torch.einsum('i,j-&gt;ij', x, y)
+tensor([[ 0.1156, -0.2897, -0.3918,  0.4963],
+        [-0.3744,  0.9381,  1.2685, -1.6070],
+        [ 0.7208, -1.8058, -2.4419,  3.0936],
+        [ 0.1713, -0.4291, -0.5802,  0.7350],
+        [ 0.5704, -1.4290, -1.9323,  2.4480]])
+
+# batch matrix multiplication
+&gt;&gt;&gt; As = torch.randn(3,2,5)
+&gt;&gt;&gt; Bs = torch.randn(3,5,4)
+&gt;&gt;&gt; torch.einsum('bij,bjk-&gt;bik', As, Bs)
+tensor([[[-1.0564, -1.5904,  3.2023,  3.1271],
+        [-1.6706, -0.8097, -0.8025, -2.1183]],
+
+        [[ 4.2239,  0.3107, -0.5756, -0.2354],
+        [-1.4558, -0.3460,  1.5087, -0.8530]],
+
+        [[ 2.8153,  1.8787, -4.3839, -1.2112],
+        [ 0.3728, -2.1131,  0.0921,  0.8305]]])
+
+# with sublist format and ellipsis
+&gt;&gt;&gt; torch.einsum(As, [..., 0, 1], Bs, [..., 1, 2], [..., 0, 2])
+tensor([[[-1.0564, -1.5904,  3.2023,  3.1271],
+        [-1.6706, -0.8097, -0.8025, -2.1183]],
+
+        [[ 4.2239,  0.3107, -0.5756, -0.2354],
+        [-1.4558, -0.3460,  1.5087, -0.8530]],
+
+        [[ 2.8153,  1.8787, -4.3839, -1.2112],
+        [ 0.3728, -2.1131,  0.0921,  0.8305]]])
+
+# batch permute
+&gt;&gt;&gt; A = torch.randn(2, 3, 4, 5)
+&gt;&gt;&gt; torch.einsum('...ij-&gt;...ji', A).shape
+torch.Size([2, 3, 5, 4])
+
+# equivalent to torch.nn.functional.bilinear
+&gt;&gt;&gt; A = torch.randn(3,5,4)
+&gt;&gt;&gt; l = torch.randn(2,5)
+&gt;&gt;&gt; r = torch.randn(2,4)
+&gt;&gt;&gt; torch.einsum('bn,anm,bm-&gt;ba', l, A, r)
+tensor([[-0.3430, -5.2405,  0.4494],
+        [ 0.3311,  5.5201, -3.0356]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
 <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/71639781">一个函数打天下，einsum</a></p>
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.einsum.html#torch-einsum">TORCH.EINSUM</a></p>
 
                 
             </div>
@@ -465,8 +532,8 @@ $c=\sum_ia_ib">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Math/">
-                                    <span class="chip bg-color">Math</span>
+                                <a href="/tags/%E2%80%98Pytorch-Function%E2%80%99/">
+                                    <span class="chip bg-color">‘Pytorch Function’</span>
                                 </a>
                             
                         </div>
@@ -693,8 +760,12 @@ $c=\sum_ia_ib">
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Passerby-W
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Pytorch/" class="post-category">
+                                    Pytorch
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -703,8 +774,8 @@ $c=\sum_ia_ib">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Math/">
-                        <span class="chip bg-color">Math</span>
+                    <a href="/tags/%E2%80%98Pytorch-Function%E2%80%99/">
+                        <span class="chip bg-color">‘Pytorch Function’</span>
                     </a>
                     
                 </div>
@@ -944,7 +1015,7 @@ $c=\sum_ia_ib">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">28.1k</span>
+                        class="white-color">28.4k</span>
             
             
             
@@ -1232,22 +1303,6 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 
