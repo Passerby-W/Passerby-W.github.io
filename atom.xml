@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-10-11T06:17:46.300Z</updated>
+  <updated>2022-10-12T03:48:59.596Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速幂及应用</title>
+    <link href="http://passerby-w.github.io/2022/10/12/kuai-su-mi-ji-ying-yong/"/>
+    <id>http://passerby-w.github.io/2022/10/12/kuai-su-mi-ji-ying-yong/</id>
+    <published>2022-10-12T02:53:53.000Z</published>
+    <updated>2022-10-12T03:48:59.596Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;幂运算（英语：exponentiation），又称指数运算，是数学运算，表达式为$b^n$，读作“b的n次方”或“b的n n次幂”。其中，</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://passerby-w.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="快速幂" scheme="http://passerby-w.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    
+  </entry>
   
   <entry>
     <title>Deep Learning Systems课程笔记（1）</title>
@@ -507,31 +532,6 @@
     
     
     <category term="NER" scheme="http://passerby-w.github.io/tags/NER/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ASR错误自动识别与纠正</title>
-    <link href="http://passerby-w.github.io/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/"/>
-    <id>http://passerby-w.github.io/2021/12/31/asr-cuo-wu-zi-dong-shi-bie-yu-jiu-zheng/</id>
-    <published>2021-12-31T07:19:38.000Z</published>
-    <updated>2021-12-31T08:10:42.407Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
-    
-    
-    <category term="ASR纠错" scheme="http://passerby-w.github.io/tags/ASR%E7%BA%A0%E9%94%99/"/>
     
   </entry>
   
