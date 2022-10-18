@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Deep-Learning-Systems课程笔记（2）</title>
+      <link href="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/"/>
+      <url>/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h2><p>感知机是一个线性分类模型，属于判别模型，因为模型关心的是对给定的输入X，应该预测什么样的输出Y，与生成模型的不同在于不需要先学习出联合分布P(X,Y)。</p><p>感知机的输入输出都是二进制的，多个输入一个输出。</p><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 11.50.49.png" alt="" style="zoom: 33%;"></p><p>其中神经元内的计算如下：</p><blockquote><p>$\sum_jw_jx_j$</p></blockquote><p>output计算如下：</p><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 14.28.59.png" alt="" style="zoom:33%;"></p><h2 id="感知机到神经网络"><a href="#感知机到神经网络" class="headerlink" title="感知机到神经网络"></a>感知机到神经网络</h2><p>无法解决非线性问题，例如XOR问题。</p><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 14.33.34.png" alt="" style="zoom:50%;"></p><p>即便采用多层perceptron，他仍然是一个线性模型。</p><blockquote><p>$h_{\theta}(x)=\theta^T\phi(x)$</p><p>$\theta\in\mathbb{R}^{d*k}$    $\phi:\mathbb{R^n}\rightarrow\mathbb{R^d}$</p><p>$\phi(x)=W^Tx$</p><p>$h_{\theta}(x)=\theta^T\phi(x)=\theta^TW^Tx=\hat\theta x$</p></blockquote><p>神经网络为了解决这一问题，引入了激活函数使得模型可以解决非线性问题。主要改动就是用$\sigma$替换掉原来的$\phi$方法。</p><blockquote><p>where 𝜎: R → R is a nonlinear function applied <em>elementwise</em> to the vector (e.g. sigmoid, ReLU)</p></blockquote><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 16.32.29.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 16.34.18.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 16.39.39.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 17.17.30.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/截屏2022-10-18 17.18.04.png" alt="" style="zoom:50%;"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Deep-Learning-Systems课程笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Algorithms and Implementation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>快速幂及应用</title>
       <link href="/2022/10/12/kuai-su-mi-ji-ying-yong/"/>
       <url>/2022/10/12/kuai-su-mi-ji-ying-yong/</url>
@@ -33,7 +58,7 @@
       <link href="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/"/>
       <url>/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/</url>
       
-        <content type="html"><![CDATA[<p>首先介绍一下Softmax的公式：</p><blockquote><p>$a_i=\frac{e^{z_i}}{\sum_j^ne^{z_j}}$</p></blockquote><p>它接受一个向量（或者一组变量）作为输入，每个变量指数化后除以所有指数化变量之和，有点类似于对输入进行归一化，事实上它就叫做归一化指数函数。</p><p>Sigmoid函数其实就是Softmax在二分类时候的特例，对于二分类而言（以输入$x_1$ 为例）：</p><blockquote><p>Sigmoid函数： $output(x_1)=\frac{1}{1+e^{-x_1}}$    (1)</p><p>Softmax函数： $output(x_1)=\frac{e^{x_1}}{e^{x_1}+e^{x_2}}=\frac{1}{1+e^{-(x_1-x_2)}}$    (2)</p><p>由公式（2）我们可知，$(x1−x2)$ 可以用$z_1$代替，即Softmax函数可以写成：</p><p>$output(z_1)=\frac{1}{1+e^{-z_1}}$    (3) </p><p>（3）和公式（1）完全相同，所以理论上来说两者是没有任何区别的。</p></blockquote><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.30.22-5459032.png" alt="" style="zoom: 33%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.36.24.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.39.17.png" alt="" style="zoom:50%;"><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.40.14-5459621.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.42.25-5459754.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.43.09-5459797.png" alt="" style="zoom:50%;"></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/42040307">softmax损失函数最简单的求导推导</a></p><p><a href="https://zhuanlan.zhihu.com/p/67759205">Softmax与交叉熵损失的实现及求导</a></p><p><a href="https://dlsyscourse.org/slides/softmax_regression.pdf">ML Refresher / Softmax Regression</a></p>]]></content>
+        <content type="html"><![CDATA[<p>首先介绍一下Softmax的公式：</p><blockquote><p>$a_i=\frac{e^{z_i}}{\sum_j^ne^{z_j}}$</p></blockquote><p>它接受一个向量（或者一组变量）作为输入，每个变量指数化后除以所有指数化变量之和，有点类似于对输入进行归一化，事实上它就叫做归一化指数函数。</p><p>Sigmoid函数其实就是Softmax在二分类时候的特例，对于二分类而言（以输入$x_1$ 为例）：</p><blockquote><p>Sigmoid函数： $output(x_1)=\frac{1}{1+e^{-x_1}}$    (1)</p><p>Softmax函数： $output(x_1)=\frac{e^{x_1}}{e^{x_1}+e^{x_2}}=\frac{1}{1+e^{-(x_1-x_2)}}$    (2)</p><p>由公式（2）我们可知，$(x1−x2)$ 可以用$z_1$代替，即Softmax函数可以写成：</p><p>$output(z_1)=\frac{1}{1+e^{-z_1}}$    (3) </p><p>（3）和公式（1）完全相同，所以理论上来说两者是没有任何区别的。</p></blockquote><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.30.22-5459032.png" alt="" style="zoom: 33%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.36.24.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.39.17.png" alt="" style="zoom:50%;"><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.40.14-5459621.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-18 15.32.32.png" alt="" style="zoom: 50%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.42.25-5459754.png" alt="" style="zoom:50%;"></p><p><img src="/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/截屏2022-10-11 11.43.09-5459797.png" alt="" style="zoom:50%;"></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/42040307">softmax损失函数最简单的求导推导</a></p><p><a href="https://zhuanlan.zhihu.com/p/67759205">Softmax与交叉熵损失的实现及求导</a></p><p><a href="https://dlsyscourse.org/slides/softmax_regression.pdf">ML Refresher / Softmax Regression</a></p>]]></content>
       
       
       <categories>

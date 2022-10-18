@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-10-12T06:46:40.084Z</updated>
+  <updated>2022-10-18T09:18:28.526Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Deep-Learning-Systems课程笔记（2）</title>
+    <link href="http://passerby-w.github.io/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/"/>
+    <id>http://passerby-w.github.io/2022/10/18/deep-learning-systems-ke-cheng-bi-ji-2/</id>
+    <published>2022-10-18T03:42:11.000Z</published>
+    <updated>2022-10-18T09:18:28.526Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;感知机&quot;&gt;&lt;a href=&quot;#感知机&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Deep-Learning-Systems课程笔记" scheme="http://passerby-w.github.io/categories/Deep-Learning-Systems%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Algorithms and Implementation" scheme="http://passerby-w.github.io/tags/Algorithms-and-Implementation/"/>
+    
+  </entry>
   
   <entry>
     <title>快速幂及应用</title>
@@ -46,7 +71,7 @@
     <link href="http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/"/>
     <id>http://passerby-w.github.io/2022/10/11/deep-learning-systems-ke-cheng-bi-ji-1/</id>
     <published>2022-10-11T03:00:20.000Z</published>
-    <updated>2022-10-12T06:16:22.369Z</updated>
+    <updated>2022-10-18T07:36:39.501Z</updated>
     
     
       
@@ -507,31 +532,6 @@
     
     
     <category term="Binary Search" scheme="http://passerby-w.github.io/tags/Binary-Search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NER学习整理</title>
-    <link href="http://passerby-w.github.io/2021/12/31/ner-xue-xi-zheng-li/"/>
-    <id>http://passerby-w.github.io/2021/12/31/ner-xue-xi-zheng-li/</id>
-    <published>2021-12-31T08:01:23.000Z</published>
-    <updated>2022-01-06T06:46:11.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;什么是NER&quot;&gt;&lt;a href=&quot;#什么是NER&quot; class=&quot;headerlink&quot; title=&quot;什么是NER&quot;&gt;&lt;/a&gt;什么是NER&lt;/h2&gt;&lt;p&gt;命名体识别（Named Entity Recognition,</summary>
-        
-      
-    
-    
-    
-    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
-    
-    
-    <category term="NER" scheme="http://passerby-w.github.io/tags/NER/"/>
     
   </entry>
   
