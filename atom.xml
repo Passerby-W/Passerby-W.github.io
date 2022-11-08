@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-10-19T02:40:56.627Z</updated>
+  <updated>2022-11-07T03:14:26.236Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tokenization for NLP</title>
+    <link href="http://passerby-w.github.io/2022/11/05/tokenization-for-nlp/"/>
+    <id>http://passerby-w.github.io/2022/11/05/tokenization-for-nlp/</id>
+    <published>2022-11-05T04:45:11.000Z</published>
+    <updated>2022-11-07T03:14:26.236Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Tokenization的目地是将输入文本分割成一个个token，和词典配合以让机器认识文本。它的难点在于如何获得理想的切分，使文本中所有的token都具有正确的表义，并且不会存在OOV问题。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="http://passerby-w.github.io/categories/NLP/"/>
+    
+    
+    <category term="Tokenization" scheme="http://passerby-w.github.io/tags/Tokenization/"/>
+    
+  </entry>
   
   <entry>
     <title>Deep Learning Systems课程笔记（2）</title>
@@ -505,33 +531,6 @@
     
     
     <category term="Regular Expression" scheme="http://passerby-w.github.io/tags/Regular-Expression/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法-二分法</title>
-    <link href="http://passerby-w.github.io/2022/01/06/suan-fa-er-fen-fa/"/>
-    <id>http://passerby-w.github.io/2022/01/06/suan-fa-er-fen-fa/</id>
-    <published>2022-01-06T06:42:05.000Z</published>
-    <updated>2022-01-10T08:24:45.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;二分法主要是通过左右逼近的方式，向目标值靠拢，并且取得对数复杂度的算法。&lt;/p&gt;
-&lt;p&gt;下面这段代码就是一般二分法的代码，不过应该如何理解二分法的本质呢？&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-python&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Algorithm" scheme="http://passerby-w.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="Binary Search" scheme="http://passerby-w.github.io/tags/Binary-Search/"/>
     
   </entry>
   

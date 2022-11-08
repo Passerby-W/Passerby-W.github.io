@@ -352,7 +352,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>幂运算（英语：exponentiation），又称指数运算，是数学运算，表达式为$b^n$，读作“b的n次方”或“b的n次幂”。其中， b称为底数，而n称为指数，通常指数写成上标，放在底数的右边。如果指数很大，通常幂运算的结果都特别大，而且很慢，那么有没有一种好的方法可以加速这一计算过程呢。</p>
-<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.04.38-5543886.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.04.38-5543886.png" alt style="zoom:50%;"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">def fast_exp(a, n):
     """
     快速求幂函数的结果，时间复杂度为O(logn)
@@ -369,10 +369,10 @@
     return r<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>快速幂算法的应用有以下三点：</p>
 <h2 id="计算-a-n-对-m-取模"><a href="#计算-a-n-对-m-取模" class="headerlink" title="计算$a^n$对$m$取模"></a>计算$a^n$对$m$取模</h2><p>幂取模运算在密码学和数论中非常重要。</p>
-<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.09.11-5544157.png" alt="" style="zoom: 25%;"></p>
-<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.10.42-5544250.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.09.11-5544157.png" alt style="zoom: 25%;"></p>
+<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.10.42-5544250.png" alt style="zoom:50%;"></p>
 <h2 id="计算斐波那契数列第n项"><a href="#计算斐波那契数列第n项" class="headerlink" title="计算斐波那契数列第n项"></a>计算斐波那契数列第n项</h2><p>求斐波那契数列第n项只需要将初始化的r改为矩阵形式即可。</p>
-<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.17.40-5544667.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.17.40-5544667.png" alt style="zoom:50%;"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">def fast_fab(n):
     A = np.array([1, 0])
     R = np.array([[1, 1], [1, 0]])
@@ -384,7 +384,7 @@
         n = n &gt;&gt; 1
     return I @ A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="线性变换n次"><a href="#线性变换n次" class="headerlink" title="线性变换n次"></a>线性变换n次</h2><p>类似于斐波那契数列算法</p>
-<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.48.21-5546506.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/10/12/kuai-su-mi-ji-ying-yong/截屏2022-10-12 11.48.21-5546506.png" alt style="zoom:50%;"></p>
 
                 
             </div>
@@ -926,7 +926,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">29.2k</span>
+                        class="white-color">30.6k</span>
             
             
             

@@ -400,7 +400,7 @@
 <li><strong><em>深度学习方法：</em></strong>将深度学习技术应用于NER有三个核心优势。首先，NER受益于非线性转换，它生成从输入到输出的非线性映射。与线性模型（如对数线性HMM和线性链CRF）相比，基于DL的模型能够通过非线性激活函数从数据中学习复杂的特征。第二，深度学习节省了设计NER特性的大量精力。传统的基于特征的方法需要大量的工程技术和领域专业知识。另一方面，基于DL的模型可以有效地从原始数据中自动学习有用的表示形式和潜在因素。第三，深层神经网络模型可以通过梯度下降法在端到端范式中进行训练。这一特性使我们能够设计可能复杂的NER系统。基于深度学习的NER模型有很多种，下面将列举几种深度学习解决NER的例子。</li>
 </ol>
 <h3 id="BiLSTM-CRF"><a href="#BiLSTM-CRF" class="headerlink" title="BiLSTM+CRF"></a>BiLSTM+CRF</h3><p>BiLSTM+CRF结构如下图所示：首先，句中的每个单词是一条包含词嵌入和字嵌入的词向量，词嵌入通常是事先训练好的，字嵌入则是随机初始化的。所有的嵌入都会随着训练的迭代过程被调整。其次，BiLSTM-CRF的输入是词嵌入向量，输出是每个单词对应的预测标签。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-80fc94217cfd3ae9d85636859a8b27bc_1440w.jpg" alt=""></p>
+<p><img src="https://pic1.zhimg.com/80/v2-80fc94217cfd3ae9d85636859a8b27bc_1440w.jpg" alt></p>
 <p>BiLSTM层的输入表示该单词对应各个类别的分数。如W0，BiLSTM节点的输出是1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) and 0.05 (O)。这些分数将会是CRF层的输入。所有的经BiLSTM层输出的分数将作为CRF层的输入，类别序列中分数最高的类别就是预测的最终结果。</p>
 <h5 id="为什么使用CRF层"><a href="#为什么使用CRF层" class="headerlink" title="为什么使用CRF层"></a>为什么使用CRF层</h5><p>使用CRF层的的原因是LSTM在进行序列建模时只考虑了输入序列的信息，无法对标签转移关系进行建模，以BIO标注为例，可能会出现如下问题：</p>
 <p><strong>例如输入序列为：“北京烤鸭“</strong></p>
@@ -512,18 +512,18 @@
 <h3 id="IDCNN-CRF"><a href="#IDCNN-CRF" class="headerlink" title="IDCNN+CRF"></a>IDCNN+CRF</h3><p>尽管BILSTM在NER任务中有很好的表现，但是却不能充分利用GPU的并行性，因此出现了一种新的NER模型方案IDCNN+CRF。</p>
 <p>尽管传统的CNN有明显的计算优势，但是传统的CNN在经过卷积之后，末梢神经元只能得到输入文本的一小部分信息，为了获取上下文信息，需要加入更多的卷积层，导致网络越来越深，参数越来越多，容易发生过拟合。</p>
 <p>IDCNN的改进基于CNN做出了改进，卷积操作更换为空洞卷积，那么为什么要做空洞卷积呢？因为正常CNN卷积之后会接一个池化层，池化层会损失信息，降低精度，那么不如不加池化层，直接在卷积操作中增大感受野，所以就有了空洞卷积（如下图所示）。</p>
-<p><img src="https://pic4.zhimg.com/v2-4959201e816888c6648f2e78cccfd253_b.jpg" alt="" style="zoom:67%;"></p>
+<p><img src="https://pic4.zhimg.com/v2-4959201e816888c6648f2e78cccfd253_b.jpg" alt style="zoom:67%;"></p>
 <p>IDCNN为这片filter增加了一个dilation width，作用在输入矩阵的时候，会skip掉所有dilation width中间的输入数据；而filter矩阵本身的大小仍然不变，这样filter获取到了更广阔的输入矩阵上的数据，看上去就像是“膨胀”了一般。dilated width会随着层数的增加而指数增加。这样随着层数的增加，参数数量是线性增加的，而receptive field却是指数增加的，可以很快覆盖到全部的输入数据。图像的空洞卷积如下图所示：</p>
-<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.53.09.png" alt="" style="zoom: 33%;"></p>
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.53.09.png" alt style="zoom: 33%;"></p>
 <p>对应到文本中的卷积操作如下图所示：</p>
-<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.55.50.png" alt="" style="zoom:33%;"></p>
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午10.55.50.png" alt style="zoom:33%;"></p>
 <p>IDCNN获取特征之后，与BiLSTM一样，将结果输入到CRF层，利用维特比解码，得到最终的标签。</p>
 <h3 id="Bert-BiLSTM-CRF"><a href="#Bert-BiLSTM-CRF" class="headerlink" title="Bert+BiLSTM+CRF"></a>Bert+BiLSTM+CRF</h3><p>BERT的全称为Bidirectional Encoder Representation from Transformers，由谷歌2018年提出来，是一个预训练的语言表征模型。它采用新的masked language model（MLM），以致能生成深度的双向语言表征。BERT通过微调的方法可以灵活的应用到下游业务，所以可以考虑使用Bert作为embedding层，将特征输入到Bilstm+CRF中，以谋求更好的效果。</p>
 <p>该模型有以下主要优点：</p>
 <p>1）以往的预训练模型的结构会受到单向语言模型<em>（从左到右或者从右到左）</em>的限制，因而也限制了模型的表征能力，使其只能获取单方向的上下文信息。而BERT利用MLM进行预训练并且采用深层的双向Transformer组件/（单向的Transformer一般被称为Transformer decoder，而双向的Transformer则被称为Transformer encoder）来构建整个模型，因此最终生成能融合左右上下文信息的深层双向语言表征。Transformer结构如下：</p>
-<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.36.43.png" alt="" style="zoom: 30%;"></p>
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.36.43.png" alt style="zoom: 30%;"></p>
 <p>而Transformer又可以进行堆叠，形成一个更深的神经网络：</p>
-<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.51.32.png" alt="" style="zoom: 20%;"></p>
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 上午11.51.32.png" alt style="zoom: 20%;"></p>
 <p>MLM是BERT能够不受单向语言模型所限制的原因。简单来说就是以15%的概率用mask token （[MASK]）随机地对每一个训练序列中的token进行替换，然后预测出[MASK]位置原有的单词。然而，由于[MASK]并不会出现在下游任务的微调（fine-tuning）阶段，因此预训练阶段和微调阶段之间产生了不匹配（预训练的目标会令产生的语言表征对[MASK]敏感，但是却对其他token不敏感）。因此BERT采用了以下策略来解决这个问题：</p>
 <p>首先在每一个训练序列中以15%的概率随机地选中某个token位置用于预测，假如是第i个token被选中，则会被替换成以下三个token之一</p>
 <ul>
@@ -533,11 +533,11 @@
 </ul>
 <p>再用该位置对应的$T_i$去预测出原来的token（<em>输入到全连接，然后用softmax输出每个token的概率，最后用交叉熵计算loss）</em>。该策略令到BERT不再只对[MASK]敏感，而是对所有的token都敏感，以致能抽取出任何token的表征信息。</p>
 <p>2）预训练后，只需要添加一个额外的输出层进行fine-tune，就可以在各种各样的下游任务中取得state-of-the-art的表现。在这过程中并不需要对BERT进行任务特定的结构修改。</p>
-<h3 id="FLAT"><a href="#FLAT" class="headerlink" title="FLAT"></a>FLAT</h3><p><img src="https://pic4.zhimg.com/80/v2-a317ee70e90df352fe518386fd0b1c3b_1440w.jpg" alt="" style="zoom:50%;"></p>
+<h3 id="FLAT"><a href="#FLAT" class="headerlink" title="FLAT"></a>FLAT</h3><p><img src="https://pic4.zhimg.com/80/v2-a317ee70e90df352fe518386fd0b1c3b_1440w.jpg" alt style="zoom:50%;"></p>
 <p>FLAT的基本思想来源于Lattice-LSTM（如上图），Lattice-LSTM采取的RNN结构无法捕捉长距离依赖，同时引入词汇信息是有损的，同时动态的Lattice结构也不能充分进行GPU并行。为解决计算效率低下、引入词汇信息有损的这两个问题，FLAT基于Transformer结构进行了两大改进：</p>
 <p><strong>改进1：Flat-Lattice Transformer，无损引入词汇信息</strong></p>
 <p>FLAT设计了一种巧妙position encoding来融合Lattice 结构，具体地情况如下上图所示，对于每一个字符和词汇都构建两个head position encoding 和tail position encoding，这种方式可以重构原有的Lattice结构。</p>
-<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 下午1.48.04.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2021/12/31/ner-xue-xi-zheng-li/截屏2021-12-10 下午1.48.04.png" alt style="zoom:50%;"></p>
 <p><strong>改进2：相对位置编码，让Transformer适用NER任务</strong></p>
 <p>Lattice结构由不同长度的跨度组成。为了编码跨域之间的交互，FLAT提出了跨域的相对位置编码。对于两个空间的 $x_i $和 $x_j$，它们之间有三种关系:交集、包含和分离，由它们的正面和反面决定。这三种关系不是直接对其编码，而是使用密集向量来建模它们的关系。它是通过对头部和尾部信息的连续变换来计算的。因此，相对位置编码不仅可以表示两个符号之间的关系，还可以表示更详细的信息，如字符和单词之间的距离。让$head[i]$和$tail[i]$表示跨度$x_i$的头和尾位置。可以用四种相对距离来表示$x_i $和 $x_j$和 之间的关系,具体公式如下所示：</p>
 <script type="math/tex; mode=display">
@@ -1113,7 +1113,7 @@ d_{ij}^{tt}=tail[i]-tail[j]\\</script><h2 id="中文NER任务特点"><a href="#�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">29.2k</span>
+                        class="white-color">30.6k</span>
             
             
             
