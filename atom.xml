@@ -6,7 +6,7 @@
   <link href="http://passerby-w.github.io/atom.xml" rel="self"/>
   
   <link href="http://passerby-w.github.io/"/>
-  <updated>2022-11-07T03:14:26.236Z</updated>
+  <updated>2023-02-22T07:06:03.558Z</updated>
   <id>http://passerby-w.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://passerby-w.github.io/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/"/>
+    <id>http://passerby-w.github.io/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/</id>
+    <published>2023-02-20T09:36:12.693Z</published>
+    <updated>2023-02-22T07:06:03.558Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;自然语言处理——语言模型&quot;&gt;&lt;a href=&quot;#自然语言处理——语言模型&quot; class=&quot;headerlink&quot; title=&quot;自然语言处理——语言模型&quot;&gt;&lt;/a&gt;自然语言处理——语言模型&lt;/h1&gt;&lt;h2 id=&quot;语言模型&quot;&gt;&lt;a href=&quot;#语言模型&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Tokenization for NLP</title>
@@ -505,32 +526,6 @@
     <category term="neo4j" scheme="http://passerby-w.github.io/tags/neo4j/"/>
     
     <category term="java" scheme="http://passerby-w.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式</title>
-    <link href="http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/"/>
-    <id>http://passerby-w.github.io/2022/01/10/zheng-ze-biao-da-shi/</id>
-    <published>2022-01-10T07:29:52.000Z</published>
-    <updated>2022-01-13T02:46:42.960Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。&lt;/p&gt;
-&lt;p&gt;在线测试正则表达式网站：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="http://passerby-w.github.io/categories/Python/"/>
-    
-    
-    <category term="Regular Expression" scheme="http://passerby-w.github.io/tags/Regular-Expression/"/>
     
   </entry>
   

@@ -1,0 +1,1330 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="python,nlp,machine learning,hexo,data structue">
+    <meta name="description" content="自然语言处理——语言模型语言模型
+语音识别系统的目的，是把语音转换成文字。具体来说，是输入一段语音信号，要找一个文字序列（由词或字组成），使得它与语音信号的匹配程度最高。这个匹配程度，一般是用概率表示的。用$X$表示语音信号，$W$表示文字">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>WAN</title>
+    <link rel="icon" type="image/png" href="/medias/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="WAN" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">WAN</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">WAN</div>
+        <div class="logo-desc">
+            
+            My life is working on gradient descent
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-02-20
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-02-22
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    21 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="自然语言处理——语言模型"><a href="#自然语言处理——语言模型" class="headerlink" title="自然语言处理——语言模型"></a>自然语言处理——语言模型</h1><h2 id="语言模型"><a href="#语言模型" class="headerlink" title="语言模型"></a>语言模型</h2><p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_timeline.png" alt="Timeline of Language Models" style="zoom:50%;"></p>
+<p>语音识别系统的目的，是把语音转换成文字。具体来说，是输入一段语音信号，要找一个文字序列（由词或字组成），使得它与语音信号的匹配程度最高。这个匹配程度，一般是用概率表示的。用$X$表示语音信号，$W$表示文字序列，则要求解的是下面这个问题：</p>
+<blockquote>
+<p>$W^∗=\arg\max_WP(W|X)$</p>
+</blockquote>
+<p>一般认为，语音是由文字产生的（可以理解成人们先想好要说的词，再把它们的音发出来），所以上式中条件概率的顺序就比较别扭了。没关系，通过贝叶斯公式，可以把条件和结论拧过来：</p>
+<blockquote>
+<p>$W^∗=\arg\max_W\frac{P(X|W)P(W)}{P(X)}=\arg\max_WP(X|W)P(W)$<br>第二步省略分母是因为我们要优化的是$W$，而$P(X)$不含$W$，是常数。</p>
+</blockquote>
+<p>上面这个方程，就是<strong>语音识别里最核心的公式</strong>。可以这样形象地理解它：我们要找的$W$，需要使得$P(W)$和$P(X|W)$都大。$P(W)$表示一个文字序列本身的概率，也就是这一串词或字本身有多“像话”；$P(X|W)$表示给定文字后语音信号的概率，即这句话有多大的可能发成这串音。计算这两项的值，就是<strong>语言模型</strong>和<strong>声学模型</strong>各自的任务。</p>
+<blockquote>
+<p>对于语言序列 w1,w2,…,wn，语言模型就是计算该序列的概率，即 P(w1,w2,…,wn) 。从机器学习的角度来看：<strong>语言模型是对语句的概率分布的建模</strong>。通俗解释：判断一个语言序列是否是正常语句，即<strong>是否是人话</strong>，例如 P(I am Light)&gt;P(Light I am) 。</p>
+</blockquote>
+<h3 id="统计语言模型"><a href="#统计语言模型" class="headerlink" title="统计语言模型"></a>统计语言模型</h3><h4 id="N-Gram模型"><a href="#N-Gram模型" class="headerlink" title="N-Gram模型"></a>N-Gram模型</h4><p>首先，由链式法则(chain rule)可以得到</p>
+<blockquote>
+<p>$P(w_1,w_2,…,w_n)=P(w_1)P(w_2|w_1)⋅⋅⋅P(w_n|w_1,…,w_{n−1})$</p>
+</blockquote>
+<p>在统计语言模型中，采用极大似然估计来计算每个词出现的条件概率，即</p>
+<blockquote>
+<p>$P(w_i|w_1,…,w_{i−1})=\frac {C(w_1,w_2,…,w_i)}{∑_wC(w_1,w_2,..w_{i−1},w)}\approx\frac {C(w_1,w_2,…,w_i)}{C(w_1,w_2,..w_{i−1})}$</p>
+</blockquote>
+<p>其中，$C(⋅)$ 表示子序列在训练集中出现的次数。</p>
+<p>对于任意长的自然语言语句，根据极大似然估计直接计算 $P(w_i|w_1,…,w_{i−1}) $显然不现实。</p>
+<p>为了解决这个问题，我们引入<strong>马尔可夫假设</strong>(Markov assumption)，即假设当前词出现的概率只依赖于前n-1个词，可以得到</p>
+<blockquote>
+<p>$P(w_i|w_1,w_2,…,w_{i−1})=P(w_i|w_{i−n+1},…,w_{i−1})$</p>
+</blockquote>
+<p>基于上式，定义 <strong>n-gram</strong> 语言模型如下：</p>
+<blockquote>
+<p>n=1 unigram：$P(w_1,w_2,…,w_n)=∏_{i=1}^nP(w_i)$</p>
+<p>n=2 bigram： $P(w_1,w_2,…,w_n)=∏_{i=1}^nP(w_i|w_{i-1})$</p>
+<p>n=3 trigram： $P(w_1,w_2,…,w_n)=∏_{i=1}^nP(w_i|w_{i-2},w_{i-1})$</p>
+</blockquote>
+<p>其中， 当$n&gt;1$时，为了使句首词的条件概率有意义，需要给原序列加上一个或多个<strong>起始符 “<s>”</s></strong><s> 。可以说起始符的作用就是为了<strong>表征句首词出现的条件概率</strong>。此外，句子还需要加一个<strong>结束符“<s>”</s></strong><s>，当不加结束符时，n-gram 语言模型只能分别对所有<strong>固定长度</strong>的序列进行概率分布建模，而不是任意长度的序列。</s></s></p><s><s>
+<p>总结下基于统计的 n-gram 语言模型的优缺点：</p>
+<blockquote>
+<p>优点：(1) 采用极大似然估计，参数易训练；(2) 完全包含了前 n-1 个词的全部信息；(3) 可解释性强，直观易理解。</p>
+<p>缺点：(1) 缺乏远程依赖，只能建模到前 n-1 个词；(2) 随着 n 的增大，参数空间呈指数增长；(3) 数据稀疏，难免会出现OOV的问题（可使用平滑技术解决）；(4) 单纯的基于统计频次，非常受数据集影响，泛化能力差；（5）无法考虑两个词之间的相似度。</p>
+</blockquote>
+<h4 id="统计模型中的平滑技术"><a href="#统计模型中的平滑技术" class="headerlink" title="统计模型中的平滑技术"></a>统计模型中的平滑技术</h4><p>自然语言处理中的一大痛点就是出现<strong>未登录词</strong>(OOV)的问题，即测试集中出现了训练集中未出现过的词，导致语言模型计算出的概率为零。另一方面，可能某个子序列未在训练集中出现，也会导致概率为零。平滑的出现就是为了缓解这类问题。</p>
+<p>其次，常见的平滑技术有：</p>
+<ol>
+<li>Laplace Smoothing</li>
+<li>Interpolation</li>
+<li>Kneser-Ney</li>
+<li>…</li>
+</ol>
+<h3 id="神经网络语言模型"><a href="#神经网络语言模型" class="headerlink" title="神经网络语言模型"></a>神经网络语言模型</h3><h4 id="Neural-Networks-Language-Model"><a href="#Neural-Networks-Language-Model" class="headerlink" title="Neural Networks Language Model"></a>Neural Networks Language Model</h4><p>为了缓解<em>n</em>元模型估算概率时遇到的数据稀疏问题，研究者们提出了神经网络语言模型。代表性工作是Bengio等人在2003年提出的神经网络语言模型，该语言模型使用了一个三层前馈神经网络来进行建模。其中有趣的发现了第一层参数，用做词表示不仅低维紧密，而且能够蕴涵语义，也为后来的很多词向量模型（例如word2vec）打下了基础。</p>
+<p>前馈网络语言模型的架构图如下图所示，分为四层：</p>
+<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_nnlm.png" alt="前馈网络语言模型" style="zoom:40%;"></p>
+<p>这样得到的语言模型自带平滑，无需传统 n-gram 模型中那些复杂的平滑算法。</p>
+<p>有了上面的基础，我们可以稍微总结下语言模型到底在建模什么，私以为可以看作是在给定一个序列的前提下，预测下一个词出现的概率，即</p>
+<blockquote>
+<p>$P(w_i|w_1,…,w_{i−1})$</p>
+</blockquote>
+<p>不论 n-gram 中的 n 怎么选取，实际上都是对上式的近似。理解了这点，就不难理解神经网络语言模型的本质。</p>
+<p>神经网络语言模型(NNLM)通过构建神经网络的方式来探索和建模自然语言内在的依赖关系。尽管与统计语言模型的直观性相比，神经网络的黑盒子特性决定了NNLM的可解释性较差，但这并不妨碍其成为一种非常好的概率分布建模方式。</p>
+<blockquote>
+<p>优点：(1) 长距离依赖，具有更强的约束性；(2) 避免了数据稀疏所带来的OOV问题；(3) 好的词表征能够提高模型泛化能力。</p>
+<p>缺点：(1) 模型训练时间长；(2) 神经网络黑盒子，可解释性较差。</p>
+</blockquote>
+<h4 id="RNN-Language-Model"><a href="#RNN-Language-Model" class="headerlink" title="RNN Language Model"></a>RNN Language Model</h4><p>RNNLM结构如下：</p>
+<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_rnn.png" alt="截屏2023-02-21 14.19.04" style="zoom: 40%;"></p>
+<blockquote>
+<p>优点：（1）解决了ngram模型中不能捕获长期依赖的问题。</p>
+<p>缺点：（1）捕获长距离依赖能力仍然有限；（2）无法并行运算。</p>
+</blockquote>
+<h4 id="Word2vec"><a href="#Word2vec" class="headerlink" title="Word2vec"></a>Word2vec</h4><p>Word2Vec是2013年被Tomas Mikolov提出来的词向量训练算法，在论文中作者提到了两种Word2Vec的具体实现方式：<strong>连续词袋模型CBOW（Continuous Bag-of-Words Model）</strong>和<strong>Skip-gram</strong>。</p>
+<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_w2v.png" alt="Word2vec" style="zoom:40%;"></p>
+<p>Word2Vec 是一种计算非常高效的，可以从原始语料中学习字词空间向量的预测模型。CBOW 模式用一个词语的上下文作为输入，预测词语本身。即一句话中扣掉一个词，让模型猜这个词是什么。Skip-gram 模式用一个词语作为输入，来预测它周围的上下文（一个或多个词语）。即给模型一个词，猜前面和后面可能出现什么词。</p>
+<p>cbow是 1个老师 VS K个学生，K个学生（周围词）都会从老师（中心词）那里学习知识，但是老师（中心词）是一视同仁的，教给大家的一样的知识。至于你学到了多少，还要看下一轮（假如还在窗口内），或者以后的某一轮，你还有机会加入老师的课堂当中（再次出现作为周围词），跟着大家一起学习，然后进步一点。因此相对skip-gram，你的业务能力肯定没有人家强，但是对于整个训练营（训练过程）来说，这样肯定效率高，速度更快。</p>
+<p>在skip-gram里面，每个词在作为中心词的时候，实际上是 1个学生 VS K个老师，K个老师（周围词）都会对学生（中心词）进行“专业”的训练，这样学生（中心词）的“能力”（向量结果）相对就会扎实（准确）一些，但是这样肯定会使用更长的时间。</p>
+<p>其中，训练方法有负采样和层次softmax两种。</p>
+<blockquote>
+<p>优点：（1）解决词语相似度问题。</p>
+<p>缺点：（2）本质上是静态模型，无法解决一词多义的问题。</p>
+</blockquote>
+<h4 id="Glove"><a href="#Glove" class="headerlink" title="Glove"></a>Glove</h4><p>GloVe的全称叫Global Vectors for Word Representation，它是一个基于全局词频统计（count-based &amp; overall statistics）的词表征（word representation）工具。</p>
+<p><strong>Glove与LSA的区别</strong></p>
+<p>LSA（Latent Semantic Analysis）是一种比较早的count-based的词向量表征工具，它也是基于co-occurance matrix的，只不过采用了基于奇异值分解（SVD）的矩阵分解技术对大矩阵进行降维，而我们知道SVD的复杂度是很高的，所以它的计算代价比较大。还有一点是它对所有单词的统计权重都是一致的。而这些缺点在GloVe中被一一克服了。</p>
+<p>GloVe与word2vec，两个模型都可以根据词汇的“共现co-occurrence”信息，将词汇编码成一个向量（所谓共现，即语料中词汇一块出现的频率）。两者最直观的区别在于，word2vec是“predictive”的模型，而GloVe是“count-based”的模型。</p>
+<ul>
+<li>Predictive的模型，如Word2vec，根据context预测中间的词汇，要么根据中间的词汇预测context，分别对应了word2vec的两种训练方式cbow和skip-gram。对于word2vec，采用三层神经网络就能训练，最后一层的输出要用一个Huffuman树进行词的预测。</li>
+<li>Count-based模型，如GloVe，本质上是对共现矩阵进行降维。首先，构建一个词汇的共现矩阵，每一行是一个word，每一列是context。共现矩阵就是计算每个word在每个context出现的频率。由于context是多种词汇的组合，其维度非常大，我们希望像network embedding一样，在context的维度上降维，学习word的低维表示。这一过程可以视为共现矩阵的重构问题，即reconstruction loss。</li>
+</ul>
+<p>相比Word2Vec，GloVe更容易并行化，所以对于较大的训练数据，GloVe更快。</p>
+<blockquote>
+<p>优点：解决了w2v模型只用局部信息的缺点，使用了全局信息。</p>
+</blockquote>
+<h4 id="Elmo"><a href="#Elmo" class="headerlink" title="Elmo"></a>Elmo</h4><p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_elmo.png" alt="Elmo" style="zoom:40%;"></p>
+<p>解决了词语在不同语境词嵌入相同的问题</p>
+<blockquote>
+<p>优点：（1）利用上下文预测当前词，动态embedding。</p>
+<p>缺点：（1）两个方向的lstm属于弱双向，不能同时获得上下文信息；（2）不能完全解长距离依赖问题；（3）不能并行。</p>
+</blockquote>
+<h3 id="Transfomer家族"><a href="#Transfomer家族" class="headerlink" title="Transfomer家族"></a>Transfomer家族</h3><p>Attention is all you need</p>
+<p>整个结构完全由feed-forward network和attention组成。</p>
+<p>标准的 Transformer 模型主要由两个模块构成：</p>
+<ul>
+<li><strong>Encoder（左边）：</strong>负责理解输入文本，为每个输入构造对应的语义表示（语义特征），；</li>
+<li><strong>Decoder（右边）：</strong>负责生成输出，使用 Encoder 输出的语义表示结合其他输入来生成目标序列。</li>
+</ul>
+<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_transformer.png" alt="Transformer结构" style="zoom:50%;"></p>
+<p>随着时间的推移，新的 Transformer 模型层出不穷，但是它们依然可以被归类到三种主要架构下：</p>
+<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_transformer_models.png" alt="Transformer家族" style="zoom:50%;"></p>
+<h4 id="Encoder-分支"><a href="#Encoder-分支" class="headerlink" title="Encoder 分支"></a>Encoder 分支</h4><p>纯 Encoder 模型只使用 Transformer 模型中的 Encoder 模块，也被称为自编码 (auto-encoding) 模型。在每个阶段，注意力层都可以访问到原始输入句子中的所有词语，即具有“双向 (Bi-directional)”注意力。纯 Encoder 模型通常通过破坏给定的句子（例如随机遮盖其中的单词），然后让模型进行重构来进行预训练，最适合处理那些需要理解整个句子语义的任务，例如句子分类、命名实体识别（词语分类）和抽取式问答。</p>
+<p>BERT 是第一个基于 Transformer 结构的纯 Encoder 模型，它在提出时横扫了整个 NLP 界，在流行的 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1804.07461">GLUE</a> 基准（通过多个任务度量模型的自然语言理解能力）上超过了当时所有的最强模型。随后的一系列工作对 BERT 的预训练目标和架构进行调整以进一步提高性能。时至今日，纯 Encoder 模型依然在 NLP 行业中占据主导地位。</p>
+<p>下面我们简略地介绍一下 BERT 模型以及各种变体：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1810.04805">BERT</a>：通过预测文本中被掩码的词语和判断一个文本是否跟随着另一个来进行预训练，前一个任务被称为<strong>遮盖语言建模</strong> (Masked Language Modeling, MLM)，后一个任务被称为<strong>下一句预测</strong> (Next Sentence Prediction, NSP)；</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1910.01108">DistilBERT</a>：尽管 BERT 模型性能优异，但它的模型大小使其难以部署在低延迟需求的环境中。 通过在预训练期间使用知识蒸馏 (knowledge distillation) 技术，DistilBERT 在内存占用减少 40%、计算速度提高 60% 的情况下，依然可以保持 BERT 模型 97% 的性能；</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1907.11692">RoBERTa</a>：BERT 之后的一项研究表明，通过修改预训练方案可以进一步提高性能。 RoBERTa 在更多的训练数据上，以更大的批次训练了更长的时间，并且放弃了 NSP 任务。与 BERT 模型相比，这些改变显著地提高了模型的性能；</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1901.07291">XLM</a>：跨语言语言模型 (XLM) 探索了构建多语言模型的数个预训练目标，包括来自 GPT 模型的自回归语言建模和来自 BERT 的 MLM。此外，研究者还通过将 MLM 任务拓展到多语言输入，提出了翻译语言建模 (Translation Language Modeling, TLM)。XLM 模型基于这些任务进行预训练后，在数个多语言 NLU 基准和翻译任务上取得了最好的性能；</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1911.02116">XLM-RoBERTa</a>：跟随 XLM 和 RoBERTa 的工作，XLM-RoBERTa (XLM-R) 模型通过升级训练数据使得多语言预训练更进一步。具体地，首先基于 Common Crawl 语料库创建了一个包含 2.5 TB 文本数据的语料，然后在该数据集上运用 MLM 训练了一个编码器。由于数据集没有包含平行对照文本，因此移除了 XLM 的 TLM 目标。最终，该模型大幅超越了 XLM 和多语言 BERT 变体；</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.11942">ALBERT</a>：ALBERT 模型通过三处变化使得 Encoder 架构更高效：首先，它将词嵌入维度与隐藏维度解耦，使得嵌入维度很小以减少模型参数；其次，所有模型层共享参数，这进一步减少了模型的实际参数量；最后，将 NSP 任务替换为句子排序预测，即预测两个连续句子的顺序是否被交换。这些变化使得可以用更少的参数训练更大的模型，并在 NLU 任务上取得了优异的性能；</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2003.10555">ELECTRA</a>：标准 MLM 预训练的一个缺陷是，在每个训练步骤中，只有被遮盖掉词语的表示会得到更新。ELECTRA 使用了一种双模型方法来解决这个问题：第一个模型（通常很小）继续按标准的遮盖语言模型一样工作，预测被遮盖的词语；第二个模型（称为鉴别器）则预测第一个模型的输出中哪些词语是被遮盖的，因此判别器需要对每个词语进行二分类，这使得训练效率提高了 30 倍。对于下游任务，鉴别器也像标准 BERT 模型一样进行微调；</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2006.03654">DeBERTa</a>：DeBERTa 模型引入了两处架构变化。首先，每个词语都被表示为两个向量，一个用于记录内容，另一个用于记录相对位置。通过将词语的内容与相对位置分离，自注意力层 (Self-Attention) 层就可以更好地建模邻近词语对的依赖关系。另一方面，词语的绝对位置也很重要（尤其对于解码），因此 DeBERTa 在词语解码头的 softmax 层之前添加了一个绝对位置嵌入。DeBERTa 是第一个在 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1905.00537">SuperGLUE</a> 基准（更困难的 GLUE 版本）上击败人类基准的模型。</li>
+</ul>
+<h4 id="Decoder-分支"><a href="#Decoder-分支" class="headerlink" title="Decoder 分支"></a>Decoder 分支</h4><p>纯 Decoder 模型只使用 Transformer 模型中的 Decoder 模块。在每个阶段，对于某个给定的词语，注意力层只能访问句子中位于它之前的词语，即只能迭代地基于已经生成的词语来逐个预测后面的词语，因此也被称为自回归 (auto-regressive) 模型。纯 Decoder 模型的预训练通常围绕着预测句子中下一个单词展开。纯 Decoder 模型最适合处理那些只涉及文本生成的任务。</p>
+<p>对 Transformer Decoder 模型的探索在在很大程度上是由 <a target="_blank" rel="noopener" href="https://openai.com/">OpenAI</a> 带头进行的，通过使用更大的数据集进行预训练，以及将模型的规模扩大，纯 Decoder 模型的性能也在不断提高。</p>
+<p>下面我们就来简要介绍一下一些生成模型的演变：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://openai.com/blog/language-unsupervised">GPT</a>：GPT 结合了新颖高效的 Transformer Decoder 架构和迁移学习，通过根据前面单词预测下一个单词的预训练任务，在 BookCorpus 数据集上进行了训练。GPT 模型在分类等下游任务上取得了很好的效果。</li>
+<li><a target="_blank" rel="noopener" href="https://openai.com/blog/better-language-models/">GPT-2</a>：受简单且可扩展的预训练方法的启发，OpenAI 通过扩大原始模型和训练集创造了 GPT-2，它能够生成篇幅较长且语义连贯的文本。由于担心被误用，该模型分阶段进行发布，首先公布了较小的模型，然后发布了完整的模型。</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.05858">CTRL</a>：像 GPT-2 这样的模型虽然可以续写文本（也称为 prompt），但是用户几乎无法控制生成序列的风格。因此，条件 Transformer 语言模型 (Conditional Transformer Language, CTRL) 通过在序列开头添加特殊的“控制符”使得用户可以控制生成文本的风格，并且只需要调整控制符就可以生成多样化的文本。</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2005.14165">GPT-3</a>：在成功将 GPT 扩展到 GPT-2 之后，通过对不同规模语言模型行为的分析表明，存在<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2001.08361">幂律</a>来约束计算、数据集大小、模型大小和语言模型性能之间的关系。因此，GPT-2 被进一步放大 100 倍，产生了具有 1750 亿个参数的 GPT-3。除了能够生成令人印象深刻的真实篇章之外，该模型还展示了小样本学习 (few-shot learning) 的能力：只需要给出很少新任务的样本（例如将文本转换为代码），GPT-3 就能够在未见过的新样本上完成任务。但是 OpenAI 并没有开源这个模型，而是通过 OpenAI API 提供了调用接口；</li>
+<li><a target="_blank" rel="noopener" href="https://zenodo.org/record/5297715">GPT-Neo</a> / <a target="_blank" rel="noopener" href="https://github.com/kingoflolz/mesh-transformer-jax">GPT-J-6B</a>：由于 GPT-3 没有开源，因此一些旨在重新创建和发布 GPT-3 规模模型的研究人员组成了 EleutherAI，GPT-Neo 和 GPT-J-6B 就是由 EleutherAI 训练的类似 GPT 的模型。当前公布的模型具有 1.3、2.7 和 60 亿个参数，在性能上可以媲美 OpenAI 提供的较小版本的 GPT-3 模型。</li>
+</ul>
+<h4 id="Encoder-Decoder-分支"><a href="#Encoder-Decoder-分支" class="headerlink" title="Encoder-Decoder 分支"></a>Encoder-Decoder 分支</h4><p>Encoder-Decoder 模型（又称 Seq2Seq 模型）同时使用 Transformer 架构的两个模块。在每个阶段，Encoder 的注意力层都可以访问初始输入句子中的所有单词，而 Decoder 的注意力层则只能访问输入中给定词语之前的词语（已经解码生成的词语）。这些模型可以使用编码器或解码器模型的目标来完成预训练，但通常会包含一些更复杂的任务。例如，T5 通过使用 mask 字符随机遮盖掉输入中的文本片段（包含多个词）进行预训练，训练目标则是预测出被遮盖掉的文本。Encoder-Decoder 模型最适合处理那些需要根据给定输入来生成新句子的任务，例如自动摘要、翻译或生成式问答。</p>
+<p>下面我们简单介绍一些在自然语言理解 (NLU) 和自然语言生成 (NLG) 领域的 Encoder-Decoder 模型：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1910.10683">T5</a>：T5 模型将所有 NLU 和 NLG 任务都转换为文本到文本任务来统一解决，这样就可以运用 Encoder-Decoder 框架来完成任务。例如，对于文本分类问题，将文本作为输入送入 Encoder，然后 Decoder 生成文本形式的标签。T5 采用原始的 Transformer 架构，在 C4 大型爬取数据集上，通过遮盖语言建模以及将所有 SuperGLUE 任务转换为文本到文本任务来进行预训练。最终，具有 110 亿个参数的最大版本 T5 模型在多个基准上取得了最优性能。</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1910.13461">BART</a>：BART 在 Encoder-Decoder 架构中结合了 BERT 和 GPT 的预训练过程。首先将输入句子通过遮盖词语、打乱句子顺序、删除词语、文档旋转等方式进行破坏，然后通过 Encoder 编码后传递给 Decoder，并且要求 Decoder 能够重构出原始的文本。这使得模型可以灵活地用于 NLU 或 NLG 任务，并且在两者上都实现了最优性能。</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2010.11125">M2M-100</a>：一般翻译模型是按照特定的语言对和翻译方向来构建的，因此无法用于处理多语言。事实上，语言对之间可能存在共享知识，这可以用来处理稀有语言之间的翻译。M2M-100 是第一个可以在 100 种语言之间进行翻译的模型，并且对小众的语言也能生成高质量的翻译。该模型使用特殊的前缀标记（类似于 BERT 的 <code>[CLS]</code>）来指示源语言和目标语言。</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2007.14062">BigBird</a>：由于注意力机制 O(n2) 的内存要求，Transformer 模型只能处理一定长度范围内的文本。 BigBird 通过使用线性扩展的稀疏注意力形式解决了这个问题，从而将可处理的文本长度从大多数 BERT 模型的 512 大幅扩展到 4096，这对于处理文本摘要等需要保存长距离依赖关系的任务特别有用。</li>
+</ul>
+<h3 id="语言模型的评价指标"><a href="#语言模型的评价指标" class="headerlink" title="语言模型的评价指标"></a>语言模型的评价指标</h3><p>信息论中常采用<strong>相对熵</strong>(relative entropy)来衡量真实模型和训练模型两个分布之间的相近程度。</p>
+<p>对于离散随机变量X，熵、交叉熵以及相对熵的定义分别如下</p>
+<blockquote>
+<p>$H(p)=−∑_ip(x_i)logp(x_i) $</p>
+<p>$H(p,q)=−∑_ip(x_i)logq(x_i) $</p>
+<p>$D(p||q)=H(p,q)−H(p)=∑_ip(x_i)logp(x_i)/q(x_i) $</p>
+<p>其中， p(x) 和 q(x) 都是对随机变量概率分布的建模。</p>
+</blockquote>
+<p>假定p是样本的真实分布，q是对其的建模。因为真实分布的熵H(p) 值是确定的$H(p,q)≥H(p)$恒成立。</p>
+<p>对于自然语言序列$W=w_1,w_2,…,w_N$，可以推导得到对每个词的平均交叉熵为：</p>
+<blockquote>
+<p>$H(W)=−\frac1NlogP(w_1,w_2,…,w_N)$</p>
+</blockquote>
+<p>显然，交叉熵越小，则建模的概率分布越接近真实分布。交叉熵描述的是样本的平均编码长度，虽然物理意义很明确，但是不够直观。因此，在此基础上，我们定义<strong>困惑度</strong>(perplexity) </p>
+<blockquote>
+<p>$Preplexity(W)=2^{H(W)}=\sqrt[N]{\frac{1}{P(w_1,…,w_N)}}$</p>
+</blockquote>
+<p>困惑度在语言模型中的物理意义可以描述为对于任意给定序列，下一个候选词的可选范围大小。同样的，困惑度越小，说明所建模的语言模型越精确。</p>
+</s></s>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Passerby-W</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://passerby-w.github.io/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/">http://passerby-w.github.io/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Passerby-W</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">谢谢老板！</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/minivaline/MiniValine.js"></script>
+<script>
+    new MiniValine(Object.assign({"enable":true,"serverURL":"https://minivaline.your-domain.top"}, {
+	  el: '#mvcomments',
+    }));
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Passerby-W
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/05/tokenization-for-nlp/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Tokenization for NLP">
+                        
+                        <span class="card-title">Tokenization for NLP</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NLP/" class="post-category">
+                                    NLP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Tokenization/">
+                        <span class="chip bg-color">Tokenization</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: WAN<br />'
+            + '文章作者: Passerby-W<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2023</span>
+            
+            <a href="/about" target="_blank">Passerby-W</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">36.5k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "12";
+                        var startDate = "31";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:670870488@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1b515b2aa23094a74aff2c82b6d0b911";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+
+</html>
