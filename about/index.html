@@ -322,7 +322,7 @@
                     </div>
                 </div>
 
-                <div class="introduction center-align" data-aos="fade-up"></div>
+                <div class="introduction center-align" data-aos="fade-up">undefined</div>
 
                 <style type="text/css">
     #posts-chart,
@@ -425,7 +425,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"NLP","value":7},{"name":"Python","value":2},{"name":"Deep Learning Systems课程笔记","value":2},{"name":"Installment","value":2},{"name":"Tutorial","value":5},{"name":"Paper","value":1},{"name":"Sources","value":1},{"name":"Pytorch","value":1},{"name":"Algorithm","value":2},{"name":"Knowledge Graph","value":1},{"name":"Math","value":1}],
+                data: [{"name":"NLP","value":7},{"name":"Paper","value":1},{"name":"Deep Learning Systems课程笔记","value":2},{"name":"Installment","value":2},{"name":"Python","value":2},{"name":"Tutorial","value":5},{"name":"Sources","value":1},{"name":"Pytorch","value":1},{"name":"Algorithm","value":2},{"name":"Knowledge Graph","value":1},{"name":"Math","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -449,7 +449,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["NLP","neo4j","Bert","Logging","Softmax","ASR纠错","Node.js","Hexo","CNN","DCNN"]
+                data: ["NLP","neo4j","ASR纠错","Bert","CNN","DCNN","Softmax","Algorithms and Implementation","Node.js","Hexo"]
             }
         ],
         yAxis: [
@@ -810,6 +810,22 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 

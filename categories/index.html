@@ -226,11 +226,11 @@
                 </a>
                 
                 
-                <a href="/categories/Python/" title="Python: 2">
+                <a href="/categories/Paper/" title="Paper: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Python
-                        <span class="tag-length">2</span>
+                            style="background-color: #F5EEF8;">Paper
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -253,20 +253,20 @@
                 </a>
                 
                 
-                <a href="/categories/Tutorial/" title="Tutorial: 5">
+                <a href="/categories/Python/" title="Python: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">Tutorial
-                        <span class="tag-length">5</span>
+                            style="background-color: #FEF9E7;">Python
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Paper/" title="Paper: 1">
+                <a href="/categories/Tutorial/" title="Tutorial: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">Paper
-                        <span class="tag-length">1</span>
+                            style="background-color: #F8F9F9;">Tutorial
+                        <span class="tag-length">5</span>
                     </span>
                 </a>
                 
@@ -358,7 +358,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"NLP","max":8},{"name":"Python","max":8},{"name":"Deep Learning Systems课程笔记","max":8},{"name":"Installment","max":8},{"name":"Tutorial","max":8},{"name":"Paper","max":8},{"name":"Sources","max":8},{"name":"Pytorch","max":8},{"name":"Algorithm","max":8},{"name":"Knowledge Graph","max":8},{"name":"Math","max":8}],
+            indicator: [{"name":"NLP","max":8},{"name":"Paper","max":8},{"name":"Deep Learning Systems课程笔记","max":8},{"name":"Installment","max":8},{"name":"Python","max":8},{"name":"Tutorial","max":8},{"name":"Sources","max":8},{"name":"Pytorch","max":8},{"name":"Algorithm","max":8},{"name":"Knowledge Graph","max":8},{"name":"Math","max":8}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -369,7 +369,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [7,2,2,2,5,1,1,1,2,1,1],
+                    value : [7,1,2,2,2,5,1,1,2,1,1],
                     name : '文章分类数量'
                 }
             ]
@@ -688,6 +688,22 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 
