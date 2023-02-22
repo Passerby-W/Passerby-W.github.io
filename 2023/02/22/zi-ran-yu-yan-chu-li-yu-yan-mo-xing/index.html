@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python,nlp,machine learning,hexo,data structue">
-    <meta name="description" content="自然语言处理——语言模型语言模型
-语音识别系统的目的，是把语音转换成文字。具体来说，是输入一段语音信号，要找一个文字序列（由词或字组成），使得它与语音信号的匹配程度最高。这个匹配程度，一般是用概率表示的。用$X$表示语音信号，$W$表示文字">
+    <meta name="keywords" content="自然语言处理——语言模型, python,nlp,machine learning,hexo,data structue">
+    <meta name="description" content="语言模型
+语音识别系统的目的，是把语音转换成文字。具体来说，是输入一段语音信号，要找一个文字序列（由词或字组成），使得它与语音信号的匹配程度最高。这个匹配程度，一般是用概率表示的。用$X$表示语音信号，$W$表示文字序列，则要求解的是下面这">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>WAN</title>
+    <title>自然语言处理——语言模型 | WAN</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -162,12 +162,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">自然语言处理——语言模型</h1>
                 </div>
             </div>
         </div>
@@ -281,12 +281,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Language-Model/">
+                                <span class="chip bg-color">Language Model</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NLP/" class="post-category">
+                                NLP
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -295,7 +308,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-20
+                    2023-02-22
                 </div>
                 
 
@@ -339,7 +352,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="自然语言处理——语言模型"><a href="#自然语言处理——语言模型" class="headerlink" title="自然语言处理——语言模型"></a>自然语言处理——语言模型</h1><h2 id="语言模型"><a href="#语言模型" class="headerlink" title="语言模型"></a>语言模型</h2><p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_timeline.png" alt="Timeline of Language Models" style="zoom:50%;"></p>
+                <h2 id="语言模型"><a href="#语言模型" class="headerlink" title="语言模型"></a>语言模型</h2><p><img src="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_timeline.png" alt="Timeline of Language Models" style="zoom:50%;"></p>
 <p>语音识别系统的目的，是把语音转换成文字。具体来说，是输入一段语音信号，要找一个文字序列（由词或字组成），使得它与语音信号的匹配程度最高。这个匹配程度，一般是用概率表示的。用$X$表示语音信号，$W$表示文字序列，则要求解的是下面这个问题：</p>
 <blockquote>
 <p>$W^∗=\arg\max_WP(W|X)$</p>
@@ -372,7 +385,7 @@
 <p>n=2 bigram： $P(w_1,w_2,…,w_n)=∏_{i=1}^nP(w_i|w_{i-1})$</p>
 <p>n=3 trigram： $P(w_1,w_2,…,w_n)=∏_{i=1}^nP(w_i|w_{i-2},w_{i-1})$</p>
 </blockquote>
-<p>其中， 当$n&gt;1$时，为了使句首词的条件概率有意义，需要给原序列加上一个或多个<strong>起始符 “<s>”</s></strong><s> 。可以说起始符的作用就是为了<strong>表征句首词出现的条件概率</strong>。此外，句子还需要加一个<strong>结束符“<s>”</s></strong><s>，当不加结束符时，n-gram 语言模型只能分别对所有<strong>固定长度</strong>的序列进行概率分布建模，而不是任意长度的序列。</s></s></p><s><s>
+<p>其中， 当$n&gt;1$时，为了使句首词的条件概率有意义，需要给原序列加上一个或多个<strong>起始符 “<s>”</s></strong> 。可以说起始符的作用就是为了<strong>表征句首词出现的条件概率</strong>。此外，句子还需要加一个<strong>结束符“<s>”</s></strong>，当不加结束符时，n-gram 语言模型只能分别对所有<strong>固定长度</strong>的序列进行概率分布建模，而不是任意长度的序列。</p>
 <p>总结下基于统计的 n-gram 语言模型的优缺点：</p>
 <blockquote>
 <p>优点：(1) 采用极大似然估计，参数易训练；(2) 完全包含了前 n-1 个词的全部信息；(3) 可解释性强，直观易理解。</p>
@@ -388,7 +401,7 @@
 </ol>
 <h3 id="神经网络语言模型"><a href="#神经网络语言模型" class="headerlink" title="神经网络语言模型"></a>神经网络语言模型</h3><h4 id="Neural-Networks-Language-Model"><a href="#Neural-Networks-Language-Model" class="headerlink" title="Neural Networks Language Model"></a>Neural Networks Language Model</h4><p>为了缓解<em>n</em>元模型估算概率时遇到的数据稀疏问题，研究者们提出了神经网络语言模型。代表性工作是Bengio等人在2003年提出的神经网络语言模型，该语言模型使用了一个三层前馈神经网络来进行建模。其中有趣的发现了第一层参数，用做词表示不仅低维紧密，而且能够蕴涵语义，也为后来的很多词向量模型（例如word2vec）打下了基础。</p>
 <p>前馈网络语言模型的架构图如下图所示，分为四层：</p>
-<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_nnlm.png" alt="前馈网络语言模型" style="zoom:40%;"></p>
+<p><img src="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_nnlm.png" alt="前馈网络语言模型" style="zoom:40%;"></p>
 <p>这样得到的语言模型自带平滑，无需传统 n-gram 模型中那些复杂的平滑算法。</p>
 <p>有了上面的基础，我们可以稍微总结下语言模型到底在建模什么，私以为可以看作是在给定一个序列的前提下，预测下一个词出现的概率，即</p>
 <blockquote>
@@ -401,13 +414,13 @@
 <p>缺点：(1) 模型训练时间长；(2) 神经网络黑盒子，可解释性较差。</p>
 </blockquote>
 <h4 id="RNN-Language-Model"><a href="#RNN-Language-Model" class="headerlink" title="RNN Language Model"></a>RNN Language Model</h4><p>RNNLM结构如下：</p>
-<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_rnn.png" alt="截屏2023-02-21 14.19.04" style="zoom: 40%;"></p>
+<p><img src="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_rnn.png" alt="截屏2023-02-21 14.19.04" style="zoom: 40%;"></p>
 <blockquote>
 <p>优点：（1）解决了ngram模型中不能捕获长期依赖的问题。</p>
 <p>缺点：（1）捕获长距离依赖能力仍然有限；（2）无法并行运算。</p>
 </blockquote>
 <h4 id="Word2vec"><a href="#Word2vec" class="headerlink" title="Word2vec"></a>Word2vec</h4><p>Word2Vec是2013年被Tomas Mikolov提出来的词向量训练算法，在论文中作者提到了两种Word2Vec的具体实现方式：<strong>连续词袋模型CBOW（Continuous Bag-of-Words Model）</strong>和<strong>Skip-gram</strong>。</p>
-<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_w2v.png" alt="Word2vec" style="zoom:40%;"></p>
+<p><img src="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_w2v.png" alt="Word2vec" style="zoom:40%;"></p>
 <p>Word2Vec 是一种计算非常高效的，可以从原始语料中学习字词空间向量的预测模型。CBOW 模式用一个词语的上下文作为输入，预测词语本身。即一句话中扣掉一个词，让模型猜这个词是什么。Skip-gram 模式用一个词语作为输入，来预测它周围的上下文（一个或多个词语）。即给模型一个词，猜前面和后面可能出现什么词。</p>
 <p>cbow是 1个老师 VS K个学生，K个学生（周围词）都会从老师（中心词）那里学习知识，但是老师（中心词）是一视同仁的，教给大家的一样的知识。至于你学到了多少，还要看下一轮（假如还在窗口内），或者以后的某一轮，你还有机会加入老师的课堂当中（再次出现作为周围词），跟着大家一起学习，然后进步一点。因此相对skip-gram，你的业务能力肯定没有人家强，但是对于整个训练营（训练过程）来说，这样肯定效率高，速度更快。</p>
 <p>在skip-gram里面，每个词在作为中心词的时候，实际上是 1个学生 VS K个老师，K个老师（周围词）都会对学生（中心词）进行“专业”的训练，这样学生（中心词）的“能力”（向量结果）相对就会扎实（准确）一些，但是这样肯定会使用更长的时间。</p>
@@ -428,7 +441,7 @@
 <blockquote>
 <p>优点：解决了w2v模型只用局部信息的缺点，使用了全局信息。</p>
 </blockquote>
-<h4 id="Elmo"><a href="#Elmo" class="headerlink" title="Elmo"></a>Elmo</h4><p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_elmo.png" alt="Elmo" style="zoom:40%;"></p>
+<h4 id="Elmo"><a href="#Elmo" class="headerlink" title="Elmo"></a>Elmo</h4><p><img src="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_elmo.png" alt="Elmo" style="zoom:40%;"></p>
 <p>解决了词语在不同语境词嵌入相同的问题</p>
 <blockquote>
 <p>优点：（1）利用上下文预测当前词，动态embedding。</p>
@@ -441,9 +454,9 @@
 <li><strong>Encoder（左边）：</strong>负责理解输入文本，为每个输入构造对应的语义表示（语义特征），；</li>
 <li><strong>Decoder（右边）：</strong>负责生成输出，使用 Encoder 输出的语义表示结合其他输入来生成目标序列。</li>
 </ul>
-<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_transformer.png" alt="Transformer结构" style="zoom:50%;"></p>
+<p><img src="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_transformer.png" alt="Transformer结构" style="zoom:50%;"></p>
 <p>随着时间的推移，新的 Transformer 模型层出不穷，但是它们依然可以被归类到三种主要架构下：</p>
-<p><img src="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_transformer_models.png" alt="Transformer家族" style="zoom:50%;"></p>
+<p><img src="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/lm_transformer_models.png" alt="Transformer家族" style="zoom:50%;"></p>
 <h4 id="Encoder-分支"><a href="#Encoder-分支" class="headerlink" title="Encoder 分支"></a>Encoder 分支</h4><p>纯 Encoder 模型只使用 Transformer 模型中的 Encoder 模块，也被称为自编码 (auto-encoding) 模型。在每个阶段，注意力层都可以访问到原始输入句子中的所有词语，即具有“双向 (Bi-directional)”注意力。纯 Encoder 模型通常通过破坏给定的句子（例如随机遮盖其中的单词），然后让模型进行重构来进行预训练，最适合处理那些需要理解整个句子语义的任务，例如句子分类、命名实体识别（词语分类）和抽取式问答。</p>
 <p>BERT 是第一个基于 Transformer 结构的纯 Encoder 模型，它在提出时横扫了整个 NLP 界，在流行的 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1804.07461">GLUE</a> 基准（通过多个任务度量模型的自然语言理解能力）上超过了当时所有的最强模型。随后的一系列工作对 BERT 的预训练目标和架构进行调整以进一步提高性能。时至今日，纯 Encoder 模型依然在 NLP 行业中占据主导地位。</p>
 <p>下面我们简略地介绍一下 BERT 模型以及各种变体：</p>
@@ -493,7 +506,7 @@
 <p>$Preplexity(W)=2^{H(W)}=\sqrt[N]{\frac{1}{P(w_1,…,w_N)}}$</p>
 </blockquote>
 <p>困惑度在语言模型中的物理意义可以描述为对于任意给定序列，下一个候选词的可选范围大小。同样的，困惑度越小，说明所建模的语言模型越精确。</p>
-</s></s>
+
                 
             </div>
             <hr/>
@@ -519,7 +532,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://passerby-w.github.io/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/">http://passerby-w.github.io/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/</a>
+                    <a href="http://passerby-w.github.io/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/">http://passerby-w.github.io/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,7 +569,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Language-Model/">
+                                    <span class="chip bg-color">Language Model</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -760,13 +777,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2023/02/20/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/">
+                <a href="/2023/02/22/zi-ran-yu-yan-chu-li-yu-yan-mo-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="自然语言处理——语言模型">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">自然语言处理——语言模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,17 +794,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-22
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Passerby-W
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NLP/" class="post-category">
+                                    NLP
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Language-Model/">
+                        <span class="chip bg-color">Language Model</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1001,6 +1030,13 @@
 
 </main>
 
+
+<script src=""></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
