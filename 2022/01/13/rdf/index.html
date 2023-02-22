@@ -376,11 +376,11 @@
 <li>URI ⊃ URN</li>
 <li>URL ∩ URN = ∅</li>
 </ul>
-<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.17.36.png" alt style="zoom:50%;"></p>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.17.36.png" alt="" style="zoom:50%;"></p>
 <p>首先假设：类别“artist”包括solo artist和band，band成员是solo artist。</p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.35.15.png" alt style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.35.15.png" alt="" style="zoom:50%;"></p>
 <p>RDF描述这些关系的方式基于我们如何用言语表达。如果我们说“<strong>The Beatles</strong> has as a member <strong>Paul McCartney</strong>”，那么用RDF来表示就如图下所示：</p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.36.36.png" alt style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.36.36.png" alt="" style="zoom:50%;"></p>
 <h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><p>类（<strong>class</strong>）是指某种类型的事物（如artist和band），一个类由一组个体（<strong>individuals</strong>），如披头士或约翰·列侬组成，也可称为实例或对象。类或个体可以是RDF三元组结构中的<strong>subject</strong>或<strong>object</strong>。    </p>
 <h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><p>RDF三元组的中间部分是谓词（<strong>predicate</strong>），有两种用法。当它在我们的模型中描述两个对象（<strong>classes</strong>或<strong>individuals</strong>）之间的关系时，它被称为对象属性（<strong>object property</strong>）。</p>
 <p>如果谓词提供有关对象的数据（数字、日期、字符串等），则称为描述属性的数据属性（<strong>attribute</strong>）。</p>
@@ -390,18 +390,18 @@
 <li><strong>Literal:</strong> Nodes representing values like numbers and dates</li>
 <li><strong>Blank node:</strong> Nodes without an explicit identifier</li>
 </ul>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.54.24.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.54.54.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.02.03.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.02.33.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.03.16.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.03.46.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.04.30.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.04.54.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.07.27.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.05.12.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.07.58.png" alt style="zoom:50%;"></p>
-<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.08.44.png" alt style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.54.24.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午5.54.54.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.02.03.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.02.33.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.03.16.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.03.46.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.04.30.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.04.54.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.07.27.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.05.12.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.07.58.png" alt="" style="zoom:50%;"></p>
+<p><img src="/2022/01/13/rdf/截屏2022-01-13 下午6.08.44.png" alt="" style="zoom:50%;"></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://www.stardog.com/trainings/getting-started-with-rdf-sparql/">STARDOG</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqi/p/kg-study-part-1.html">知识图谱学习笔记</a></p>
 
@@ -1241,22 +1241,6 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 
